@@ -2,6 +2,7 @@ import React from 'react';
 import { AppContainer } from 'react-hot-loader';
 import ReactDom from 'react-dom';
 import App from './App';
+import './css/main.css'
 
 const render = () => {
     ReactDom.render(

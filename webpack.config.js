@@ -43,17 +43,17 @@ module.exports = {
                     {
                         loader: 'css-loader',
                         options: {
-                            modules: true,
+                            /*modules: true,
                             camelCase: true,
-                            localIdentName: '[path][name]__[local]--[hash:base64:5]',
+                            localIdentName: '[path][name]__[local]--[hash:base64:5]',*/
                         },
-                    }, {
+                    }, /*{
                         loader: 'typed-css-modules-loader',
                         options: {
                             camelCase: true,
                             outDir: './built/css-modules'
                         },
-                    }
+                    }*/
                 ]
             }
         ]
@@ -68,4 +68,6 @@ module.exports = {
             template: './index.html'
         }),
     ],
+
+    watch: true
 };

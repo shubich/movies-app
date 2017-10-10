@@ -1,0 +1,53 @@
+#header {
+    background: #242424;
+    padding: 25px 50px;
+    color: white;
+}
+
+#nav {
+    display: flex;
+    flex-flow: row wrap;
+    box-sizing: border-box;
+}
+
+#nav .sitename {
+    color: hotpink;
+    font-size: 1.5em;
+    font-weight: bold;
+    flex: 1;
+}
+
+.btn-search {
+    padding: 5px 50px;
+    border-radius: 3px;
+}
+
+#search-form {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+#search-form h2 {}
+
+#search-form form {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+#search-form input[type='text'] {
+    flex-basis: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 5px solid #111111;
+    border-bottom-color: hotpink;
+    box-shadow: 1px 1px 5px #333;
+    margin-bottom: 15px;
+}
+
+#search-form #search-props {
+    flex: 1;
+}
+
+#search-form #search-props button {
+    margin-left: 10px;
+}
