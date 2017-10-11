@@ -25,14 +25,20 @@ const movies = [
         year: '1997',
         genre: 'Dramas',
         img: 'https://images-na.ssl-images-amazon.com/images/M/MV5BNmY5ODRmYTItNWU0Ni00MWE3LTgyYzUtYjZlN2Q5YTcyM2NmXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SY1000_CR0,0,683,1000_AL_.jpg'
+    },
+    {
+        title: 'JACKIE BROWN',
+        year: '1997',
+        genre: 'Dramas',
+        img: 'https://images-na.ssl-images-amazon.com/images/M/MV5BNmY5ODRmYTItNWU0Ni00MWE3LTgyYzUtYjZlN2Q5YTcyM2NmXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SY1000_CR0,0,683,1000_AL_.jpg'
     }
 ];
 
 export const Films = () => (
     <div id='films'>
         {
-            movies.map(movie => (
-                <Film {...movie}/>
+            movies.map((movie, i) => (
+                <Film key={i} {...movie}/>
             ))
         }
     </div>

@@ -9,7 +9,7 @@ module.exports = {
     entry: {
         shop: [
             'react-hot-loader/patch',
-            'webpack-dev-server/client?http://localhost:3000',
+            // 'webpack-dev-server/client?http://localhost:3000',
             './index',
         ]
     },
@@ -23,11 +23,11 @@ module.exports = {
         extensions: ['.js', '.jsx']
     },
 
-    devServer: {
-        historyApiFallback: true,
-        hot: true,
-        port: 3000
-    },
+    // devServer: {
+    //     historyApiFallback: true,
+    //     hot: true,
+    //     port: 3000
+    // },
 
     module: {
         rules: [{

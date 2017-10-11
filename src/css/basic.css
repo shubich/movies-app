@@ -3,6 +3,10 @@ body {
     background: black;
 }
 
+img {
+    width: 100%;
+}
+
 #app {
     max-width: 1111px;
     margin: 0 auto;
@@ -65,4 +69,13 @@ input:focus {
 input:focus,
 button:focus {
     outline: none;
+}
+
+/* TEXT */
+.text-primary {
+    color: hotpink;
+}
+
+.text-basic {
+    color: #bbb;
 }
