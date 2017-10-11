@@ -1,0 +1,96 @@
+#header {
+    background: @gray;
+    padding: 25px 50px;
+    color: white;
+    #nav {
+        display: flex;
+        flex-flow: row wrap;
+        box-sizing: border-box;
+        .sitename {
+            flex: 1;
+        }
+        .btn-search {
+            padding: 5px 50px;
+            border-radius: 3px;
+        }
+    }
+
+
+    // SEARCH FORM
+    #search-form {
+        display: flex;
+        flex-flow: column wrap;
+        form {
+            display: flex;
+            flex-flow: row wrap;
+        }
+        input[type='text'] {
+            flex-basis: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 5px solid #111111;
+            border-bottom-color: hotpink;
+            box-shadow: 1px 1px 5px #333;
+            margin-bottom: 15px;
+        }
+        #search-props {
+            flex: 1;
+        }
+        #search-props button {
+            margin-left: 10px;
+        }
+    }
+    
+
+    // FILM DETAILS
+    #film-details {
+        margin-top: 40px;
+        // display: flex;
+        // flex-flow: row wrap;
+        // justify-content: space-between;
+
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        //grid-auto-rows: 100px;
+        grid-gap: 15px;
+        // padding: 25px;
+
+        .poster {
+            width: 250px;
+        }
+
+        .rating {
+            color: lime;
+            margin-left: 25px;
+            font-size: 0.7em;
+            font-weight: 100;
+            border: 1px solid lime;
+            border-radius: 50px;
+            padding: 5px;
+        }
+        .numbers {
+            font-weight: bold;
+            span {
+                margin-right: 10px;
+            }
+        }
+        .description {
+            margin-top: 25px;
+        }
+        .director, .cast {
+            font-size: 0.8em;
+        }
+    }
+}
+
+
+@media screen and (max-width: 670px) {
+    #header {
+        #film-details {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            .poster {
+                width: 100%;
+            }
+        }
+    }
+}

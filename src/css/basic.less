@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background: black;
+    background: @gray;
 }
 
 img {
@@ -8,12 +8,16 @@ img {
 }
 
 #app {
+    margin: 0 auto;
+}
+
+.container {
     max-width: 1111px;
     margin: 0 auto;
 }
 
 .sitename {
-    color: hotpink;
+    color: @primary-color;
     font-size: 1.5em;
     font-weight: bold;
 }
@@ -28,35 +32,34 @@ img {
 }
 
 .btn-primary {
-    background: hotpink;
-    color: white;
+    background: @primary-color;
+    color: @default-color;
 }
 
 .btn-basic {
     background: gray;
-    color: white;
+    color: @default-color;
 }
 
 .btn-default {
-    background: white;
-    color: hotpink;
+    background: @default-color;
+    color: @primary-color;
 }
 
 
 /* LINKS */
 
-a,
-.link {
+a, .link {
     text-decoration: none;
     color: black;
-}
 
-.link:hover {
-    color: hotpink;
+    &:hover {
+        color: @primary-color;
+    }
 }
 
 .link-primary {
-    color: hotpink;
+    color: @primary-color;
 }
 
 
@@ -73,9 +76,9 @@ button:focus {
 
 /* TEXT */
 .text-primary {
-    color: hotpink;
+    color: @primary-color;
 }
 
 .text-basic {
-    color: #bbb;
+    color: @basic-color;
 }

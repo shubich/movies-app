@@ -5,8 +5,10 @@ import {FilmDetails} from './FilmDetails'
 
 export const Header = () => (
     <div id='header'>
-        <Nav />
-        {/* <SearchForm /> */}
-        <FilmDetails />
+        <div className='container'>
+            <Nav />
+            {/* <SearchForm /> */}
+            <FilmDetails />
+        </div>
     </div>
 );

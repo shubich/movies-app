@@ -1,0 +1,33 @@
+#films {
+    padding: 25px;
+    background: white;
+    .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+        grid-auto-rows: 100%;
+        grid-gap: 50px;
+        
+        .film {
+            
+            img {
+                width: 100%;
+            }
+    
+            .top-info {
+                display: flex;
+                flex-flow: row nowrap;
+            }
+            
+            .title {
+                flex: 1;
+                font-size: 1.3em;
+            }
+            
+            .year {
+                border: 1px solid black;
+                padding: 3px;
+            }
+        }
+    }
+}
+

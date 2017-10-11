@@ -42,19 +42,15 @@ module.exports = {
                     'style-loader',
                     {
                         loader: 'css-loader',
-                        options: {
-                            /*modules: true,
-                            camelCase: true,
-                            localIdentName: '[path][name]__[local]--[hash:base64:5]',*/
-                        },
-                    }, /*{
-                        loader: 'typed-css-modules-loader',
-                        options: {
-                            camelCase: true,
-                            outDir: './built/css-modules'
-                        },
-                    }*/
+                    },
                 ]
+            }, {
+                test: /\.less?$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    {loader: 'less-loader'}
+                ],
             }
         ]
     },
