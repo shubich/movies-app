@@ -51,6 +51,13 @@ module.exports = {
                     'css-loader',
                     {loader: 'less-loader'}
                 ],
+            }, {
+                test: /\.(ttf|eot|svg|woff|png)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+                loader: "file-loader",
+                options: {
+                    name: '[path][name].[ext]?[hash]'
+                }
+    
             }
         ]
     },
