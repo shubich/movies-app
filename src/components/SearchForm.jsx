@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const SearchForm = () => (
     <div id='search-form'>
@@ -10,7 +11,9 @@ export const SearchForm = () => (
                 <button className='btn btn-primary'>TITLE</button>
                 <button className='btn btn-basic'>DIRECTOR</button>
             </div>
-            <button className='btn btn-primary btn-search'>SEARCH</button>            
+            <Link to='/search'>
+                <button className='btn btn-primary btn-search'>SEARCH</button>                    
+            </Link>
         </form>
     </div>
 );

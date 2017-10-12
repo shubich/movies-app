@@ -10,7 +10,8 @@ export const Header = () => (
             <Nav />
             <Switch>
                 <Route exact path='/' component={SearchForm}/>
-                <Route path='/movie' component={FilmDetails}/>
+                <Route exact path='/search' component={SearchForm}/>
+                <Route path='/movie/:id' component={FilmDetails}/>
             </Switch>
         </div>
     </header>

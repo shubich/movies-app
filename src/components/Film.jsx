@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export const Film = ({title, year, genre, img}) => (
+export const Film = ({id, title, year, genre, img}) => (
     <div className='film'>
-        <Link to='/movie'>
+        <Link to={'/movie/'+id}>
             <img src={img} alt=""/>
         </Link>
         <div className='top-info'>
