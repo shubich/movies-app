@@ -1,10 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const Film = ({title, year, genre, img}) => (
     <div className='film'>
-        <img src={img} alt=""/>
+        <Link to='/movie'>
+            <img src={img} alt=""/>
+        </Link>
         <div className='top-info'>
-            <span className='title'>{title}</span>
+            <Link to='/movie'>
+                <span className='title'>{title}</span>
+            </Link>
             <span className='year'>{year}</span>
         </div>
         <div className='bottom-info'>

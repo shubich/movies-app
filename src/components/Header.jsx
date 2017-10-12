@@ -1,14 +1,17 @@
 import React from 'react';
-import {Nav} from './Nav'
-import {SearchForm} from './SearchForm'
-import {FilmDetails} from './FilmDetails'
+import { Route, Switch } from 'react-router-dom';
+import {Nav} from './Nav';
+import {SearchForm} from './SearchForm';
+import {FilmDetails} from './FilmDetails';
 
 export const Header = () => (
-    <div id='header'>
+    <header id='header'>
         <div className='container'>
             <Nav />
-            {/* <SearchForm /> */}
-            <FilmDetails />
+            <Switch>
+                <Route exact path='/' component={SearchForm}/>
+                <Route path='/movie' component={FilmDetails}/>
+            </Switch>
         </div>
-    </div>
+    </header>
 );

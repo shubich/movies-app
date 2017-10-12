@@ -1,9 +1,9 @@
 import React from 'react';
 
 export const Footer = () => (
-    <div id='footer'>
+    <footer id='footer'>
         <div className='container'>    
-            <span className='sitename'>netflixroulette</span>
+            <h3 className='sitename'>netflixroulette</h3>
         </div>
-    </div>
+    </footer>
 );
