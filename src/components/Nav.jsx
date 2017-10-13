@@ -1,16 +1,15 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
-export const Nav = () => (
+export const Nav = ({search = true}) => (
     <div id='nav'>
         <h1 className='sitename'>netflixroulette</h1>
-        <Switch>
-            <Route path='/movie'>
+        {
+            search ? (
                 <Link to='/'>
                     <button className='btn btn-default btn-search'>SEARCH</button>            
                 </Link>
-            </Route>
-        </Switch>
+            ) : null
+        }
     </div>
 );
