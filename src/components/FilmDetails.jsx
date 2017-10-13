@@ -10,7 +10,6 @@ export const FilmDetails = (props) => {
     const curFilm = movies.find(isCurFilm);
     return (
         <div>
-            <Nav search={true}/>
             <div id='film-details'>
                 <div className='poster'>
                     <img src={curFilm.img} alt=""/>
