@@ -1,0 +1,6 @@
+// export const GET_FILMS_BY_TITLE = 'GET_FILMS_BY_TITLE';
+// export const GET_FILMS_BY_DIRECTOR = 'GET_FILMS_BY_DIRECTOR';
+// export const SORT_FILMS_BY_DATE = 'SORT_FILMS_BY_DATE';
+// export const SORT_FILMS_BY_RATING = 'SORT_FILMS_BY_RATING';
+export const GET_FILMS = 'GET_FILMS';
+export const SORT_FILMS = 'SORT_FILMS';
