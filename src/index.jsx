@@ -11,7 +11,7 @@ import { Status } from './components/Status'
 import { Films } from './components/Films';
 import { NotFound } from './components/NotFound';
 import { Footer } from './components/Footer';
-import './css/main.less';
+import './styles/main.less';
 
 const render = () => {
     ReactDom.render(
