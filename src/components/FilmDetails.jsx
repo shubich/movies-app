@@ -2,12 +2,9 @@ import React from 'react';
 import {Nav} from './Nav';
 import { movies } from '../data';
 
-export const FilmDetails = (props) => {
-    const filmId = props.match.params.id;
-    const isCurFilm = (film, index, array) => {
-        return film.id == filmId
-    };
-    const curFilm = movies.find(isCurFilm);
+export const FilmDetails = ({
+    curFilm
+}) => {
     return (
         <div>
             <div id='film-details'>

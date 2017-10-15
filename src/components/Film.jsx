@@ -1,8 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export const Film = ({id, title, year, genre, img}) => (
-    <div className='film'>
+export const Film = ({
+    id, 
+    title, 
+    year, 
+    genre, 
+    img, 
+    onClick
+}) => (
+    <div className='film' onClick={onClick}>
         <Link to={'/film/'+id}>
             <img src={img} alt=""/>
         </Link>

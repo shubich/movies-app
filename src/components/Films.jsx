@@ -1,21 +1,21 @@
 import React from 'react';
 import {Film} from './Film';
-import { movies } from '../data';
 
-export const Films = (props) => {
-    let visibleMovies;
-    if (props.match.params.id) {
-        const curFilmId = props.match.params.id;
-        visibleMovies = movies.filter(movie =>
-            movie.id != curFilmId
-        )    
-    } else visibleMovies = movies;
+export const Films = ({
+    films,
+    onFilmClick
+}) => {
+
     return (
         <div id='films'>
             <div className='container'>
                 {
-                    visibleMovies.map((movie, i) => (
-                        <Film key={i} {...movie}/>
+                    films.map((film, i) => (
+                        <Film 
+                            key={i} 
+                            {...film}
+                            onClick={() => onFilmClick(film.id)} 
+                        />
                     ))
                 }
             </div>

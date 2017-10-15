@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
+import './styles/main.less';
 
 export default class App extends React.Component {
 

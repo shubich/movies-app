@@ -1,20 +1,24 @@
 import {
-    GET_FILMS_BY_TITLE,
-    GET_FILMS_BY_DIRECTOR,
-    SORT_FILMS_BY_DATE,
-    SORT_FILMS_BY_RATING    
+    GET_FILMS,
+    SORT_FILMS
 } from '../constants/Films';
+import { movies } from '../data';
 
-const films = (state, action) => {
+const getFilms = (props) => {
+    // something important
+    return movies;
+}
+
+const initialState = getFilms(null);
+
+const films = (state = initialState, action) => {
     switch(action.type) {
-        case GET_FILMS_BY_TITLE:
-            return 1;
-        case GET_FILMS_BY_TITLE:
-            return 2;
-        case SORT_FILMS_BY_DATE:
-            return 3;
-        case SORT_FILMS_BY_RATING:
-            return 4;
+        case GET_FILMS:
+            return [...movies];
+        case SORT_FILMS:
+            return state;
+        default:
+            return state;
     }
 }
 
