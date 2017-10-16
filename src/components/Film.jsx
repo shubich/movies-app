@@ -1,17 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { imagePrefix } from '../api/'
 
 export const Film = ({
     id, 
     title, 
-    year, 
+    release_date, 
     genre, 
-    img, 
+    poster_path, 
     onClick
 }) => (
     <div className='film' onClick={onClick}>
         <Link to={'/film/'+id}>
-            <img src={img} alt=""/>
+            <img src={imagePrefix+poster_path} alt=""/>
         </Link>
         <div className='top-info'>
             <span className='title'>
@@ -19,7 +20,7 @@ export const Film = ({
                     {title}
                 </Link>            
             </span>
-            <span className='year'>{year}</span>
+            <span className='year'>{release_date.split('-')[0]}</span>
         </div>
         <div className='bottom-info'>
             <span className='genre'>{genre}</span>

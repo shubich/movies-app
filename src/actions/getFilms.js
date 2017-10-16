@@ -25,14 +25,18 @@ const getFilms = (query) => {
             response.json().then(function(data) {
                 dispatch({
                     type: GET_FILMS_SUCCESS,
-                    films: data
+                    films: data.results
                 })  
                 console.log(data);  
             });  
           }  
         )  
-        .catch(function(err) {  
-          console.log('Fetch Error :-S', err);  
+        .catch(function(err) {
+            dispatch({
+                type: GET_FILMS_FAILURE,
+                error: err
+            })
+            console.log('Fetch Error :-S', err);  
         });
     }
 };

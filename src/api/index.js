@@ -1,6 +1,6 @@
-const API_KEY = '595f6d4c932627df7eb7d5c2f27a7e40';
-const host = 'https://api.themoviedb.org';
-const route = '/3/search/movie';
+export const API_KEY = '595f6d4c932627df7eb7d5c2f27a7e40';
+export const host = 'https://api.themoviedb.org/3/search/movie';
+export const imagePrefix = 'https://image.tmdb.org/t/p/w640';
 
 // https://api.themoviedb.org/3/search/movie?api_key=595f6d4c932627df7eb7d5c2f27a7e40&language=en-US&&query=taxi&page=1&include_adult=false
 const encodeQueryData = (data) => {
@@ -17,22 +17,22 @@ const QUERY = {
     include_adult: 'false'
 };
 
-var data = { 'first name': 'George', 'last name': 'Jetson', 'age': 110 };
-var querystring = encodeQueryData(data);
+// var data = { 'first name': 'George', 'last name': 'Jetson', 'age': 110 };
+// var querystring = encodeQueryData(data);
 
-console.log(querystring);
+// console.log(querystring);
 
-export default {
-    getFilms(params) {
-        switch (params.searchFilter) {
-            case 'title':
-                //let films = 
-                return '...';
-            case 'director':
-                return '...';
-        }
-    },
-    getFilmDetails(params) {
-        // getFilmById
-    }
-}
+// export default {
+//     getFilms(params) {
+//         switch (params.searchFilter) {
+//             case 'title':
+//                 //let films = 
+//                 return '...';
+//             case 'director':
+//                 return '...';
+//         }
+//     },
+//     getFilmDetails(params) {
+//         // getFilmById
+//     }
+// }
