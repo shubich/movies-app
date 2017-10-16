@@ -1,20 +1,16 @@
 import { connect } from 'react-redux';
 import { Films } from '../components/Films';
 import getFilms from '../actions/getFilms';
+import { getVisibleFilms } from '../utils';
 
 const mapStateToProps = (state, ownProps) => {
-    /* move to another file */
-    let visibleFilms;
-    if (ownProps.match.params.id) {
-        const curFilmId = ownProps.match.params.id;
-        visibleFilms = state.films.filter(movie =>
-            movie.id != curFilmId
-        );    
-    } else visibleFilms = state.films;
-    /* move to another file */
+    const filmId = ownProps.match.params.id;
     
     return {
-        films: visibleFilms
+        films: getVisibleFilms(
+            filmId, 
+            state.films
+        )
     };
 }
 
@@ -26,9 +22,9 @@ const mapDispatchToProps = (dispatch) => {
     };
 }
 
-const CurFilms = connect(
+const FilmsContainer = connect(
     mapStateToProps,
     mapDispatchToProps
 ) (Films);
 
-export default CurFilms;
+export default FilmsContainer;

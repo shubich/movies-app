@@ -8,9 +8,9 @@ import App from './App';
 import { Header } from './components/Header';
 import { Nav } from './components/Nav';
 import SearchBar from './containers/SearchBar';
-import FilmDetailsCR from './containers/FilmDetailsCR';
+import FilmDetailsContainer from './containers/FilmDetailsContainer';
 import { Status } from './components/Status'
-import CurFilms from './containers/CurFilms';
+import FilmsContainer from './containers/FilmsContainer';
 import { NotFound } from './components/NotFound';
 import { Footer } from './components/Footer';
 
@@ -24,10 +24,10 @@ const render = () => {
                             <App>
                                 <Header>
                                     <Nav search={true}/>
-                                    <Route component={FilmDetailsCR}/>
+                                    <Route component={FilmDetailsContainer}/>
                                 </Header>
                                 <Route component={Status}/>
-                                <Route component={CurFilms}/>
+                                <Route component={FilmsContainer}/>
                                 <Footer/>
                             </App>
                         </Route>                
@@ -39,7 +39,7 @@ const render = () => {
                                 </Header>
                                 <Route component={Status}/>
                                 <Switch>
-                                    <Route path='/search/:query' component={CurFilms}/>
+                                    <Route path='/search/:query' component={FilmsContainer}/>
                                     <Route path='*' component={NotFound}/>
                                 </Switch>                            
                                 <Footer/>

@@ -3,22 +3,22 @@ import {Nav} from './Nav';
 import { movies } from '../data';
 
 export const FilmDetails = ({
-    curFilm
+    currentFilm
 }) => {
     return (
         <div>
             <div id='film-details'>
                 <div className='poster'>
-                    <img src={curFilm.img} alt=""/>
+                    <img src={currentFilm.img} alt=""/>
                 </div>
                 <div className='info'>
                     <h2>
-                        <span className='title text-primary'>{curFilm.title}</span>
+                        <span className='title text-primary'>{currentFilm.title}</span>
                         <span className='rating'>4.1</span>
                     </h2>
-                    <p className='genre text-basic'>{curFilm.genre}</p>
+                    <p className='genre text-basic'>{currentFilm.genre}</p>
                     <p className='numbers'>
-                        <span className='release-year'>{curFilm.year}</span>
+                        <span className='release-year'>{currentFilm.year}</span>
                         <span className='duration'>154 min</span>
                     </p>
                     <p className='description text-basic'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita natus repudiandae quo accusantium. Beatae a dolorem assumenda quo placeat quam, error, perspiciatis velit harum temporibus numquam repudiandae accusamus, fugiat corrupti ipsa consectetur quibusdam unde! A maiores exercitationem adipisci aut dolore.</p>
