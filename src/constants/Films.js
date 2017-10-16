@@ -1,2 +1,4 @@
-export const GET_FILMS = 'GET_FILMS';
+export const GET_FILMS_REQUEST = 'GET_FILMS_REQUEST';
+export const GET_FILMS_SUCCESS = 'GET_FILMS_SUCCESS';
+export const GET_FILMS_FAILURE = 'GET_FILMS_FAILURE';
 export const SORT_FILMS = 'SORT_FILMS';

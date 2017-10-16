@@ -16,8 +16,9 @@ let SearchBar = ({ dispatch }) => (
                 </div>
                 <Link 
                     to='/search/Quentin Tarantino'
-                    onClick={() => {
-                        dispatch(getFilms('director', 'Quentin Tarantino'))
+                    onClick={(e) => {
+                        //e.preventDefault();
+                        dispatch(getFilms('Taxi'))
                     }}
                 >
                     <button className='btn btn-primary btn-search'>SEARCH</button>                    
