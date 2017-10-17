@@ -23,8 +23,12 @@ let SearchBar = ({ dispatch }) => {
                     <Link 
                         to={'/search/'+searchQuery}
                         onClick={(e) => {
-                            //e.preventDefault();
-                            dispatch(getFilms(searchQuery.value))
+                            if (!searchQuery.value) {
+                                e.preventDefault();
+                                searchQuery.focus();
+                            } else {
+                                dispatch(getFilms(searchQuery.value))
+                            }
                         }}
                     >
                         <button className='btn btn-primary btn-search'>SEARCH</button>                    

@@ -1,6 +1,4 @@
 import React from 'react';
-import {Film} from './Film';
-import { movies } from '../data';
 
 export const NotFound = () => (
     <div id='notfound'>
