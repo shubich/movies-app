@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { Films } from '../components/Films';
-import getFilms from '../actions/getFilms';
+import getFilmDetails from '../actions/getFilmDetails';
 import { getVisibleFilms } from '../utils';
 
 const mapStateToProps = (state, ownProps) => {
@@ -19,6 +19,9 @@ const mapDispatchToProps = (dispatch) => {
     return {
         onFilmClick: (id) => {
             console.log('onFilmClick ' + id);
+            dispatch(
+                getFilmDetails(id)
+            )
         }
     };
 }

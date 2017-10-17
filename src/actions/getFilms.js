@@ -14,7 +14,7 @@ const getFilms = (query) => {
         })
         
         const queryString = API.encodeQueryData({...API.getFilmsQuery, query});
-        let url = `${API.host}?${queryString}`;
+        let url = `${API.host}${API.searchMoviesPath}?${queryString}`;
 
         fetch(url)  
         .then(  

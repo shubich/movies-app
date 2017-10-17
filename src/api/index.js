@@ -1,6 +1,9 @@
 export const API_KEY = '595f6d4c932627df7eb7d5c2f27a7e40';
-export const host = 'https://api.themoviedb.org/3/search/movie';
+export const host = 'https://api.themoviedb.org/';
 export const imagePrefix = 'https://image.tmdb.org/t/p/w640';
+
+export const searchMoviesPath = '3/search/movie';
+export const moviePath = '3/movie/';
 
 export const encodeQueryData = (data) => {
     let query = [];

@@ -20,7 +20,14 @@ export const Film = ({
                     {title}
                 </Link>            
             </span>
-            <span className='year'>{release_date.split('-')[0]}</span>
+            <span className='year'>
+                {
+                    release_date ?
+                    release_date.split('-')[0]
+                    :
+                    'unknown'
+                }
+            </span>
         </div>
         <div className='bottom-info'>
             <span className='genre'>{genre}</span>

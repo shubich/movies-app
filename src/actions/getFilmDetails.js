@@ -5,6 +5,7 @@ import {
 } from '../constants/Films';
 
 import * as API from '../api';
+import getFilms from './getFilms';
 
 const getFilmDetails = (id) => {
     return (dispatch) => {
@@ -14,7 +15,7 @@ const getFilmDetails = (id) => {
         })
         
         const queryString = API.encodeQueryData({...API.getFilmDetailsQuery});
-        let url = `${API.host}/${id}?${queryString}`;
+        let url = `${API.host}${API.moviePath}${id}?${queryString}`;
 
         fetch(url)  
         .then(  
@@ -29,8 +30,11 @@ const getFilmDetails = (id) => {
             response.json().then(function(data) {
                 dispatch({
                     type: GET_FILM_DETAILS_SUCCESS,
-                    film: data
+                    details: data
                 })
+                dispatch(
+                    getFilms(data.title)                    
+                )
             });  
           }  
         )  
