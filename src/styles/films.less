@@ -1,6 +1,7 @@
 #films {
     padding: 25px;
     background: white;
+    min-height: 550px;
     .container {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
@@ -16,16 +17,16 @@
             .top-info {
                 display: flex;
                 flex-flow: row nowrap;
-            }
-            
-            .title {
-                flex: 1;
-                font-size: 1.3em;
-            }
-            
-            .year {
-                border: 1px solid black;
-                padding: 3px;
+                align-items: baseline;
+                .title {
+                    flex: 1;
+                    font-size: 1.3em;
+                }
+                
+                .year {
+                    border: 1px solid black;
+                    padding: 3px;
+                }
             }
         }
     }
@@ -34,7 +35,7 @@
 #notfound {
     padding: 25px;
     background: white;
-    min-height: 500px;
+    min-height: 550px;
     display: flex;
     align-items: center;
     h2 {
