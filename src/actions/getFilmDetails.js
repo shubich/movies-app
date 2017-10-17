@@ -1,20 +1,20 @@
 import { 
-    GET_FILMS_REQUEST,
-    GET_FILMS_SUCCESS,
-    GET_FILMS_FAILURE 
+    GET_FILM_DETAILS_REQUEST,
+    GET_FILM_DETAILS_SUCCESS,
+    GET_FILM_DETAILS_FAILURE 
 } from '../constants/Films';
 
 import * as API from '../api';
 
-const getFilms = (query) => {
+const getFilmDetails = (id) => {
     return (dispatch) => {
         dispatch({
-            type: GET_FILMS_REQUEST,
-            query         
+            type: GET_FILM_DETAILS_REQUEST,
+            id         
         })
         
-        const queryString = API.encodeQueryData({...API.getFilmsQuery, query});
-        let url = `${API.host}?${queryString}`;
+        const queryString = API.encodeQueryData({...API.getFilmDetailsQuery});
+        let url = `${API.host}/${id}?${queryString}`;
 
         fetch(url)  
         .then(  
@@ -28,15 +28,15 @@ const getFilms = (query) => {
             // Examine the text in the response  
             response.json().then(function(data) {
                 dispatch({
-                    type: GET_FILMS_SUCCESS,
-                    results: data.results
+                    type: GET_FILM_DETAILS_SUCCESS,
+                    film: data
                 })
             });  
           }  
         )  
         .catch(function(err) {
             dispatch({
-                type: GET_FILMS_FAILURE,
+                type: GET_FILM_DETAILS_FAILURE,
                 error: err
             })
             console.log('Fetch Error :-S', err);  
@@ -44,4 +44,4 @@ const getFilms = (query) => {
     }
 };
 
-export default getFilms;
+export default getFilmDetails;

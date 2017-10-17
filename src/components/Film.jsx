@@ -12,7 +12,7 @@ export const Film = ({
 }) => (
     <div className='film' onClick={onClick}>
         <Link to={'/film/'+id}>
-            <img src={imagePrefix+poster_path} alt=""/>
+            <img src={imagePrefix+poster_path} alt="poster"/>
         </Link>
         <div className='top-info'>
             <span className='title'>

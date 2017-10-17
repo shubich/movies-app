@@ -1,6 +1,6 @@
 import React from 'react';
 import {Nav} from './Nav';
-import { movies } from '../data';
+import { imagePrefix } from '../api/'
 
 export const FilmDetails = ({
     currentFilm
@@ -9,21 +9,28 @@ export const FilmDetails = ({
         <div>
             <div id='film-details'>
                 <div className='poster'>
-                    <img src={currentFilm.img} alt=""/>
+                    <img src={imagePrefix+currentFilm.poster_path} alt="poster"/>
                 </div>
                 <div className='info'>
                     <h2>
                         <span className='title text-primary'>{currentFilm.title}</span>
-                        <span className='rating'>4.1</span>
+                        <span className='rating'>
+                            {
+                                currentFilm.vote_average < 10 ?
+                                currentFilm.vote_average.toFixed(1)
+                                :
+                                currentFilm.vote_average 
+                            }
+                        </span>
                     </h2>
-                    <p className='genre text-basic'>{currentFilm.genre}</p>
+                    {/* <p className='genre text-basic'>{currentFilm.genre}</p> */}
                     <p className='numbers'>
-                        <span className='release-year'>{currentFilm.year}</span>
-                        <span className='duration'>154 min</span>
+                        <span className='release-year'>{currentFilm.release_date}</span>
+                        {/* <span className='duration'>154 min</span> */}
                     </p>
-                    <p className='description text-basic'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita natus repudiandae quo accusantium. Beatae a dolorem assumenda quo placeat quam, error, perspiciatis velit harum temporibus numquam repudiandae accusamus, fugiat corrupti ipsa consectetur quibusdam unde! A maiores exercitationem adipisci aut dolore.</p>
-                    <p className='director text-basic'>Director: Quentin Tarantino</p>
-                    <p className='cast text-basic'>Cast: Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi obcaecati assumenda at veritatis rerum, mollitia consectetur provident maiores doloremque non.</p>
+                    <p className='description text-basic'>{currentFilm.overview}</p>
+                    {/* <p className='director text-basic'>Director: Quentin Tarantino</p>
+                    <p className='cast text-basic'>Cast: [...actors]</p> */}
                 </div>
 
             </div>

@@ -7,11 +7,11 @@ const mapStateToProps = (state, ownProps) => {
     const filmId = ownProps.match.params.id;
     
     return {
-        // films: getVisibleFilms(
-        //     filmId, 
-        //     state.films
-        // )
-        ...state.films
+        ...state.films,
+        results: getVisibleFilms(
+            filmId,
+            state.films.results
+        )
     };
 }
 

@@ -8,7 +8,7 @@ const mapStateToProps = (state, ownProps) => {
     return {
         currentFilm: getCurrentFilm(
             filmId, 
-            state.films
+            state.films.results
         )
     };
 }

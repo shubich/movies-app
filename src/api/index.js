@@ -10,12 +10,19 @@ export const encodeQueryData = (data) => {
     return query.join('&');
 }
 
-export const QUERY = {
+export const getFilmsQuery = {
     api_key: API_KEY,
     language: 'en-US',
     include_adult: 'false',
     page: '1'
 };
 
-// request url exapmle
+export const getFilmDetailsQuery = {
+    api_key: API_KEY
+}
+
+// request films url exapmle
 // https://api.themoviedb.org/3/search/movie?api_key=595f6d4c932627df7eb7d5c2f27a7e40&language=en-US&&query=taxi&page=1&include_adult=false
+
+// request film details url exapmle
+// https://api.themoviedb.org/3/movie/343611?api_key={api_key}
