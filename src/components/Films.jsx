@@ -9,7 +9,7 @@ export const Films = ({
     onFilmClick
 }) => {
     return (
-        results.length ?
+        (results.length || fetching) ?
         <div id='films'>
             <div className='container'>
                 {
