@@ -8,7 +8,7 @@ export const Status = (props) => {
                 <div className='container'>
                     <div className='count'>{props.count} movies found</div>
                     <div className='sort'>
-                        <span>Sort by</span>
+                        <span className='sortBy'>Sort by</span>
                         <a 
                             onClick={()=>props.handleSort('date')}
                             className={'link link-'+(props.sort == 'date' ? 'primary' : 'default')}

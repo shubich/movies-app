@@ -1,5 +1,4 @@
 #status {
-    padding: 25px 50px;
     background: #CDCDCD;
     .container {
         display: flex;
@@ -7,10 +6,16 @@
         .count {
             flex: 1;
         }
+        .sortBy {
+            font-weight: bold;
+        }
         .link {
             margin-left: 10px;
             cursor: pointer;
         }
+        @media @phone {
+            flex-flow: column wrap;
+        }        
     }
 }
 
