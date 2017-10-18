@@ -19,9 +19,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
         onFilmClick: (id) => {
             console.log('onFilmClick ' + id);
-            dispatch(
-                getFilmDetails(id)
-            )
+            window.scrollTo(0, 0);
         }
     };
 }

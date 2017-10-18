@@ -6,7 +6,18 @@ export class FilmDetails extends React.Component {
     constructor(props) {
         super(props);
         if (!this.props.fetching) {
+            console.log('from Constructor')
             this.props.getFilmDetails();            
+        }
+    }
+
+    componentWillReceiveProps(nextProps) {
+        let currentId =  this.props.match.params.id;
+        let nextId = nextProps.match.params.id;
+
+        if (currentId != nextId) {
+            console.log('from WillRECEIVE')            
+            this.props.getFilmDetails(nextId);
         }
     }
     
