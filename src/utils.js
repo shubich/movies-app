@@ -16,3 +16,18 @@ export const getVisibleFilms = (filmId, films) => {
         return visibleFilms;
     }
 }
+
+export const sortFilms = (films, field) => {
+    films.sort(function(a, b) {
+        switch(field) {
+            case 'rating':
+                return b.vote_average - a.vote_average;
+            case 'date':
+                return Number(b.release_date.split('-')[0]) - Number(a.release_date.split('-')[0]);   
+            default:
+                console.warn(`sort by ${field} is not available`);
+                return films;     
+        }
+    });
+    return films;
+}

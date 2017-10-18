@@ -17,7 +17,7 @@ export const Films = ({
                     <p>Loading...</p>
                     :
                     results.map((film, i) => (
-                        film.poster_path ?
+                        film.poster_path !=1 ?
                         <Film 
                             key={i} 
                             film={film}

@@ -14,8 +14,12 @@ class SearchBar extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        this.props.history.push(`/search/${this.searchQuery.value}`);
-        this.props.dispatch(getFilms(this.searchQuery.value))
+        if (this.searchQuery.value) {
+            this.props.history.push(`/search/${this.searchQuery.value}`);
+            this.props.dispatch(getFilms(this.searchQuery.value))
+        } else {
+            this.searchQuery.focus();
+        }
     }
 
     render() {

@@ -5,22 +5,25 @@ import {
     SORT_FILMS
 } from '../constants/Films';
 
+import { sortFilms } from '../utils';
+
 const initialState = {
     results: [],
     fetching: false,
+    sort: '',
     error: ''
 }
 
 const films = (state = initialState, action) => {
     switch(action.type) {
         case GET_FILMS_REQUEST:
-            return { results: [], fetching: true, error: '' };
+            return { results: [], fetching: true, error: '', sort: '' };
         case GET_FILMS_SUCCESS:
-            return { results: action.results, fetching: false, error: '' };
+            return { results: action.results, fetching: false, error: '', sort: '' };
         case GET_FILMS_FAILURE:
-            return { results: [], fetching: false, error: action.error };
+            return { results: [], fetching: false, error: action.error, sort: '' };
         case SORT_FILMS:
-            return state;
+            return { ...state, results: sortFilms([...state.results], action.resultsFilter), sort: action.resultsFilter };
         default:
             return state;
     }
