@@ -29,13 +29,8 @@ export class FilmDetails extends React.Component {
             : 
             details.vote_average;
 
-        details.genres = (details.genres) ? 
-            details.genres.map((genre, i, arr) => {
-                if (i+1 == arr.length) return genre.name;
-                else return genre.name + ', ';
-            })
-            : 
-            null;
+        details.genres = details.genres && details.genres
+            .map((genre) => genre.name).join(', ');
 
         details.release_date = (details.release_date) ?
             details.release_date

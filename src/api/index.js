@@ -1,3 +1,11 @@
+const Api = {
+    key: '595f6d4c932627df7eb7d5c2f27a7e40',
+    host: 'https://api.themoviedb.org/',
+    imagePrefix: 'https://image.tmdb.org/t/p/w640'
+};
+
+// https://www.npmjs.com/package/eslint-config-airbnb !!!
+
 export const API_KEY = '595f6d4c932627df7eb7d5c2f27a7e40';
 export const host = 'https://api.themoviedb.org/';
 export const imagePrefix = 'https://image.tmdb.org/t/p/w640';
@@ -23,6 +31,40 @@ export const getFilmsQuery = {
 export const getFilmDetailsQuery = {
     api_key: API_KEY
 }
+
+export const filmsRequest = (query) => {
+    const queryString = API.encodeQueryData({...API.getFilmsQuery, query});
+    let url = `${API.host}${API.searchMoviesPath}?${queryString}`;
+
+    return request(url);
+}
+
+export const similarFilmsRequest = (id) => {
+    const queryString = encodeQueryData({...getFilmDetailsQuery});
+    let url = `${host}${moviePath}${id}/similar?${queryString}`;
+
+    return request(url);
+}
+
+export const filmDetailsRequest = (id) => {
+    const queryString = API.encodeQueryData({...API.getFilmDetailsQuery});
+    let url = `${API.host}${API.moviePath}${id}?${queryString}`;
+
+    return request(url);
+}
+
+export const request = (url) => (
+    fetch(url)
+    .then(  
+        function(response) {  
+            if (response.status !== 200) {  
+                console.log('Looks like there was a problem. Status Code: ' +  
+                response.status);  
+                return;  
+            }  
+        }  
+    )
+)
 
 // request films url exapmle
 // https://api.themoviedb.org/3/search/movie?api_key=595f6d4c932627df7eb7d5c2f27a7e40&language=en-US&&query=taxi&page=1&include_adult=false
