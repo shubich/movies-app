@@ -7,8 +7,8 @@ export const Film = ({
     onClick
 }) => {
     return (
-        <div className='film' onClick={onClick}>
-            <Link to={'/film/'+film.id}>
+        <div className='film'>
+            <Link to={'/film/'+film.id} onClick={onClick}>
             {
                 film.poster_path
                     ? <img src={imagePrefix+film.poster_path} alt="poster"/>
@@ -16,19 +16,14 @@ export const Film = ({
             }
             </Link>
             <div className='top-info'>
-                <span className='title'>
-                    <Link to={'/film/'+film.id}>
-                        {film.title}
-                    </Link>            
-                </span>
-                <span className='year'>
-                    {
-                        film.release_date ?
-                        film.release_date.split('-')[0]
-                        :
-                        'unknown'
-                    }
-                </span>
+                <Link className='title' to={'/film/'+film.id} onClick={onClick}>
+                    {film.title}
+                </Link>            
+                {
+                    film.release_date
+                    ? <span className='year'>{film.release_date.split('-')[0]}</span>
+                    : null
+                }
             </div>
             <div className='bottom-info'>
                 {/* <span className='genre'>{film.genre}</span> */}

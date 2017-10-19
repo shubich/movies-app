@@ -4,7 +4,7 @@ import {
     GET_FILMS_FAILURE 
 } from '../constants/Films';
 
-import * as API from '../api';
+import * as Api from '../api';
 
 const getFilms = (query) => {
     return (dispatch) => {
@@ -13,26 +13,22 @@ const getFilms = (query) => {
             query         
         })
         
-        const queryString = API.encodeQueryData({...API.getFilmsQuery, query});
-        let url = `${API.host}${API.searchMoviesPath}?${queryString}`;
-
-        fetch(url)  
+        Api.requests.films(query)
         .then(  
-          function(response) {  
-            if (response.status !== 200) {  
-              console.log('Looks like there was a problem. Status Code: ' +  
-                response.status);  
-              return;  
-            }
-      
-            // Examine the text in the response  
-            response.json().then(function(data) {
-                dispatch({
-                    type: GET_FILMS_SUCCESS,
-                    results: data.results
-                })
-            });  
-          }  
+            function(response) {       
+                if (response.status !== 200) {  
+                    console.log('Looks like there was a problem. Status Code: ' + response.status);  
+                    return;  
+                }
+
+                // Examine the text in the response  
+                response.json().then(function(data) {
+                    dispatch({
+                        type: GET_FILMS_SUCCESS,
+                        results: data.results
+                    })
+                });  
+            }  
         )  
         .catch(function(err) {
             dispatch({

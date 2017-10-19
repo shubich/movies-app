@@ -4,8 +4,7 @@ import {
     GET_FILM_DETAILS_FAILURE 
 } from '../constants/Films';
 
-import * as API from '../api';
-import getFilms from './getFilms';
+import * as Api from '../api';
 
 const getFilmDetails = (id) => {
     return (dispatch) => {
@@ -14,16 +13,12 @@ const getFilmDetails = (id) => {
             id         
         })
         
-        const queryString = API.encodeQueryData({...API.getFilmDetailsQuery});
-        let url = `${API.host}${API.moviePath}${id}?${queryString}`;
-
-        fetch(url)  
+        Api.requests.details(id)
         .then(  
           function(response) {  
             if (response.status !== 200) {  
-              console.log('Looks like there was a problem. Status Code: ' +  
-                response.status);  
-              return;  
+                console.log('Looks like there was a problem. Status Code: ' + response.status);  
+                return;  
             }
       
             // Examine the text in the response  

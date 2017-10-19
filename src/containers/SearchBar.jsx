@@ -22,6 +22,10 @@ class SearchBar extends React.Component {
         }
     }
 
+    setRef = (node) => {
+        if (node) this[node.name] = node;
+    } 
+
     render() {
         return (
             <div>
@@ -30,9 +34,11 @@ class SearchBar extends React.Component {
                     <form onSubmit={this.handleSubmit}>
                         <input 
                             type='text' 
+                            name='searchQuery'
+                            autoComplete='off'
                             defaultValue={this.initialTitle}
                             placeholder='Pulp Fiction'
-                            ref={node => {this.searchQuery = node}}
+                            ref={this.setRef}
                         />
                         <div id='search-props'>
                             <span>SEARCH BY</span>

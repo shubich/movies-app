@@ -6,7 +6,6 @@ export class FilmDetails extends React.Component {
     constructor(props) {
         super(props);
         if (!this.props.fetching) {
-            console.log('from Constructor')
             this.props.getFilmDetails();            
             this.props.getSimilarFilms();            
         }
@@ -16,37 +15,14 @@ export class FilmDetails extends React.Component {
         let currentId =  this.props.match.params.id;
         let nextId = nextProps.match.params.id;
 
-        if (currentId != nextId) {
-            console.log('from WillRECEIVE')            
+        if (currentId != nextId) {           
             this.props.getFilmDetails(nextId);
             this.props.getSimilarFilms(nextId);
         }
     }
     
-    checkDetails(details) {
-        details.vote_average = (details.vote_average < 10) ? 
-            details.vote_average.toFixed(1) 
-            : 
-            details.vote_average;
-
-        details.genres = details.genres && details.genres
-            .map((genre) => genre.name).join(', ');
-
-        details.release_date = (details.release_date) ?
-            details.release_date
-            :
-            null;
-
-        details.runtime = (details.runtime) ?
-            details.runtime + ' min'
-            :
-            null;
-
-        return details;
-    }
-
     render() {
-        let details = this.checkDetails({...this.props.details});
+        let details = this.props.details;
         
         return (
             details.title ?

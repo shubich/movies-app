@@ -18,7 +18,6 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         onFilmClick: (id) => {
-            console.log('onFilmClick ' + id);
             window.scrollTo(0, 0);
         }
     };

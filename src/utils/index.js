@@ -31,3 +31,30 @@ export const sortFilms = (films, field) => {
     });
     return films;
 }
+
+export const checkDetails = (details) => {
+    details.vote_average = (details.vote_average < 10) 
+        ? details.vote_average.toFixed(1) 
+        : details.vote_average;
+
+    details.genres = details.genres && details.genres
+        .map((genre) => genre.name).join(', ');
+
+    details.release_date = (details.release_date) 
+        ? details.release_date
+        : null;
+
+    details.runtime = (details.runtime) 
+        ? details.runtime + ' min'
+        : null;
+
+    return details;
+}
+
+export const encodeQueryData = (data) => {
+    let query = [];
+    for (let item in data) {
+        query.push(`${encodeURIComponent(item)}=${encodeURIComponent(data[item])}`);
+    }
+    return query.join('&');
+}

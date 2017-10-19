@@ -4,7 +4,7 @@ import {
     GET_SIMILAR_FILMS_FAILURE 
 } from '../constants/Films';
 
-import * as API from '../api';
+import * as Api from '../api';
 
 const getSimilarFilms = (id) => {
     return (dispatch) => {
@@ -13,9 +13,14 @@ const getSimilarFilms = (id) => {
             id         
         })
         
-        API.similarFilmsRequest(id)
+        Api.requests.similar(id)
         .then(  
             function(response) {  
+                if (response.status !== 200) {  
+                    console.log('Looks like there was a problem. Status Code: ' + response.status);  
+                    return;  
+                }
+
                 // Examine the text in the response  
                 response.json().then(function(data) {
                     dispatch({
