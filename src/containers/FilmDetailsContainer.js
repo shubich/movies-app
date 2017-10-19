@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { FilmDetails } from '../components/FilmDetails';
 import { getCurrentFilm } from '../utils';
 import getFilmDetails from '../actions/getFilmDetails';
+import getSimilarFilms from '../actions/getSimilarFilms';
 
 const mapStateToProps = (state) => {
     return {
@@ -16,6 +17,11 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         getFilmDetails: (id=filmId) => {
             dispatch(
                 getFilmDetails(id)
+            )
+        },
+        getSimilarFilms: (id=filmId) => {
+            dispatch(
+                getSimilarFilms(id)
             )
         }
     };

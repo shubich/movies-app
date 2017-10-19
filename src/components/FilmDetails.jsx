@@ -8,6 +8,7 @@ export class FilmDetails extends React.Component {
         if (!this.props.fetching) {
             console.log('from Constructor')
             this.props.getFilmDetails();            
+            this.props.getSimilarFilms();            
         }
     }
 
@@ -18,6 +19,7 @@ export class FilmDetails extends React.Component {
         if (currentId != nextId) {
             console.log('from WillRECEIVE')            
             this.props.getFilmDetails(nextId);
+            this.props.getSimilarFilms(nextId);
         }
     }
     

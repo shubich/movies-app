@@ -1,21 +1,20 @@
 import { 
-    GET_FILM_DETAILS_REQUEST,
-    GET_FILM_DETAILS_SUCCESS,
-    GET_FILM_DETAILS_FAILURE 
+    GET_FILMS_REQUEST,
+    GET_FILMS_SUCCESS,
+    GET_FILMS_FAILURE 
 } from '../constants/Films';
 
 import * as API from '../api';
-import getFilms from './getFilms';
 
-const getFilmDetails = (id) => {
+const getSimilarFilms = (id) => {
     return (dispatch) => {
         dispatch({
-            type: GET_FILM_DETAILS_REQUEST,
+            type: GET_FILMS_REQUEST,
             id         
         })
         
         const queryString = API.encodeQueryData({...API.getFilmDetailsQuery});
-        let url = `${API.host}${API.moviePath}${id}?${queryString}`;
+        let url = `${API.host}${API.moviePath}${id}/similar?${queryString}`;
 
         fetch(url)  
         .then(  
@@ -29,15 +28,15 @@ const getFilmDetails = (id) => {
             // Examine the text in the response  
             response.json().then(function(data) {
                 dispatch({
-                    type: GET_FILM_DETAILS_SUCCESS,
-                    details: data
+                    type: GET_FILMS_SUCCESS,
+                    results: data.results
                 })
             });  
           }  
         )  
         .catch(function(err) {
             dispatch({
-                type: GET_FILM_DETAILS_FAILURE,
+                type: GET_FILMS_FAILURE,
                 error: err
             })
             console.log('Fetch Error :-S', err);  
@@ -45,4 +44,4 @@ const getFilmDetails = (id) => {
     }
 };
 
-export default getFilmDetails;
+export default getSimilarFilms;
