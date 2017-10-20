@@ -1,5 +1,4 @@
 import React from 'react';
-import {Nav} from './Nav';
 import { imagePrefix } from '../api/'
 
 export class FilmDetails extends React.Component {
