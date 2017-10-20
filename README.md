@@ -1,9 +1,13 @@
 # movies-app
-Single page application, which will allow users to search the Netflix Roulette database
+Single page application, which will allow users to search The Movie Database (TMDb)
 
-# Task 4
-## API & Redux
-- getFilmsByTitle
-- getFilmsByDirector
-- sortFilmsByDate
-- sortFilmsByRating
+# Task 5
+## Testing
+
+**Tools**
+- jest
+- enzyme
+
+**Testing**
+- redux
+- snapshots
