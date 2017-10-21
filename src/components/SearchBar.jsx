@@ -1,14 +1,11 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import getFilms from '../actions/getFilms';
 
-class SearchBar extends React.Component {
+export class SearchBar extends React.Component {
     constructor(props) {
         super(props);
-        this.initialTitle = this.props.match.url.split('/')[2];
-        if (this.initialTitle) {
-            this.props.dispatch(getFilms(this.initialTitle))
+        if (this.props.initialVal) {
+            this.props.getFilms(this.props.initialVal)
         }
     }
 
@@ -16,7 +13,7 @@ class SearchBar extends React.Component {
         e.preventDefault();
         if (this.searchQuery.value) {
             this.props.history.push(`/search/${this.searchQuery.value}`);
-            this.props.dispatch(getFilms(this.searchQuery.value))
+            this.props.getFilms(this.searchQuery.value)
         } else {
             this.searchQuery.focus();
         }
@@ -36,7 +33,7 @@ class SearchBar extends React.Component {
                             type='text' 
                             name='searchQuery'
                             autoComplete='off'
-                            defaultValue={this.initialTitle}
+                            defaultValue={this.props.initialVal}
                             placeholder='Pulp Fiction'
                             ref={this.setRef}
                         />
@@ -51,6 +48,4 @@ class SearchBar extends React.Component {
             </div>
         )
     }
-} 
-
-export default SearchBar = connect()(SearchBar);
+}

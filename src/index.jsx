@@ -7,7 +7,7 @@ import store from './store/configureStore';
 import App from './App';
 import { Header } from './components/Header';
 import { Nav } from './components/Nav';
-import SearchBar from './containers/SearchBar';
+import SearchBarContainer from './containers/SearchBarContainer';
 import FilmDetailsContainer from './containers/FilmDetailsContainer';
 import StatusContainer from './containers/StatusContainer'
 import FilmsContainer from './containers/FilmsContainer';
@@ -35,7 +35,7 @@ const render = () => {
                             <App>
                                 <Header>
                                     <Nav search={false}/>
-                                    <Route component={SearchBar}/>
+                                    <Route component={SearchBarContainer}/>
                                 </Header>
                                 <Route component={StatusContainer}/>
                                 <Switch>
