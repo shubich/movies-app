@@ -68,6 +68,7 @@ module.exports = {
         new webpack.NamedModulesPlugin(),
         new HtmlWebpackPlugin({
             title: 'nonsence',
+            favicon: './img/favicon.png',
             hash: true,
             template: './index.html'
         }),

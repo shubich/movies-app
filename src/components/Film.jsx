@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { imagePrefix } from '../api/';
+import { Poster } from './Poster';
 
 export const Film = ({
     film,
@@ -9,11 +9,7 @@ export const Film = ({
     return (
         <div className='film'>
             <Link to={'/film/'+film.id} onClick={onClick}>
-            {
-                film.poster_path
-                    ? <img src={imagePrefix+film.poster_path} alt="poster"/>
-                    : <div className='poster-none'><i className="fa fa-film" aria-hidden="true"></i></div>
-            }
+                <Poster path={film.poster_path}/>
             </Link>
             <div className='top-info'>
                 <Link className='title' to={'/film/'+film.id} onClick={onClick}>

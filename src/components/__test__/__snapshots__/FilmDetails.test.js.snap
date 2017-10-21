@@ -44,14 +44,9 @@ ShallowWrapper {
       "children": <div
         id="film-details"
       >
-        <div
-          className="poster"
-        >
-          <img
-            alt="poster"
-            src="https://image.tmdb.org/t/p/w640/img1234_0987"
-          />
-        </div>
+        <Poster
+          path="/img1234_0987"
+        />
         <div
           className="info"
         >
@@ -102,14 +97,9 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <div
-            className="poster"
-          >
-            <img
-              alt="poster"
-              src="https://image.tmdb.org/t/p/w640/img1234_0987"
-            />
-          </div>,
+          <Poster
+            path="/img1234_0987"
+          />,
           <div
             className="info"
           >
@@ -159,28 +149,13 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": null,
-          "nodeType": "host",
+          "nodeType": "function",
           "props": Object {
-            "children": <img
-              alt="poster"
-              src="https://image.tmdb.org/t/p/w640/img1234_0987"
-            />,
-            "className": "poster",
+            "path": "/img1234_0987",
           },
           "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": null,
-            "nodeType": "host",
-            "props": Object {
-              "alt": "poster",
-              "src": "https://image.tmdb.org/t/p/w640/img1234_0987",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": "img",
-          },
-          "type": "div",
+          "rendered": null,
+          "type": [Function],
         },
         Object {
           "instance": null,
@@ -372,14 +347,9 @@ ShallowWrapper {
         "children": <div
           id="film-details"
         >
-          <div
-            className="poster"
-          >
-            <img
-              alt="poster"
-              src="https://image.tmdb.org/t/p/w640/img1234_0987"
-            />
-          </div>
+          <Poster
+            path="/img1234_0987"
+          />
           <div
             className="info"
           >
@@ -430,14 +400,9 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            <div
-              className="poster"
-            >
-              <img
-                alt="poster"
-                src="https://image.tmdb.org/t/p/w640/img1234_0987"
-              />
-            </div>,
+            <Poster
+              path="/img1234_0987"
+            />,
             <div
               className="info"
             >
@@ -487,28 +452,13 @@ ShallowWrapper {
           Object {
             "instance": null,
             "key": null,
-            "nodeType": "host",
+            "nodeType": "function",
             "props": Object {
-              "children": <img
-                alt="poster"
-                src="https://image.tmdb.org/t/p/w640/img1234_0987"
-              />,
-              "className": "poster",
+              "path": "/img1234_0987",
             },
             "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": null,
-              "nodeType": "host",
-              "props": Object {
-                "alt": "poster",
-                "src": "https://image.tmdb.org/t/p/w640/img1234_0987",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": "img",
-            },
-            "type": "div",
+            "rendered": null,
+            "type": [Function],
           },
           Object {
             "instance": null,

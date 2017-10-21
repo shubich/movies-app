@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Film renders correctly 1`] = `
+exports[`Film renders correctly with full props 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
@@ -33,9 +33,8 @@ ShallowWrapper {
           replace={false}
           to="/film/1"
         >
-          <img
-            alt="poster"
-            src="https://image.tmdb.org/t/p/w640/img1234_0987"
+          <Poster
+            path="/img1234_0987"
           />
         </Link>,
         <div
@@ -68,9 +67,8 @@ ShallowWrapper {
         "key": null,
         "nodeType": "class",
         "props": Object {
-          "children": <img
-            alt="poster"
-            src="https://image.tmdb.org/t/p/w640/img1234_0987"
+          "children": <Poster
+            path="/img1234_0987"
           />,
           "onClick": [Function],
           "replace": false,
@@ -80,14 +78,13 @@ ShallowWrapper {
         "rendered": Object {
           "instance": null,
           "key": null,
-          "nodeType": "host",
+          "nodeType": "function",
           "props": Object {
-            "alt": "poster",
-            "src": "https://image.tmdb.org/t/p/w640/img1234_0987",
+            "path": "/img1234_0987",
           },
           "ref": null,
           "rendered": null,
-          "type": "img",
+          "type": [Function],
         },
         "type": [Function],
       },
@@ -171,9 +168,8 @@ ShallowWrapper {
             replace={false}
             to="/film/1"
           >
-            <img
-              alt="poster"
-              src="https://image.tmdb.org/t/p/w640/img1234_0987"
+            <Poster
+              path="/img1234_0987"
             />
           </Link>,
           <div
@@ -206,9 +202,8 @@ ShallowWrapper {
           "key": null,
           "nodeType": "class",
           "props": Object {
-            "children": <img
-              alt="poster"
-              src="https://image.tmdb.org/t/p/w640/img1234_0987"
+            "children": <Poster
+              path="/img1234_0987"
             />,
             "onClick": [Function],
             "replace": false,
@@ -218,14 +213,13 @@ ShallowWrapper {
           "rendered": Object {
             "instance": null,
             "key": null,
-            "nodeType": "host",
+            "nodeType": "function",
             "props": Object {
-              "alt": "poster",
-              "src": "https://image.tmdb.org/t/p/w640/img1234_0987",
+              "path": "/img1234_0987",
             },
             "ref": null,
             "rendered": null,
-            "type": "img",
+            "type": [Function],
           },
           "type": [Function],
         },
@@ -280,6 +274,266 @@ ShallowWrapper {
               "rendered": "1999",
               "type": "span",
             },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "className": "bottom-info",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`Film renders correctly with partial props 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Film
+    film={
+      Object {
+        "id": 2,
+        "title": "Taxi",
+      }
+    }
+    onClick={[Function]}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": null,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <Link
+          onClick={[Function]}
+          replace={false}
+          to="/film/2"
+        >
+          <Poster
+            path={undefined}
+          />
+        </Link>,
+        <div
+          className="top-info"
+        >
+          <Link
+            className="title"
+            onClick={[Function]}
+            replace={false}
+            to="/film/2"
+          >
+            Taxi
+          </Link>
+        </div>,
+        <div
+          className="bottom-info"
+        />,
+      ],
+      "className": "film",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "class",
+        "props": Object {
+          "children": <Poster
+            path={undefined}
+          />,
+          "onClick": [Function],
+          "replace": false,
+          "to": "/film/2",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "function",
+          "props": Object {
+            "path": undefined,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <Link
+              className="title"
+              onClick={[Function]}
+              replace={false}
+              to="/film/2"
+            >
+              Taxi
+            </Link>,
+            null,
+          ],
+          "className": "top-info",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "class",
+            "props": Object {
+              "children": "Taxi",
+              "className": "title",
+              "onClick": [Function],
+              "replace": false,
+              "to": "/film/2",
+            },
+            "ref": null,
+            "rendered": "Taxi",
+            "type": [Function],
+          },
+          null,
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "className": "bottom-info",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": null,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Link
+            onClick={[Function]}
+            replace={false}
+            to="/film/2"
+          >
+            <Poster
+              path={undefined}
+            />
+          </Link>,
+          <div
+            className="top-info"
+          >
+            <Link
+              className="title"
+              onClick={[Function]}
+              replace={false}
+              to="/film/2"
+            >
+              Taxi
+            </Link>
+          </div>,
+          <div
+            className="bottom-info"
+          />,
+        ],
+        "className": "film",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "class",
+          "props": Object {
+            "children": <Poster
+              path={undefined}
+            />,
+            "onClick": [Function],
+            "replace": false,
+            "to": "/film/2",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "function",
+            "props": Object {
+              "path": undefined,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <Link
+                className="title"
+                onClick={[Function]}
+                replace={false}
+                to="/film/2"
+              >
+                Taxi
+              </Link>,
+              null,
+            ],
+            "className": "top-info",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "class",
+              "props": Object {
+                "children": "Taxi",
+                "className": "title",
+                "onClick": [Function],
+                "replace": false,
+                "to": "/film/2",
+              },
+              "ref": null,
+              "rendered": "Taxi",
+              "type": [Function],
+            },
+            null,
           ],
           "type": "div",
         },

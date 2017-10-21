@@ -36,9 +36,14 @@ ShallowWrapper {
       "children": <div
         className="container"
       >
-        <p>
-          Loading...
-        </p>
+        <Loading
+          className=""
+          color="#000"
+          delay={0}
+          height={64}
+          type="bars"
+          width={64}
+        />
       </div>,
       "id": "films",
     },
@@ -48,22 +53,32 @@ ShallowWrapper {
       "key": null,
       "nodeType": "host",
       "props": Object {
-        "children": <p>
-          Loading...
-        </p>,
+        "children": <Loading
+          className=""
+          color="#000"
+          delay={0}
+          height={64}
+          type="bars"
+          width={64}
+        />,
         "className": "container",
       },
       "ref": null,
       "rendered": Object {
         "instance": null,
         "key": null,
-        "nodeType": "host",
+        "nodeType": "class",
         "props": Object {
-          "children": "Loading...",
+          "className": "",
+          "color": "#000",
+          "delay": 0,
+          "height": 64,
+          "type": "bars",
+          "width": 64,
         },
         "ref": null,
-        "rendered": "Loading...",
-        "type": "p",
+        "rendered": null,
+        "type": [Function],
       },
       "type": "div",
     },
@@ -78,9 +93,14 @@ ShallowWrapper {
         "children": <div
           className="container"
         >
-          <p>
-            Loading...
-          </p>
+          <Loading
+            className=""
+            color="#000"
+            delay={0}
+            height={64}
+            type="bars"
+            width={64}
+          />
         </div>,
         "id": "films",
       },
@@ -90,22 +110,32 @@ ShallowWrapper {
         "key": null,
         "nodeType": "host",
         "props": Object {
-          "children": <p>
-            Loading...
-          </p>,
+          "children": <Loading
+            className=""
+            color="#000"
+            delay={0}
+            height={64}
+            type="bars"
+            width={64}
+          />,
           "className": "container",
         },
         "ref": null,
         "rendered": Object {
           "instance": null,
           "key": null,
-          "nodeType": "host",
+          "nodeType": "class",
           "props": Object {
-            "children": "Loading...",
+            "className": "",
+            "color": "#000",
+            "delay": 0,
+            "height": 64,
+            "type": "bars",
+            "width": 64,
           },
           "ref": null,
-          "rendered": "Loading...",
-          "type": "p",
+          "rendered": null,
+          "type": [Function],
         },
         "type": "div",
       },

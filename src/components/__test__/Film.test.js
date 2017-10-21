@@ -2,11 +2,12 @@ import React from 'react';
 import { Film } from '../Film';
 import { shallow } from 'enzyme';
 
-let props;
+let fullProps;
+let partialProps;
 
 describe('Film', () => {
     beforeEach(() => {
-        props = {
+        fullProps = {
             film: {
                 id: 1,
                 title: 'Pulp Fiction',
@@ -15,11 +16,26 @@ describe('Film', () => {
             },
             onClick: jest.fn
         };
+
+        partialProps = {
+            film: {
+                id: 2,
+                title: 'Taxi'
+            },
+            onClick: jest.fn
+        };
     });
 
-    it('renders correctly', () => {
+    it('renders correctly with full props', () => {
         const wrapper = shallow(
-            <Film {...props} />
+            <Film {...fullProps} />
+        );
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('renders correctly with partial props', () => {
+        const wrapper = shallow(
+            <Film {...partialProps}/>
         );
         expect(wrapper).toMatchSnapshot();
     });

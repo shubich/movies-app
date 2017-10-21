@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactLoading from 'react-loading';
 import { Film } from './Film';
 import { NotFound } from './NotFound';
 
@@ -14,7 +15,7 @@ export const Films = ({
             <div className='container'>
                 {
                     fetching ?
-                    <p>Loading...</p>
+                    <ReactLoading type='bars' color='#000' delay={0} />
                     :
                     results.map((film, i) => (
                         <Film 
