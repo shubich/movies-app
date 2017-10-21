@@ -5,15 +5,16 @@ import { shallow } from 'enzyme';
 let props;
 
 describe('Nav', () => {
-    beforeEach(() => {
-        props = {
-            search: true
-        }
+    it('renders correctly with search', () => {
+        const wrapper = shallow(
+            <Nav/>
+        );
+        expect(wrapper).toMatchSnapshot();
     });
 
-    it('renders correctly', () => {
+    it('renders correctly without search', () => {
         const wrapper = shallow(
-            <Nav {...props} />
+            <Nav search={false} />
         );
         expect(wrapper).toMatchSnapshot();
     });

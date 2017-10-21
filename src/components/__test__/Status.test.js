@@ -19,9 +19,23 @@ describe('Status', () => {
         };
     });
 
-    it('renders correctly', () => {
+    it('renders correctly with props', () => {
         const wrapper = shallow(
             <Status {...props} />
+        );
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('renders correctly with another sort', () => {
+        const wrapper = shallow(
+            <Status {...props} sort='date' />
+        );
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('renders correctly without props', () => {
+        const wrapper = shallow(
+            <Status/>
         );
         expect(wrapper).toMatchSnapshot();
     });

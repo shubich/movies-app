@@ -26,9 +26,16 @@ describe('FilmDetails', () => {
         };
     });
 
-    it('renders correctly', () => {
+    it('renders correctly with details', () => {
         const wrapper = shallow(
             <FilmDetails {...props} />
+        );
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('renders correctly without details', () => {
+        const wrapper = shallow(
+            <FilmDetails {...props} details={[]} />
         );
         expect(wrapper).toMatchSnapshot();
     });

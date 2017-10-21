@@ -23,9 +23,24 @@ describe('Films', () => {
         };
     });
 
-    it('renders correctly', () => {
+    it('renders correctly with results', () => {
         const wrapper = shallow(
             <Films {...props} />
+        );
+        expect(wrapper).toMatchSnapshot();
+    });
+
+
+    it('renders correctly with fetching', () => {
+        const wrapper = shallow(
+            <Films {...props} fetching={true} />
+        );
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('renders correctly without results', () => {
+        const wrapper = shallow(
+            <Films {...props} results={[]} />
         );
         expect(wrapper).toMatchSnapshot();
     });
