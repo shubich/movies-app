@@ -1,18 +1,27 @@
 import { connect } from 'react-redux';
 import { Status } from '../components/Status'
-import sortFilms from '../actions/sortFilms';
+import setSortType from '../actions/setSortType';
+import { sortFilms } from '../utils';
 
 const mapStateToProps = (state, ownProps) => {    
-    return {
-        count: state.films.results.length,
-        sort: state.films.sort
-    };
+    if (state.search.searchType === 'title') {
+        return {
+            ...state.search,
+            count: state.films.results.length
+        };
+    } else if (state.search.searchType === 'person') {
+        return {
+            ...state.search,
+            count: state.people.results.length
+        }
+    }
+
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
         handleSort: (field) => {
-            dispatch(sortFilms(field));
+            dispatch(setSortType(field));
         }
     };
 }

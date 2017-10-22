@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
 import { FilmDetails } from '../components/FilmDetails';
-import { getCurrentFilm } from '../utils';
 import getFilmDetails from '../actions/getFilmDetails';
 import getSimilarFilms from '../actions/getSimilarFilms';
 

@@ -1,7 +1,91 @@
-@import './media.less';
-@import './palette.less';
-@import './basic.less';
-@import './header.less';
-@import './status.less';
-@import './films.less';
-@import './footer.less';
+#main {
+    padding: 25px;
+    background: white;
+    min-height: 550px;
+    .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+        grid-auto-rows: 100%;
+        grid-gap: 50px;
+        
+        .film, .person {
+            
+            img {
+                width: 100%;
+            }
+
+            .poster-none {
+                width: 100%;
+                height: 360px;
+                &:hover {
+                    color: initial
+                }
+            }
+    
+            .top-info {
+                display: flex;
+                flex-flow: row nowrap;
+                align-items: baseline;
+                .title {
+                    flex: 1;
+                    font-size: 1.3em;
+                }
+                
+                .year {
+                    border: 1px solid black;
+                    padding: 3px;
+                }
+
+                .popularity {
+                    background: red;
+                    color: white;
+                    width: 2.3vh;
+                    height: 2.3vh;
+                    position: relative;
+                    text-align: center;
+                    line-height: 2.3vh;
+                    z-index: 1;
+                }
+                .popularity:before, .popularity:after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 2.3vh;
+                    height: 2.3vh;
+                    background: red;
+                    z-index: -1;
+                }
+                .popularity:before {
+                    -webkit-transform: rotate(30deg);
+                       -moz-transform: rotate(30deg);
+                        -ms-transform: rotate(30deg);
+                         -o-transform: rotate(30deg);
+                }
+                .popularity:after {
+                    -webkit-transform: rotate(60deg);
+                       -moz-transform: rotate(60deg);
+                        -ms-transform: rotate(60deg);
+                         -o-transform: rotate(60deg);
+                }
+                
+            }
+        }
+    }
+}
+
+#notfound {
+    padding: 25px;
+    background: white;
+    min-height: 550px;
+    display: flex;
+    align-items: center;
+    h2 {
+        margin: unset;
+        text-align: center;
+        color: @basic-color;
+        font-size: 3em;
+        font-weight: unset;
+    }
+}
+

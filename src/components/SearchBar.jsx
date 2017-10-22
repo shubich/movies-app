@@ -9,14 +9,32 @@ export class SearchBar extends React.Component {
         }
     }
 
-    handleSubmit = (e) => {
-        e.preventDefault();
+    getContent(searchType) {
         if (this.searchQuery.value) {
             this.props.history.push(`/search/${this.searchQuery.value}`);
-            this.props.getFilms(this.searchQuery.value)
+            
+            switch(searchType) {
+                case 'title':
+                    this.props.getFilms(this.searchQuery.value);
+                    break;
+                case 'person':
+                    this.props.getPeople(this.searchQuery.value);
+                    break;
+            }
+            
         } else {
             this.searchQuery.focus();
         }
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault();
+        this.getContent(this.props.searchType);
+    }
+
+    handleOptionChange = (changeEvent) => {
+        this.props.setSearchType(changeEvent.target.value);
+        this.getContent(changeEvent.target.value);
     }
 
     setRef = (node) => {
@@ -39,8 +57,20 @@ export class SearchBar extends React.Component {
                         />
                         <div id='search-props'>
                             <span>SEARCH BY</span>
-                            <button className='btn btn-primary'>TITLE</button>
-                            <button className='btn btn-basic'>DIRECTOR</button>
+
+                            <label className={'prop btn btn-'+(this.props.searchType == 'title' ? 'primary' : 'basic')}>
+                                <input type="radio" value="title" 
+                                    checked={this.props.searchType === 'title'} 
+                                    onChange={this.handleOptionChange} />
+                                TITLE
+                            </label>
+
+                            <label className={'prop btn btn-'+(this.props.searchType == 'person' ? 'primary' : 'basic')}>
+                                <input type="radio" value="person" 
+                                    checked={this.props.searchType === 'person'}                 
+                                    onChange={this.handleOptionChange} />
+                                DIRECTOR
+                            </label>
                         </div>
                         <button type='submit' className='btn btn-primary btn-search'>SEARCH</button>
                     </form>

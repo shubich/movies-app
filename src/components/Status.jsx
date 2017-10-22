@@ -6,22 +6,27 @@ export const Status = (props) => {
             {
                 (props.count && props.match.url !== '/') ?
                 <div className='container'>
-                    <div className='count'>{props.count} movies found</div>
-                    <div className='sort'>
-                        <span className='sortBy'>Sort by</span>
-                        <a 
-                            onClick={()=>props.handleSort('date')}
-                            className={'link link-'+(props.sort == 'date' ? 'primary' : 'default')}
-                        >
-                            release date
-                        </a>
-                        <a 
-                            onClick={()=>props.handleSort('rating')}
-                            className={'link link-'+(props.sort == 'rating' ? 'primary' : 'default')}
-                        >
-                            rating
-                        </a>
-                    </div>
+                    <div className='count'>{props.count} {props.searchType == 'title' ? 'movies' : 'people'} found</div>
+                    {
+                        props.searchType == 'title' ?
+                        <div className='sort'>
+                            <span className='sortBy'>Sort by</span>
+                            {
+                                props.sortType === 'date'
+                                    ? <span className='link link-primary'>release date</span>
+                                    : <a onClick={()=>props.handleSort('date')} className='link link-default'>release date</a>
+                            }
+
+                            {
+                                props.sortType === 'rating'
+                                    ? <span className='link link-primary'>rating</span>
+                                    : <a onClick={()=>props.handleSort('rating')} className='link link-default'>rating</a>
+                            }
+                        </div>
+                        :
+                        null
+                    }
+
                 </div>
                 :
                 null

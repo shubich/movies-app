@@ -10,7 +10,7 @@ import { Nav } from './components/Nav';
 import SearchBarContainer from './containers/SearchBarContainer';
 import FilmDetailsContainer from './containers/FilmDetailsContainer';
 import StatusContainer from './containers/StatusContainer'
-import FilmsContainer from './containers/FilmsContainer';
+import MainContainer from './containers/MainContainer';
 import { NotFound } from './components/NotFound';
 import { Footer } from './components/Footer';
 
@@ -27,7 +27,7 @@ const render = () => {
                                     <Route component={FilmDetailsContainer}/>
                                 </Header>
                                 <Route component={StatusContainer}/>
-                                <Route component={FilmsContainer}/>
+                                <Route component={MainContainer}/>
                                 <Footer/>
                             </App>
                         </Route>                
@@ -39,7 +39,7 @@ const render = () => {
                                 </Header>
                                 <Route component={StatusContainer}/>
                                 <Switch>
-                                    <Route path='/search/:query' component={FilmsContainer}/>
+                                    <Route path='/search/:query' component={MainContainer}/>
                                     <Route path='*' component={NotFound}/>
                                 </Switch>                            
                                 <Footer/>

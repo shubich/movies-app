@@ -6,7 +6,8 @@ export const imagePrefix = 'https://image.tmdb.org/t/p/w640';
 
 const paths = {
     search: '3/search/movie',
-    movie: '3/movie/'
+    movie: '3/movie/',
+    people: '3/search/person'
 };
 
 const queries = {
@@ -35,6 +36,11 @@ export const requests = {
     similar: (id) => {
         const queryString = encodeQueryData({...queries.default});
         const url = `${host}${paths.movie}${id}/similar?${queryString}`;
+        return fetch(url);   
+    },
+    people: (query) => {
+        const queryString = encodeQueryData({...queries.default, query});
+        const url = `${host}${paths.people}?${queryString}`;
         return fetch(url);   
     }
 }

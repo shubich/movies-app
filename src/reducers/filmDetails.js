@@ -2,7 +2,7 @@ import {
     GET_FILM_DETAILS_REQUEST,
     GET_FILM_DETAILS_SUCCESS,
     GET_FILM_DETAILS_FAILURE,
-} from '../constants/Films';
+} from '../constants/Film';
 
 import { checkDetails } from '../utils';
 
