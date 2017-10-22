@@ -7,7 +7,9 @@ export const imagePrefix = 'https://image.tmdb.org/t/p/w640';
 const paths = {
     search: '3/search/movie',
     movie: '3/movie/',
-    people: '3/search/person'
+    people: '3/search/person',
+    person: '3/person/',
+    discover: '3/discover/movie'
 };
 
 const queries = {
@@ -42,6 +44,16 @@ export const requests = {
         const queryString = encodeQueryData({...queries.default, query});
         const url = `${host}${paths.people}?${queryString}`;
         return fetch(url);   
+    },
+    person: (id) => {
+        const queryString = encodeQueryData({...queries.default});
+        const url = `${host}${paths.person}${id}?${queryString}`;    
+        return fetch(url);
+    },
+    filmsWithCast: (with_cast) => {
+        const queryString = encodeQueryData({...queries.default, with_cast});
+        const url = `${host}${paths.discover}?${queryString}`;    
+        return fetch(url);
     }
 }
 
@@ -55,3 +67,9 @@ export const requests = {
 
 // request film details url exapmle
 // https://api.themoviedb.org/3/movie/343611?api_key={api_key}
+
+// request person url exapmle
+// https://api.themoviedb.org/3/person/976?api_key=595f6d4c932627df7eb7d5c2f27a7e40
+
+// request film with person url exapmle
+// https://api.themoviedb.org/3/discover/movie?api_key=595f6d4c932627df7eb7d5c2f27a7e40&with_cast=976

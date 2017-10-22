@@ -5,12 +5,14 @@ import search from '../reducers/search';
 import films from '../reducers/films';
 import people from '../reducers/people';
 import filmDetails from '../reducers/filmDetails';
+import personDetails from '../reducers/personDetails';
 
 const moviesApp = combineReducers({
     search,
     films,
     people,
-    filmDetails
+    filmDetails,
+    personDetails
 });
 
 const store = createStore(

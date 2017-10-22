@@ -1,3 +1,11 @@
+const handleDate = (str) => {
+    let [year, month, day] = str.split('-');
+    let date = new Date(year, month-1, day);
+    let options = { year: 'numeric', month: 'short', day: 'numeric' };
+
+    return date.toLocaleString('en-US', options);
+}
+
 export const sortFilms = (films, field) => {
     films.sort(function(a, b) {
         switch(field) {
@@ -12,7 +20,7 @@ export const sortFilms = (films, field) => {
     return films;
 }
 
-export const checkDetails = (details) => {
+export const handleFilmDetails = (details) => {
     details.vote_average = (details.vote_average < 10) 
         ? details.vote_average.toFixed(1) 
         : details.vote_average;
@@ -21,11 +29,33 @@ export const checkDetails = (details) => {
         .map((genre) => genre.name).join(', ');
 
     details.release_date = (details.release_date) 
-        ? details.release_date
+        ? handleDate(details.release_date)
         : null;
 
     details.runtime = (details.runtime) 
         ? details.runtime + ' min'
+        : null;
+
+    return details;
+}
+
+export const handlePersonDetails = (details) => {
+    details.birthday = (details.birthday)
+        ? 'Born: ' + handleDate(details.birthday)
+        : null; 
+    details.deathday = (details.deathday)
+        ? handleDate(details.deathday)
+        : null; 
+    details.popularity = (details.popularity)
+        ? Math.round(details.popularity)
+        : null;
+    details.place_of_birth = (details.place_of_birth)
+        ? ' in ' + details.place_of_birth
+        : null; 
+
+    details.born = details.birthday + details.place_of_birth;
+    details.died = details.deathday
+        ? 'Died: ' + details.deathday
         : null;
 
     return details;

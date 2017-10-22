@@ -1,19 +1,19 @@
 import { 
-    GET_FILM_DETAILS_REQUEST,
-    GET_FILM_DETAILS_SUCCESS,
-    GET_FILM_DETAILS_FAILURE 
-} from '../constants/Film';
+    GET_PERSON_DETAILS_REQUEST,
+    GET_PERSON_DETAILS_SUCCESS,
+    GET_PERSON_DETAILS_FAILURE
+} from '../constants/Person';
 
 import * as Api from '../api';
 
-const getFilmDetails = (id) => {
+const getPersonDetails = (id) => {
     return (dispatch) => {
         dispatch({
-            type: GET_FILM_DETAILS_REQUEST,
+            type: GET_PERSON_DETAILS_REQUEST,
             id         
         })
         
-        Api.requests.details(id)
+        Api.requests.person(id)
         .then(  
             function(response) {  
                 if (response.status !== 200) {  
@@ -24,7 +24,7 @@ const getFilmDetails = (id) => {
                 // Examine the text in the response  
                 response.json().then(function(data) {
                     dispatch({
-                        type: GET_FILM_DETAILS_SUCCESS,
+                        type: GET_PERSON_DETAILS_SUCCESS,
                         details: data
                     })
                 });  
@@ -32,7 +32,7 @@ const getFilmDetails = (id) => {
         )  
         .catch(function(err) {
             dispatch({
-                type: GET_FILM_DETAILS_FAILURE,
+                type: GET_PERSON_DETAILS_FAILURE,
                 error: err
             })
             console.log('Fetch Error :-S', err);  
@@ -40,4 +40,4 @@ const getFilmDetails = (id) => {
     }
 };
 
-export default getFilmDetails;
+export default getPersonDetails;

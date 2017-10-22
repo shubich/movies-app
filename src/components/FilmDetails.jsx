@@ -31,7 +31,7 @@ export class FilmDetails extends React.Component {
                     this.props.fetching ?
                     <ReactLoading type='bars' delay={0} />
                     :
-                    <div id='film-details'>
+                    <div id='details'>
                         <Poster path={details.poster_path} />
                         <div className='info'>
                             <h2>

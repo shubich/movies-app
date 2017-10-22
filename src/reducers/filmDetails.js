@@ -4,7 +4,7 @@ import {
     GET_FILM_DETAILS_FAILURE,
 } from '../constants/Film';
 
-import { checkDetails } from '../utils';
+import { handleFilmDetails } from '../utils';
 
 const initialState = {
     details: {},
@@ -17,7 +17,7 @@ const filmDetails = (state = initialState, action) => {
         case GET_FILM_DETAILS_REQUEST:
             return { details: {}, fetching: true, error: '' };
         case GET_FILM_DETAILS_SUCCESS:
-            return { details: checkDetails({...action.details}), fetching: false, error: '' };
+            return { details: handleFilmDetails({...action.details}), fetching: false, error: '' };
         case GET_FILM_DETAILS_FAILURE:
             return { details: {}, fetching: false, error: action.error };
         default:

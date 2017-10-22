@@ -9,6 +9,7 @@ import { Header } from './components/Header';
 import { Nav } from './components/Nav';
 import SearchBarContainer from './containers/SearchBarContainer';
 import FilmDetailsContainer from './containers/FilmDetailsContainer';
+import PersonDetailsContainer from './containers/PersonDetailsContainer';
 import StatusContainer from './containers/StatusContainer'
 import MainContainer from './containers/MainContainer';
 import { NotFound } from './components/NotFound';
@@ -25,6 +26,17 @@ const render = () => {
                                 <Header>
                                     <Nav search={true}/>
                                     <Route component={FilmDetailsContainer}/>
+                                </Header>
+                                <Route component={StatusContainer}/>
+                                <Route component={MainContainer}/>
+                                <Footer/>
+                            </App>
+                        </Route>     
+                        <Route path='/person/:id'>
+                            <App>
+                                <Header>
+                                    <Nav search={true}/>
+                                    <Route component={PersonDetailsContainer}/>
                                 </Header>
                                 <Route component={StatusContainer}/>
                                 <Route component={MainContainer}/>
