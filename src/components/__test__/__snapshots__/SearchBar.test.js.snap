@@ -6,9 +6,15 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <SearchBar
     getFilms={[Function]}
-    history={[Function]}
+    getPeople={[Function]}
+    history={
+      Object {
+        "push": [Function],
+      }
+    }
     initialVal={2330}
     searchType="person"
+    setSearchType={[Function]}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -719,9 +725,15 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <SearchBar
     getFilms={[Function]}
-    history={[Function]}
+    getPeople={[Function]}
+    history={
+      Object {
+        "push": [Function],
+      }
+    }
     initialVal={2330}
     searchType="title"
+    setSearchType={[Function]}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],

@@ -1,14 +1,22 @@
 import films from '../films';
 
+let props;
+
 describe('films reducer', () => {
-    it('should handle initial state', () => {
-        expect(
-            films(undefined, {})
-        ).toEqual({
+    beforeEach(() => {
+        props = {
             results: [],
             fetching: false,
             error: ''
-        })
+        };
+    });
+
+    it('should handle initial state', () => {
+        expect(
+            films(undefined, {})
+        ).toEqual(
+            props
+        )
     })
 
     it('should handle GET_FILMS_REQUEST', () => {
@@ -16,16 +24,12 @@ describe('films reducer', () => {
             films(
                 undefined, 
                 {
-                    type: 'GET_FILMS_REQUEST',
-                    results: [],
-                    fetching: false,
-                    error: ''
+                    type: 'GET_FILMS_REQUEST'
                 }
             )
         ).toEqual({
-            results: [],
+            ...props,
             fetching: true,
-            error: ''
         })
     })
 
@@ -39,9 +43,8 @@ describe('films reducer', () => {
                 }
             )
         ).toEqual({
+            ...props,
             results: [{name: 'a'}, {name: 'b'}],
-            fetching: false,
-            error: ''
         })
     })
 
@@ -55,8 +58,7 @@ describe('films reducer', () => {
                 }
             )
         ).toEqual({
-            results: [],
-            fetching: false,
+            ...props,
             error: 'something went wrong'
         })
     })

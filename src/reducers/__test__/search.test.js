@@ -1,13 +1,21 @@
 import search from '../search';
 
+let props;
+
 describe('search reducer', () => {
+    beforeEach(() => {
+        props = {
+            searchType: 'title',
+            sortType: ''
+        };
+    });
+
     it('should handle initial state', () => {
         expect(
             search(undefined, {})
-        ).toEqual({
-            searchType: 'title',
-            sortType: ''
-        })
+        ).toEqual(
+            props
+        )
     })
 
     it('should handle SET_SEARCH_TYPE', () => {
@@ -20,8 +28,8 @@ describe('search reducer', () => {
                 }
             )
         ).toEqual({
-            searchType: 'person',
-            sortType: ''
+            ...props,
+            searchType: 'person'
         })
     })
 
@@ -35,7 +43,7 @@ describe('search reducer', () => {
                 }
             )
         ).toEqual({
-            searchType: 'title',
+            ...props,
             sortType: 'rating'
         })
     })

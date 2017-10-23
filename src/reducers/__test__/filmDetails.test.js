@@ -1,14 +1,22 @@
 import filmDetails from '../filmDetails';
 
+let props;
+
 describe('filmDetails reducer', () => {
-    it('should handle initial state', () => {
-        expect(
-            filmDetails(undefined, {})
-        ).toEqual({
+    beforeEach(() => {
+        props = {
             details: {},
             fetching: false,
             error: ''
-        })
+        };
+    });
+
+    it('should handle initial state', () => {
+        expect(
+            filmDetails(undefined, {})
+        ).toEqual(
+            props
+        )
     })
 
     it('should handle GET_FILM_DETAILS_REQUEST', () => {
@@ -16,16 +24,12 @@ describe('filmDetails reducer', () => {
             filmDetails(
                 undefined, 
                 {
-                    type: 'GET_FILM_DETAILS_REQUEST',
-                    details: {},
-                    fetching: false,
-                    error: ''
+                    type: 'GET_FILM_DETAILS_REQUEST'
                 }
             )
         ).toEqual({
-            details: {},
+            ...props,
             fetching: true,
-            error: ''
         })
     })
 
@@ -36,22 +40,24 @@ describe('filmDetails reducer', () => {
                 {
                     type: 'GET_FILM_DETAILS_SUCCESS',
                     details: {
-                        genres: ['Action', 'Comedy', 'Crime'],
+                        genres: [
+                            {id: 28, name: "Action"}, 
+                            {id: 35, name: "Comedy"}
+                        ],
                         release_date: '1998-04-04',
                         runtime: '86',
-                        vote_average: '6.5'
+                        vote_average: 6.5
                     }
                 }
             )
         ).toEqual({
+            ...props,
             details: {
-                genres: ['Action', 'Comedy', 'Crime'],
-                release_date: '1998-04-04',
-                runtime: '86',
-                vote_average: 10
-            },
-            fetching: false,
-            error: ''
+                genres: 'Action, Comedy',
+                release_date: 'Apr 4, 1998',
+                runtime: '86 min',
+                vote_average: '6.5'
+            }
         })
     })
 
@@ -65,8 +71,7 @@ describe('filmDetails reducer', () => {
                 }
             )
         ).toEqual({
-            details: {},
-            fetching: false,
+            ...props,
             error: 'something went wrong'
         })
     })

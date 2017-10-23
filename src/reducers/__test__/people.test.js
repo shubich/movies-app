@@ -1,14 +1,22 @@
 import people from '../people';
 
+let props;
+
 describe('people reducer', () => {
-    it('should handle initial state', () => {
-        expect(
-            people(undefined, {})
-        ).toEqual({
+    beforeEach(() => {
+        props = {
             results: [],
             fetching: false,
             error: ''
-        })
+        };
+    });
+
+    it('should handle initial state', () => {
+        expect(
+            people(undefined, {})
+        ).toEqual(
+            props
+        )
     })
 
     it('should handle GET_PEOPLE_REQUEST', () => {
@@ -16,16 +24,12 @@ describe('people reducer', () => {
             people(
                 undefined, 
                 {
-                    type: 'GET_PEOPLE_REQUEST',
-                    results: [],
-                    fetching: false,
-                    error: ''
+                    type: 'GET_PEOPLE_REQUEST'
                 }
             )
         ).toEqual({
-            results: [],
-            fetching: true,
-            error: ''
+            ...props,
+            fetching: true
         })
     })
 
@@ -39,9 +43,8 @@ describe('people reducer', () => {
                 }
             )
         ).toEqual({
+            ...props,
             results: [{name: 'a'}, {name: 'b'}],
-            fetching: false,
-            error: ''
         })
     })
 
@@ -55,8 +58,7 @@ describe('people reducer', () => {
                 }
             )
         ).toEqual({
-            results: [],
-            fetching: false,
+            ...props,
             error: 'something went wrong'
         })
     })
