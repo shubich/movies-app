@@ -1,10 +1,10 @@
 import React from 'react';
-import { Films } from '../Films';
+import { Main } from '../Main';
 import { shallow } from 'enzyme';
 
 let props;
 
-describe('Films', () => {
+describe('Main', () => {
     beforeEach(() => {
         props = {
             results: [
@@ -19,13 +19,14 @@ describe('Films', () => {
             ],
             fetching: false,
             error: '',
-            onFilmClick: jest.fn
+            onFilmClick: jest.fn,
+            searchType: 'title'
         };
     });
 
-    it('renders correctly with results', () => {
+    it('renders correctly with props', () => {
         const wrapper = shallow(
-            <Films {...props} />
+            <Main {...props} />
         );
         expect(wrapper).toMatchSnapshot();
     });
@@ -33,14 +34,21 @@ describe('Films', () => {
 
     it('renders correctly with fetching', () => {
         const wrapper = shallow(
-            <Films {...props} fetching={true} />
+            <Main {...props} fetching={true} />
         );
         expect(wrapper).toMatchSnapshot();
     });
 
     it('renders correctly without results', () => {
         const wrapper = shallow(
-            <Films {...props} results={[]} />
+            <Main {...props} results={[]} />
+        );
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('renders correctly without searchType', () => {
+        const wrapper = shallow(
+            <Main {...props} searchType={''} />
         );
         expect(wrapper).toMatchSnapshot();
     });

@@ -12,10 +12,11 @@ const initialState = {
 
 const search = (state = initialState, action) => {
     switch(action.type) {
-        case SET_SORT_TYPE:
-            return { ...state, sortType: action.filter };
         case SET_SEARCH_TYPE:
             return { ...state, searchType: action.filter };
+        case SET_SORT_TYPE:
+            return { ...state, sortType: action.filter };
+
         default:
             return state;
     }

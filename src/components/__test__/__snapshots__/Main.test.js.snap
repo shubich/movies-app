@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Films renders correctly with fetching 1`] = `
+exports[`Main renders correctly with fetching 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Films
+  Symbol(enzyme.__unrendered__): <Main
     error=""
     fetching={true}
     onFilmClick={[Function]}
@@ -20,6 +20,7 @@ ShallowWrapper {
         },
       ]
     }
+    searchType="title"
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -45,7 +46,7 @@ ShallowWrapper {
           width={64}
         />
       </div>,
-      "id": "films",
+      "id": "main",
     },
     "ref": null,
     "rendered": Object {
@@ -82,7 +83,7 @@ ShallowWrapper {
       },
       "type": "div",
     },
-    "type": "div",
+    "type": "main",
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
@@ -102,7 +103,7 @@ ShallowWrapper {
             width={64}
           />
         </div>,
-        "id": "films",
+        "id": "main",
       },
       "ref": null,
       "rendered": Object {
@@ -139,7 +140,7 @@ ShallowWrapper {
         },
         "type": "div",
       },
-      "type": "div",
+      "type": "main",
     },
   ],
   Symbol(enzyme.__options__): Object {
@@ -152,11 +153,11 @@ ShallowWrapper {
 }
 `;
 
-exports[`Films renders correctly with results 1`] = `
+exports[`Main renders correctly with props 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Films
+  Symbol(enzyme.__unrendered__): <Main
     error=""
     fetching={false}
     onFilmClick={[Function]}
@@ -172,6 +173,7 @@ ShallowWrapper {
         },
       ]
     }
+    searchType="title"
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -195,7 +197,7 @@ ShallowWrapper {
               "title": "A",
             }
           }
-          onClick={[Function]}
+          onClick={undefined}
         />
         <Film
           film={
@@ -204,10 +206,10 @@ ShallowWrapper {
               "title": "B",
             }
           }
-          onClick={[Function]}
+          onClick={undefined}
         />
       </div>,
-      "id": "films",
+      "id": "main",
     },
     "ref": null,
     "rendered": Object {
@@ -223,7 +225,7 @@ ShallowWrapper {
                 "title": "A",
               }
             }
-            onClick={[Function]}
+            onClick={undefined}
           />,
           <Film
             film={
@@ -232,7 +234,7 @@ ShallowWrapper {
                 "title": "B",
               }
             }
-            onClick={[Function]}
+            onClick={undefined}
           />,
         ],
         "className": "container",
@@ -248,7 +250,7 @@ ShallowWrapper {
               "id": 1,
               "title": "A",
             },
-            "onClick": [Function],
+            "onClick": undefined,
           },
           "ref": null,
           "rendered": null,
@@ -263,7 +265,7 @@ ShallowWrapper {
               "id": 2,
               "title": "B",
             },
-            "onClick": [Function],
+            "onClick": undefined,
           },
           "ref": null,
           "rendered": null,
@@ -272,7 +274,7 @@ ShallowWrapper {
       ],
       "type": "div",
     },
-    "type": "div",
+    "type": "main",
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
@@ -290,7 +292,7 @@ ShallowWrapper {
                 "title": "A",
               }
             }
-            onClick={[Function]}
+            onClick={undefined}
           />
           <Film
             film={
@@ -299,10 +301,10 @@ ShallowWrapper {
                 "title": "B",
               }
             }
-            onClick={[Function]}
+            onClick={undefined}
           />
         </div>,
-        "id": "films",
+        "id": "main",
       },
       "ref": null,
       "rendered": Object {
@@ -318,7 +320,7 @@ ShallowWrapper {
                   "title": "A",
                 }
               }
-              onClick={[Function]}
+              onClick={undefined}
             />,
             <Film
               film={
@@ -327,7 +329,7 @@ ShallowWrapper {
                   "title": "B",
                 }
               }
-              onClick={[Function]}
+              onClick={undefined}
             />,
           ],
           "className": "container",
@@ -343,7 +345,7 @@ ShallowWrapper {
                 "id": 1,
                 "title": "A",
               },
-              "onClick": [Function],
+              "onClick": undefined,
             },
             "ref": null,
             "rendered": null,
@@ -358,7 +360,7 @@ ShallowWrapper {
                 "id": 2,
                 "title": "B",
               },
-              "onClick": [Function],
+              "onClick": undefined,
             },
             "ref": null,
             "rendered": null,
@@ -367,7 +369,7 @@ ShallowWrapper {
         ],
         "type": "div",
       },
-      "type": "div",
+      "type": "main",
     },
   ],
   Symbol(enzyme.__options__): Object {
@@ -380,15 +382,16 @@ ShallowWrapper {
 }
 `;
 
-exports[`Films renders correctly without results 1`] = `
+exports[`Main renders correctly without results 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Films
+  Symbol(enzyme.__unrendered__): <Main
     error=""
     fetching={false}
     onFilmClick={[Function]}
     results={Array []}
+    searchType="title"
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -415,6 +418,235 @@ ShallowWrapper {
       "ref": null,
       "rendered": null,
       "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`Main renders correctly without searchType 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Main
+    error=""
+    fetching={false}
+    onFilmClick={[Function]}
+    results={
+      Array [
+        Object {
+          "id": 1,
+          "title": "A",
+        },
+        Object {
+          "id": 2,
+          "title": "B",
+        },
+      ]
+    }
+    searchType=""
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": null,
+    "nodeType": "host",
+    "props": Object {
+      "children": <div
+        className="container"
+      >
+        <Person
+          onClick={undefined}
+          person={
+            Object {
+              "id": 1,
+              "title": "A",
+            }
+          }
+        />
+        <Person
+          onClick={undefined}
+          person={
+            Object {
+              "id": 2,
+              "title": "B",
+            }
+          }
+        />
+      </div>,
+      "id": "main",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": null,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Person
+            onClick={undefined}
+            person={
+              Object {
+                "id": 1,
+                "title": "A",
+              }
+            }
+          />,
+          <Person
+            onClick={undefined}
+            person={
+              Object {
+                "id": 2,
+                "title": "B",
+              }
+            }
+          />,
+        ],
+        "className": "container",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "0",
+          "nodeType": "function",
+          "props": Object {
+            "onClick": undefined,
+            "person": Object {
+              "id": 1,
+              "title": "A",
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "1",
+          "nodeType": "function",
+          "props": Object {
+            "onClick": undefined,
+            "person": Object {
+              "id": 2,
+              "title": "B",
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+    "type": "main",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": null,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="container"
+        >
+          <Person
+            onClick={undefined}
+            person={
+              Object {
+                "id": 1,
+                "title": "A",
+              }
+            }
+          />
+          <Person
+            onClick={undefined}
+            person={
+              Object {
+                "id": 2,
+                "title": "B",
+              }
+            }
+          />
+        </div>,
+        "id": "main",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <Person
+              onClick={undefined}
+              person={
+                Object {
+                  "id": 1,
+                  "title": "A",
+                }
+              }
+            />,
+            <Person
+              onClick={undefined}
+              person={
+                Object {
+                  "id": 2,
+                  "title": "B",
+                }
+              }
+            />,
+          ],
+          "className": "container",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": "0",
+            "nodeType": "function",
+            "props": Object {
+              "onClick": undefined,
+              "person": Object {
+                "id": 1,
+                "title": "A",
+              },
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": "1",
+            "nodeType": "function",
+            "props": Object {
+              "onClick": undefined,
+              "person": Object {
+                "id": 2,
+                "title": "B",
+              },
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "div",
+      },
+      "type": "main",
     },
   ],
   Symbol(enzyme.__options__): Object {
