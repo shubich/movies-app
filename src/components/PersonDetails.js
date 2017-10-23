@@ -30,10 +30,10 @@ export class PersonDetails extends React.Component {
                                 <span className='rating'>{details.popularity}</span>
                             </h2>
                             <p className='numbers'>
-                                {details.born}
+                                {details.birthday + details.place_of_birth}
                             </p>
                             <p className='numbers'>
-                                {details.died}
+                                {details.deathday}
                             </p>
                             <p className='text-basic'>{details.biography}</p>
                         </div>

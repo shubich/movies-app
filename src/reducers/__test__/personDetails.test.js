@@ -50,9 +50,7 @@ describe('personDetails reducer', () => {
             ...props,
             details: {
                 "birthday": 'Born: Jul 4, 1995', 
-                "born": 'Born: Jul 4, 1995 in Brest, Belarus', 
-                "deathday": null, 
-                "died": null, 
+                "deathday": null,
                 "place_of_birth": ' in Brest, Belarus', 
                 "popularity": 5
             }

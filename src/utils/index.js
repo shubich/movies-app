@@ -1,6 +1,6 @@
 const handleDate = (str) => {
     let [year, month, day] = str.split('-');
-    let date = new Date(year, month-1, day);
+    let date = new Date(year, month-1, day, 1);
     let options = { year: 'numeric', month: 'short', day: 'numeric' };
 
     return date.toLocaleString('en-US', options);
@@ -29,7 +29,7 @@ export const handleFilmDetails = (details) => {
         .map((genre) => genre.name).join(', ');
 
     details.release_date = (details.release_date) 
-        ? handleDate(details.release_date)
+        ? details.release_date.split('-')[0]
         : null;
 
     details.runtime = (details.runtime) 
@@ -42,21 +42,17 @@ export const handleFilmDetails = (details) => {
 export const handlePersonDetails = (details) => {
     details.birthday = (details.birthday)
         ? 'Born: ' + handleDate(details.birthday)
-        : null; 
-    details.deathday = (details.deathday)
-        ? handleDate(details.deathday)
-        : null; 
-    details.popularity = (details.popularity)
-        ? Math.round(details.popularity)
+        : null;
+    details.deathday = details.deathday
+        ? 'Died: ' + handleDate(details.deathday)
         : null;
     details.place_of_birth = (details.place_of_birth)
         ? ' in ' + details.place_of_birth
         : null; 
-
-    details.born = details.birthday + details.place_of_birth;
-    details.died = details.deathday
-        ? 'Died: ' + details.deathday
+    details.popularity = (details.popularity)
+        ? Math.round(details.popularity)
         : null;
+
 
     return details;
 }

@@ -54,7 +54,7 @@ describe('filmDetails reducer', () => {
             ...props,
             details: {
                 genres: 'Action, Comedy',
-                release_date: 'Apr 4, 1998',
+                release_date: '1998',
                 runtime: '86 min',
                 vote_average: '6.5'
             }
