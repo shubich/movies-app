@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Status renders correctly with another sort 1`] = `
+exports[`Status renders correctly with another search type 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
@@ -15,7 +15,9 @@ ShallowWrapper {
         "url": "/film/680",
       }
     }
-    sort="date"
+    searchType="person"
+    sort="rating"
+    sortType="date"
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -36,28 +38,9 @@ ShallowWrapper {
           className="count"
         >
           20
-           movies found
-        </div>
-        <div
-          className="sort"
-        >
-          <span
-            className="sortBy"
-          >
-            Sort by
-          </span>
-          <a
-            className="link link-primary"
-            onClick={[Function]}
-          >
-            release date
-          </a>
-          <a
-            className="link link-default"
-            onClick={[Function]}
-          >
-            rating
-          </a>
+           
+          people
+           found
         </div>
       </div>,
       "id": "status",
@@ -73,7 +56,203 @@ ShallowWrapper {
             className="count"
           >
             20
-             movies found
+             
+            people
+             found
+          </div>,
+          null,
+        ],
+        "className": "container",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "20",
+              " ",
+              "people",
+              " found",
+            ],
+            "className": "count",
+          },
+          "ref": null,
+          "rendered": Array [
+            "20",
+            " ",
+            "people",
+            " found",
+          ],
+          "type": "div",
+        },
+        null,
+      ],
+      "type": "div",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": null,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="container"
+        >
+          <div
+            className="count"
+          >
+            20
+             
+            people
+             found
+          </div>
+        </div>,
+        "id": "status",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="count"
+            >
+              20
+               
+              people
+               found
+            </div>,
+            null,
+          ],
+          "className": "container",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "20",
+                " ",
+                "people",
+                " found",
+              ],
+              "className": "count",
+            },
+            "ref": null,
+            "rendered": Array [
+              "20",
+              " ",
+              "people",
+              " found",
+            ],
+            "type": "div",
+          },
+          null,
+        ],
+        "type": "div",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`Status renders correctly with another sorting type 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Status
+    count="20"
+    handleSort={[Function]}
+    match={
+      Object {
+        "params": Object {
+          "id": "680",
+        },
+        "url": "/film/680",
+      }
+    }
+    searchType="title"
+    sort="rating"
+    sortType="rating"
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": null,
+    "nodeType": "host",
+    "props": Object {
+      "children": <div
+        className="container"
+      >
+        <div
+          className="count"
+        >
+          20
+           
+          movies
+           found
+        </div>
+        <div
+          className="sort"
+        >
+          <span
+            className="sortBy"
+          >
+            Sort by
+          </span>
+          <a
+            className="link link-default"
+            onClick={[Function]}
+          >
+            release date
+          </a>
+          <span
+            className="link link-primary"
+          >
+            rating
+          </span>
+        </div>
+      </div>,
+      "id": "status",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": null,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="count"
+          >
+            20
+             
+            movies
+             found
           </div>,
           <div
             className="sort"
@@ -84,17 +263,16 @@ ShallowWrapper {
               Sort by
             </span>
             <a
-              className="link link-primary"
+              className="link link-default"
               onClick={[Function]}
             >
               release date
             </a>
-            <a
-              className="link link-default"
-              onClick={[Function]}
+            <span
+              className="link link-primary"
             >
               rating
-            </a>
+            </span>
           </div>,
         ],
         "className": "container",
@@ -108,14 +286,18 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               "20",
-              " movies found",
+              " ",
+              "movies",
+              " found",
             ],
             "className": "count",
           },
           "ref": null,
           "rendered": Array [
             "20",
-            " movies found",
+            " ",
+            "movies",
+            " found",
           ],
           "type": "div",
         },
@@ -131,17 +313,16 @@ ShallowWrapper {
                 Sort by
               </span>,
               <a
-                className="link link-primary"
+                className="link link-default"
                 onClick={[Function]}
               >
                 release date
               </a>,
-              <a
-                className="link link-default"
-                onClick={[Function]}
+              <span
+                className="link link-primary"
               >
                 rating
-              </a>,
+              </span>,
             ],
             "className": "sort",
           },
@@ -165,7 +346,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": "release date",
-                "className": "link link-primary",
+                "className": "link link-default",
                 "onClick": [Function],
               },
               "ref": null,
@@ -178,12 +359,11 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": "rating",
-                "className": "link link-default",
-                "onClick": [Function],
+                "className": "link link-primary",
               },
               "ref": null,
               "rendered": "rating",
-              "type": "a",
+              "type": "span",
             },
           ],
           "type": "div",
@@ -206,7 +386,9 @@ ShallowWrapper {
             className="count"
           >
             20
-             movies found
+             
+            movies
+             found
           </div>
           <div
             className="sort"
@@ -217,17 +399,16 @@ ShallowWrapper {
               Sort by
             </span>
             <a
-              className="link link-primary"
+              className="link link-default"
               onClick={[Function]}
             >
               release date
             </a>
-            <a
-              className="link link-default"
-              onClick={[Function]}
+            <span
+              className="link link-primary"
             >
               rating
-            </a>
+            </span>
           </div>
         </div>,
         "id": "status",
@@ -243,7 +424,9 @@ ShallowWrapper {
               className="count"
             >
               20
-               movies found
+               
+              movies
+               found
             </div>,
             <div
               className="sort"
@@ -254,17 +437,16 @@ ShallowWrapper {
                 Sort by
               </span>
               <a
-                className="link link-primary"
+                className="link link-default"
                 onClick={[Function]}
               >
                 release date
               </a>
-              <a
-                className="link link-default"
-                onClick={[Function]}
+              <span
+                className="link link-primary"
               >
                 rating
-              </a>
+              </span>
             </div>,
           ],
           "className": "container",
@@ -278,14 +460,18 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 "20",
-                " movies found",
+                " ",
+                "movies",
+                " found",
               ],
               "className": "count",
             },
             "ref": null,
             "rendered": Array [
               "20",
-              " movies found",
+              " ",
+              "movies",
+              " found",
             ],
             "type": "div",
           },
@@ -301,17 +487,16 @@ ShallowWrapper {
                   Sort by
                 </span>,
                 <a
-                  className="link link-primary"
+                  className="link link-default"
                   onClick={[Function]}
                 >
                   release date
                 </a>,
-                <a
-                  className="link link-default"
-                  onClick={[Function]}
+                <span
+                  className="link link-primary"
                 >
                   rating
-                </a>,
+                </span>,
               ],
               "className": "sort",
             },
@@ -335,7 +520,7 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "children": "release date",
-                  "className": "link link-primary",
+                  "className": "link link-default",
                   "onClick": [Function],
                 },
                 "ref": null,
@@ -348,12 +533,11 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "children": "rating",
-                  "className": "link link-default",
-                  "onClick": [Function],
+                  "className": "link link-primary",
                 },
                 "ref": null,
                 "rendered": "rating",
-                "type": "a",
+                "type": "span",
               },
             ],
             "type": "div",
@@ -389,7 +573,9 @@ ShallowWrapper {
         "url": "/film/680",
       }
     }
+    searchType="title"
     sort="rating"
+    sortType="date"
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -410,7 +596,9 @@ ShallowWrapper {
           className="count"
         >
           20
-           movies found
+           
+          movies
+           found
         </div>
         <div
           className="sort"
@@ -420,14 +608,13 @@ ShallowWrapper {
           >
             Sort by
           </span>
-          <a
-            className="link link-default"
-            onClick={[Function]}
+          <span
+            className="link link-primary"
           >
             release date
-          </a>
+          </span>
           <a
-            className="link link-primary"
+            className="link link-default"
             onClick={[Function]}
           >
             rating
@@ -447,7 +634,9 @@ ShallowWrapper {
             className="count"
           >
             20
-             movies found
+             
+            movies
+             found
           </div>,
           <div
             className="sort"
@@ -457,14 +646,13 @@ ShallowWrapper {
             >
               Sort by
             </span>
-            <a
-              className="link link-default"
-              onClick={[Function]}
+            <span
+              className="link link-primary"
             >
               release date
-            </a>
+            </span>
             <a
-              className="link link-primary"
+              className="link link-default"
               onClick={[Function]}
             >
               rating
@@ -482,14 +670,18 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               "20",
-              " movies found",
+              " ",
+              "movies",
+              " found",
             ],
             "className": "count",
           },
           "ref": null,
           "rendered": Array [
             "20",
-            " movies found",
+            " ",
+            "movies",
+            " found",
           ],
           "type": "div",
         },
@@ -504,14 +696,13 @@ ShallowWrapper {
               >
                 Sort by
               </span>,
-              <a
-                className="link link-default"
-                onClick={[Function]}
+              <span
+                className="link link-primary"
               >
                 release date
-              </a>,
+              </span>,
               <a
-                className="link link-primary"
+                className="link link-default"
                 onClick={[Function]}
               >
                 rating
@@ -539,12 +730,11 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": "release date",
-                "className": "link link-default",
-                "onClick": [Function],
+                "className": "link link-primary",
               },
               "ref": null,
               "rendered": "release date",
-              "type": "a",
+              "type": "span",
             },
             Object {
               "instance": null,
@@ -552,7 +742,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": "rating",
-                "className": "link link-primary",
+                "className": "link link-default",
                 "onClick": [Function],
               },
               "ref": null,
@@ -580,7 +770,9 @@ ShallowWrapper {
             className="count"
           >
             20
-             movies found
+             
+            movies
+             found
           </div>
           <div
             className="sort"
@@ -590,14 +782,13 @@ ShallowWrapper {
             >
               Sort by
             </span>
-            <a
-              className="link link-default"
-              onClick={[Function]}
+            <span
+              className="link link-primary"
             >
               release date
-            </a>
+            </span>
             <a
-              className="link link-primary"
+              className="link link-default"
               onClick={[Function]}
             >
               rating
@@ -617,7 +808,9 @@ ShallowWrapper {
               className="count"
             >
               20
-               movies found
+               
+              movies
+               found
             </div>,
             <div
               className="sort"
@@ -627,14 +820,13 @@ ShallowWrapper {
               >
                 Sort by
               </span>
-              <a
-                className="link link-default"
-                onClick={[Function]}
+              <span
+                className="link link-primary"
               >
                 release date
-              </a>
+              </span>
               <a
-                className="link link-primary"
+                className="link link-default"
                 onClick={[Function]}
               >
                 rating
@@ -652,14 +844,18 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 "20",
-                " movies found",
+                " ",
+                "movies",
+                " found",
               ],
               "className": "count",
             },
             "ref": null,
             "rendered": Array [
               "20",
-              " movies found",
+              " ",
+              "movies",
+              " found",
             ],
             "type": "div",
           },
@@ -674,14 +870,13 @@ ShallowWrapper {
                 >
                   Sort by
                 </span>,
-                <a
-                  className="link link-default"
-                  onClick={[Function]}
+                <span
+                  className="link link-primary"
                 >
                   release date
-                </a>,
+                </span>,
                 <a
-                  className="link link-primary"
+                  className="link link-default"
                   onClick={[Function]}
                 >
                   rating
@@ -709,12 +904,11 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "children": "release date",
-                  "className": "link link-default",
-                  "onClick": [Function],
+                  "className": "link link-primary",
                 },
                 "ref": null,
                 "rendered": "release date",
-                "type": "a",
+                "type": "span",
               },
               Object {
                 "instance": null,
@@ -722,7 +916,7 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "children": "rating",
-                  "className": "link link-primary",
+                  "className": "link link-default",
                   "onClick": [Function],
                 },
                 "ref": null,

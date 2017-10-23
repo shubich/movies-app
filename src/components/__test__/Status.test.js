@@ -15,7 +15,9 @@ describe('Status', () => {
             },
             count: '20',
             sort: 'rating',
-            handleSort: jest.fn            
+            handleSort: jest.fn,
+            searchType: 'title',
+            sortType: 'date',            
         };
     });
 
@@ -26,9 +28,23 @@ describe('Status', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
-    it('renders correctly with another sort', () => {
+    // it('renders correctly with another sorting type', () => {
+    //     const wrapper = shallow(
+    //         <Status {...props} sortType='date' />
+    //     );
+    //     expect(wrapper).toMatchSnapshot();
+    // });
+
+    it('renders correctly with another search type', () => {
         const wrapper = shallow(
-            <Status {...props} sort='date' />
+            <Status {...props} searchType='person' />
+        );
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('renders correctly with another sorting type', () => {
+        const wrapper = shallow(
+            <Status {...props} sortType='rating' />
         );
         expect(wrapper).toMatchSnapshot();
     });

@@ -33,6 +33,13 @@ describe('FilmDetails', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
+    it('renders correctly with fetching', () => {
+        const wrapper = shallow(
+            <FilmDetails {...props} fetching={true} />
+        );
+        expect(wrapper).toMatchSnapshot();
+    });
+
     it('renders correctly without details', () => {
         const wrapper = shallow(
             <FilmDetails {...props} details={[]} />

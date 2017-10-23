@@ -18,13 +18,21 @@ describe('SearchBar', () => {
                     title: 'another'
                 }
             ],
-            history: jest.fn 
+            history: jest.fn,
+            searchType: 'title' 
         };
     });
 
     it('renders correctly with props', () => {
         const wrapper = shallow(
             <SearchBar {...props} />
+        );
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('renders correctly with another search type', () => {
+        const wrapper = shallow(
+            <SearchBar {...props} searchType='person' />
         );
         expect(wrapper).toMatchSnapshot();
     });
