@@ -21,8 +21,8 @@ describe('FilmDetails', () => {
                     id: '680'
                 }
             },
-            getFilmDetails: jest.fn,
-            getSimilarFilms: jest.fn
+            getFilmDetails: jest.fn(),
+            getSimilarFilms: jest.fn()
         };
     });
 
@@ -30,6 +30,14 @@ describe('FilmDetails', () => {
         const wrapper = shallow(
             <FilmDetails {...props} />
         );
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('renders correctly with newProps', () => {
+        const wrapper = shallow(
+            <FilmDetails {...props} />
+        );
+        wrapper.setProps({...props, match: {params: {id: '221'}}});
         expect(wrapper).toMatchSnapshot();
     });
 
