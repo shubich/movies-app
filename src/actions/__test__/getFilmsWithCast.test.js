@@ -1,6 +1,6 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import getFilms from '../getFilms';
+import getFilmWithCast from '../getFilmsWithCast';
 import * as types from '../../constants/Films';
 import fetchMock from 'fetch-mock';
 
@@ -23,31 +23,9 @@ describe('async actions', () => {
     ]
     const store = mockStore({ films: [] })
 
-    store.dispatch(getFilms('test')).then(() => {
+    store.dispatch(getFilmWithCast('test')).then(() => {
         // return of async actions
         expect(store.getActions()).toEqual(expectedActions)
     })
   })
-
-  it('creates GET_FILMS_FAILURE when fetching films has been done', () => {
-    fetchMock.get('*', 500);
-
-    const expectedActions = [
-        { type: types.GET_FILMS_REQUEST, query: 'test' },      
-        { 
-            type: types.GET_FILMS_FAILURE, 
-            error: {
-                name: 'FetchError',
-                message: 'invalid json response body at https://api.themoviedb.org/3/search/movie?api_key=595f6d4c932627df7eb7d5c2f27a7e40&language=en-US&include_adult=false&page=1&query=test reason: Unexpected end of JSON input',
-                type: 'invalid-json' 
-            } 
-        }
-    ]
-    const store = mockStore({ films: [] })
-
-    store.dispatch(getFilms('test')).then(() => {        
-        expect(store.getActions()).toEqual(expectedActions)
-    })
-  })
-
 })

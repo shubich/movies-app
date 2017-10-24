@@ -21,14 +21,14 @@ const getFilmsFailure = (error) => ({
     error     
 });
 
-const getFilms = (query) => {
-    return (dispatch) => {
+const getFilms = (query) => (
+    (dispatch) => {
         dispatch(getFilmsRequest(query))
         return Api.requests.films(query)
-        .then(res => res.json())
-        .then(json => dispatch(getFilmsSuccess(json.results)))    
-        .catch(err => dispatch(getFilmsFailure(err)))
+            .then(res => res.json())
+            .then(json => dispatch(getFilmsSuccess(json.results)))    
+            .catch(err => dispatch(getFilmsFailure(err)))
     }
-};
+);
 
 export default getFilms;

@@ -13,7 +13,7 @@ const getSimilarFilms = (id) => {
             id         
         })
         
-        Api.requests.similar(id)
+        return Api.requests.similar(id)
         .then(  
             function(response) {  
                 if (response.status !== 200) {  

@@ -6,38 +6,29 @@ import {
 
 import * as Api from '../api';
 
-const getFilmsWithCast = (id) => {
-    return (dispatch) => {
-        dispatch({
-            type: GET_FILMS_REQUEST,
-            id         
-        })
-        
-        Api.requests.filmsWithCast(id)
-        .then(  
-            function(response) {       
-                if (response.status !== 200) {  
-                    console.log('Looks like there was a problem. Status Code: ' + response.status);  
-                    return;  
-                }
+const getFilmsWithCastRequest = (id) => ({
+    type: GET_FILMS_REQUEST,
+    id
+});
 
-                // Examine the text in the response  
-                response.json().then(function(data) {
-                    dispatch({
-                        type: GET_FILMS_SUCCESS,
-                        results: data.results
-                    })
-                });  
-            }  
-        )  
-        .catch(function(err) {
-            dispatch({
-                type: GET_FILMS_FAILURE,
-                error: err
-            })
-            console.log('Fetch Error :-S', err);  
-        });
+const getFilmsWithCastSuccess = (results) => ({
+    type: GET_FILMS_SUCCESS,
+    results     
+});
+
+const getFilmsWithCastFailure = (error) => ({
+    type: GET_FILMS_FAILURE,
+    error     
+});
+
+const getFilmsWithCast = (id) => (
+    (dispatch) => {
+        dispatch(getFilmsWithCastRequest(id))
+        return Api.requests.filmsWithCast(id)
+            .then(res => res.json())
+            .then(json => dispatch(getFilmsWithCastSuccess(json.results)))
+            .catch(err => dispatch(getFilmsWithCastFailure(err)))
     }
-};
+);
 
 export default getFilmsWithCast;
