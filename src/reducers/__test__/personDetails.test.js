@@ -40,8 +40,9 @@ describe('personDetails reducer', () => {
                 {
                     type: 'GET_PERSON_DETAILS_SUCCESS',
                     details: {
-                        "birthday": '1995-07-04', 
-                        "place_of_birth": 'Brest, Belarus', 
+                        "birthday": '1962-06-21', 
+                        "deathday": '1990-08-15',
+                        "place_of_birth": 'Moscow, Russia', 
                         "popularity": 5
                     }
                 }
@@ -49,9 +50,9 @@ describe('personDetails reducer', () => {
         ).toEqual({
             ...props,
             details: {
-                "birthday": 'Born: Jul 4, 1995', 
-                "deathday": null,
-                "place_of_birth": ' in Brest, Belarus', 
+                "birthday": 'Born: Jun 21, 1962', 
+                "deathday": 'Died: Aug 15, 1990',
+                "place_of_birth": ' in Moscow, Russia', 
                 "popularity": 5
             }
         })

@@ -23,18 +23,18 @@ export const sortFilms = (films, field) => {
 export const handleFilmDetails = (details) => {
     details.vote_average = (details.vote_average < 10) 
         ? details.vote_average.toFixed(1) 
-        : details.vote_average;
+        : '';
 
     details.genres = details.genres && details.genres
         .map((genre) => genre.name).join(', ');
 
     details.release_date = (details.release_date) 
         ? details.release_date.split('-')[0]
-        : null;
+        : '';
 
     details.runtime = (details.runtime) 
         ? details.runtime + ' min'
-        : null;
+        : '';
 
     return details;
 }
@@ -42,16 +42,16 @@ export const handleFilmDetails = (details) => {
 export const handlePersonDetails = (details) => {
     details.birthday = (details.birthday)
         ? 'Born: ' + handleDate(details.birthday)
-        : null;
+        : '';
     details.deathday = details.deathday
         ? 'Died: ' + handleDate(details.deathday)
-        : null;
+        : '';
     details.place_of_birth = (details.place_of_birth)
         ? ' in ' + details.place_of_birth
-        : null; 
+        : ''; 
     details.popularity = (details.popularity)
         ? Math.round(details.popularity)
-        : null;
+        : '';
 
 
     return details;

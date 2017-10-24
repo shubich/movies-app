@@ -14,10 +14,8 @@ describe('Status', () => {
                 }
             },
             count: '20',
-            sort: 'rating',
-            handleSort: jest.fn,
-            searchType: 'title',
-            sortType: 'date',            
+            'searchType': 'title',
+            handleSort: jest.fn()
         };
     });
 
@@ -27,17 +25,17 @@ describe('Status', () => {
         );
         expect(wrapper).toMatchSnapshot();
     });
-
-    // it('renders correctly with another sorting type', () => {
-    //     const wrapper = shallow(
-    //         <Status {...props} sortType='date' />
-    //     );
-    //     expect(wrapper).toMatchSnapshot();
-    // });
-
+    
     it('renders correctly with another search type', () => {
         const wrapper = shallow(
             <Status {...props} searchType='person' />
+        );
+        expect(wrapper).toMatchSnapshot();
+    });   
+
+    it('renders correctly with sorting type', () => {
+        const wrapper = shallow(
+            <Status {...props} sortType='date' />
         );
         expect(wrapper).toMatchSnapshot();
     });
@@ -55,4 +53,23 @@ describe('Status', () => {
         );
         expect(wrapper).toMatchSnapshot();
     });
+
+    it('should call handleSort with "date"', () => {
+        const wrapper = shallow(
+            <Status {...props} sortType='rating' />
+        );
+        wrapper.find('a').simulate('click');
+        
+        expect(props.handleSort).toBeCalledWith('date');
+    });
+
+    it('should call handleSort with "rating"', () => {
+        const wrapper = shallow(
+            <Status {...props} sortType='date' />
+        );
+        wrapper.find('a').simulate('click');
+        
+        expect(props.handleSort).toBeCalledWith('rating');
+    });
+
 })
