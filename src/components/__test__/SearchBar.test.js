@@ -1,14 +1,12 @@
 import React from 'react';
 import { SearchBar } from '../SearchBar';
-import { shallow } from 'enzyme';
-import { mount } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 
 let props;
 
 describe('SearchBar', () => {
     beforeEach(() => {
         props = {
-            searchQuery: 'taxi',
             getFilms: jest.fn(),
             getPeople: jest.fn(),
             setSearchType: jest.fn(),
@@ -24,17 +22,9 @@ describe('SearchBar', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
-    it('renders correctly with empty searchQuery', () => {
+    it('renders correctly with searchQuery', () => {
         const wrapper = shallow(
-            <SearchBar {...props} />
-        );
-        wrapper.setProps({...props, searchQuery: null});        
-        expect(wrapper).toMatchSnapshot();
-    });
-
-    it('renders correctly with another search type', () => {
-        const wrapper = shallow(
-            <SearchBar {...props} searchType='person' />
+            <SearchBar {...props} searchQuery={'test'} />
         );
         expect(wrapper).toMatchSnapshot();
     });
@@ -43,30 +33,30 @@ describe('SearchBar', () => {
         const wrapper = mount(
             <SearchBar {...props} />
         );
-        
-        expect(props.getFilms).toBeCalledWith(props.searchQuery);
+        wrapper.setProps({...props, searchQuery: 'test'})
+        expect(props.getFilms).toBeCalledWith('test');
     });
 
-    it('should call getFilms after receive props', () => {
+    it('should call getPeople', () => {
         const wrapper = mount(
             <SearchBar {...props} />
         );
-        wrapper.setProps({...props, searchQuery: 'Smith'});
-        expect(props.getFilms).toBeCalledWith('Smith');
+        wrapper.setProps({...props, searchType: 'person', searchQuery: 'test'})
+        expect(props.getPeople).toBeCalledWith('test');
     });
-
-    it('should call getPeople after receive props', () => {
+    
+    it('shouldn\'t get anything with same props', () => {
         const wrapper = mount(
             <SearchBar {...props} />
         );
-        wrapper.setProps({...props, searchType: 'person'});
-        expect(props.getPeople).toBeCalledWith(props.searchQuery);
+        wrapper.setProps({...props});
+        expect(props.getFilms).not.toBeCalled();
     });
 
-    it('should call input.focus()', () => {
+    it('should call input.focus() when search line is empty', () => {
         const focus = jest.fn();
         const wrapper = shallow(
-            <SearchBar {...props} searchQuery={''} />
+            <SearchBar {...props} />
         );
         const wrapperInstance = wrapper.instance(); // --shallow
         wrapperInstance.searchLine={ focus }; // --shallow
@@ -75,11 +65,18 @@ describe('SearchBar', () => {
         expect(focus).toBeCalled();
     });
 
+    it('should call history.push() when search line is filled', () => {
+        const wrapper = mount(
+            <SearchBar {...props} searchQuery={'test'} />
+        );        
+        wrapper.find('form').simulate('submit', {preventDefault:jest.fn()})
+        expect(props.history.push).toBeCalled();
+    });
+
     it('should call setSearchType on radio changes', () => {
         const wrapper = mount(
             <SearchBar {...props} />
-        );
-        
+        );        
         wrapper.find('[checked=false]').simulate('change', {target: {value: 'test'}});
         expect(props.setSearchType).toBeCalledWith('test');
     })
