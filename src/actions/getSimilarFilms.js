@@ -6,38 +6,29 @@ import {
 
 import * as Api from '../api';
 
-const getSimilarFilms = (id) => {
-    return (dispatch) => {
-        dispatch({
-            type: GET_SIMILAR_FILMS_REQUEST,
-            id         
-        })
-        
-        return Api.requests.similar(id)
-        .then(  
-            function(response) {  
-                if (response.status !== 200) {  
-                    console.log('Looks like there was a problem. Status Code: ' + response.status);  
-                    return;  
-                }
+const getSimilarFilmsRequest = (id) => ({
+    type: GET_SIMILAR_FILMS_REQUEST,
+    id
+});
 
-                // Examine the text in the response  
-                response.json().then(function(data) {
-                    dispatch({
-                        type: GET_SIMILAR_FILMS_SUCCESS,
-                        results: data.results
-                    })
-                });  
-            }  
-        )  
-        .catch(function(err) {
-            dispatch({
-                type: GET_SIMILAR_FILMS_FAILURE,
-                error: err
-            })
-            console.log('Fetch Error :-S', err);  
-        });
+const getSimilarFilmsSuccess = (results) => ({
+    type: GET_SIMILAR_FILMS_SUCCESS,
+    results     
+});
+
+const getSimilarFilmsFailure = (error) => ({
+    type: GET_SIMILAR_FILMS_FAILURE,
+    error     
+});
+
+const getSimilarFilms = (id) => (
+    (dispatch) => {
+        dispatch(getSimilarFilmsRequest(id))
+        return Api.requests.similar(id)
+            .then(res => res.json())
+            .then(json => dispatch(getSimilarFilmsSuccess(json.results)))    
+            .catch(err => dispatch(getSimilarFilmsFailure(err)))
     }
-};
+);
 
 export default getSimilarFilms;

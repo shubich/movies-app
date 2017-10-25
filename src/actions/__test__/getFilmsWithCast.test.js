@@ -18,12 +18,12 @@ describe('async actions', () => {
     fetchMock.get('*', {results: ['taxi', 'wanted']});
 
     const expectedActions = [
-      { type: types.GET_FILMS_REQUEST, query: 'test' },
+      { type: types.GET_FILMS_REQUEST, id: 1 },
       { type: types.GET_FILMS_SUCCESS, results: ['taxi', 'wanted'] }
     ]
     const store = mockStore({ films: [] })
 
-    store.dispatch(getFilmWithCast('test')).then(() => {
+    store.dispatch(getFilmWithCast(1)).then(() => {
         // return of async actions
         expect(store.getActions()).toEqual(expectedActions)
     })
