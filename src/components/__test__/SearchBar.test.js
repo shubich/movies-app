@@ -8,7 +8,7 @@ let props;
 describe('SearchBar', () => {
     beforeEach(() => {
         props = {
-            initialVal: 2330,
+            searchQuery: 'taxi',
             getFilms: jest.fn(),
             getPeople: jest.fn(),
             setSearchType: jest.fn(),
@@ -24,6 +24,14 @@ describe('SearchBar', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
+    it('renders correctly with empty searchQuery', () => {
+        const wrapper = shallow(
+            <SearchBar {...props} />
+        );
+        wrapper.setProps({...props, searchQuery: null});        
+        expect(wrapper).toMatchSnapshot();
+    });
+
     it('renders correctly with another search type', () => {
         const wrapper = shallow(
             <SearchBar {...props} searchType='person' />
@@ -35,27 +43,33 @@ describe('SearchBar', () => {
         const wrapper = mount(
             <SearchBar {...props} />
         );
-        // const wrapperInstance = wrapper.instance(); // --shallow
-        // wrapperInstance.searchQuery={value: 'something'}; // --shallow
-        wrapper.find('form').simulate('submit', {preventDefault:jest.fn()})
-        expect(props.getFilms).toBeCalledWith('2330');
+        
+        expect(props.getFilms).toBeCalledWith(props.searchQuery);
     });
 
-    it('should call getPeople', () => {
+    it('should call getFilms after receive props', () => {
         const wrapper = mount(
-            <SearchBar {...props} searchType={'person'} />
+            <SearchBar {...props} />
         );
-        wrapper.find('form').simulate('submit', {preventDefault:jest.fn()})
-        expect(props.getPeople).toBeCalledWith('2330');
+        wrapper.setProps({...props, searchQuery: 'Smith'});
+        expect(props.getFilms).toBeCalledWith('Smith');
+    });
+
+    it('should call getPeople after receive props', () => {
+        const wrapper = mount(
+            <SearchBar {...props} />
+        );
+        wrapper.setProps({...props, searchType: 'person'});
+        expect(props.getPeople).toBeCalledWith(props.searchQuery);
     });
 
     it('should call input.focus()', () => {
         const focus = jest.fn();
         const wrapper = shallow(
-            <SearchBar {...props} initialVal={''} />
+            <SearchBar {...props} searchQuery={''} />
         );
         const wrapperInstance = wrapper.instance(); // --shallow
-        wrapperInstance.searchQuery={ focus }; // --shallow
+        wrapperInstance.searchLine={ focus }; // --shallow
         
         wrapper.find('form').simulate('submit', {preventDefault:jest.fn()})
         expect(focus).toBeCalled();
