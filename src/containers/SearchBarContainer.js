@@ -5,9 +5,9 @@ import getPeople from '../actions/getPeople';
 import setSearchType from '../actions/setSearchType';
 
 const mapStateToProps = (state, ownProps) => {
-    const initialVal = ownProps.match.url.split('/')[2];
+    const searchQuery = ownProps.match.url.split('/')[2] || null;
     return {
-        initialVal,
+        searchQuery,
         ...state.search
     };
 }

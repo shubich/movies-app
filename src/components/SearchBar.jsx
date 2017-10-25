@@ -4,37 +4,40 @@ import { Link } from 'react-router-dom';
 export class SearchBar extends React.Component {
     constructor(props) {
         super(props);
-        if (this.props.initialVal) {
-            this.props.getFilms(this.props.initialVal)
+        if (this.props.searchQuery) {
+            this.props.getFilms(this.props.searchQuery)
         }
     }
 
-    getContent(searchType) {
-        if (this.searchQuery.value) {
-            this.props.history.push(`/search/${this.searchQuery.value}`);
-            
-            switch(searchType) {
+    componentWillReceiveProps(nextProps) {
+        this.searchLine.value = nextProps.searchQuery || '';
+        if (
+            (this.props.searchQuery !== nextProps.searchQuery
+            || this.props.searchType !== nextProps.searchType)
+            && nextProps.searchQuery
+        ) {
+            switch (nextProps.searchType) {
                 case 'title':
-                    this.props.getFilms(this.searchQuery.value);
+                    this.props.getFilms(nextProps.searchQuery);
                     break;
                 case 'person':
-                    this.props.getPeople(this.searchQuery.value);
+                    this.props.getPeople(nextProps.searchQuery);
                     break;
             }
-            
-        } else {
-            this.searchQuery.focus();
         }
     }
 
     handleSubmit = (e) => {
         e.preventDefault();
-        this.getContent(this.props.searchType);
+        if (this.searchLine.value) {
+            this.props.history.push(`/search/${this.searchLine.value}`);          
+        } else {
+            this.searchLine.focus();
+        }
     }
 
     handleOptionChange = (changeEvent) => {
         this.props.setSearchType(changeEvent.target.value);
-        this.getContent(changeEvent.target.value);
     }
 
     setRef = (node) => {
@@ -49,9 +52,9 @@ export class SearchBar extends React.Component {
                     <form onSubmit={this.handleSubmit}>
                         <input 
                             type='text' 
-                            name='searchQuery'
+                            name='searchLine'
                             autoComplete='off'
-                            defaultValue={this.props.initialVal}
+                            defaultValue={this.props.searchQuery}
                             placeholder='Pulp Fiction'
                             ref={this.setRef}
                         />
