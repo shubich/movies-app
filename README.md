@@ -1,12 +1,8 @@
 # movies-app
 Single page application, which will allow users to search The Movie Database (TMDb)
 
-# Task 5 — Testing
+# Task 6 — Server side rendering
+Implement server rendering in your NodeJS application.
 
-**Tools**
-- jest
-- enzyme
-
-**Testing**
-- redux
-- snapshots
+**Docs**
+- http://redux.js.org/docs/recipes/ServerRendering.html
