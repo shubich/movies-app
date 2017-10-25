@@ -13,7 +13,7 @@ describe('async actions', () => {
     fetchMock.restore()
   })
 
-  it('creates GET_SIMILAR_FILMS_SUCCESS when fetching films has been done', () => {
+  it('creates GET_SIMILAR_FILMS_SUCCESS when fetching similar films has been done', () => {
     // Mock the fetch() global to always return the same value for GET requests to all URLs.
     fetchMock.get('*', {results: ['taxi', 'wanted']});
 
@@ -26,6 +26,16 @@ describe('async actions', () => {
     store.dispatch(getSimilarFilms(1)).then(() => {
         // return of async actions
         expect(store.getActions()).toEqual(expectedActions)
+    })
+  })
+
+  it('creates GET_SIMILAR_FILMS_FAILURE when fetching similar films has been done', () => {
+    fetchMock.get('*', 500);
+
+    const store = mockStore({ films: [] })
+
+    store.dispatch(getSimilarFilms(1)).then(() => {        
+        expect(store.getActions()[1].type).toEqual(types.GET_SIMILAR_FILMS_FAILURE)
     })
   })
 })

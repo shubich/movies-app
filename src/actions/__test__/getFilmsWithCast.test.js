@@ -28,4 +28,14 @@ describe('async actions', () => {
         expect(store.getActions()).toEqual(expectedActions)
     })
   })
+
+  it('creates GET_FILMS_FAILURE when fetching films has been done', () => {
+    fetchMock.get('*', 500);
+
+    const store = mockStore({ films: [] })
+
+    store.dispatch(getFilmWithCast(1)).then(() => {        
+        expect(store.getActions()[1].type).toEqual(types.GET_FILMS_FAILURE)
+    })
+  })
 })

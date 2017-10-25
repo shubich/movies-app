@@ -28,4 +28,14 @@ describe('async actions', () => {
         expect(store.getActions()).toEqual(expectedActions)
     })
   })
+
+  it('creates GET_PEOPLE_FAILURE when fetching people has been done', () => {
+    fetchMock.get('*', 500);
+
+    const store = mockStore({ people: [] })
+
+    store.dispatch(getPeople('test')).then(() => {        
+        expect(store.getActions()[1].type).toEqual(types.GET_PEOPLE_FAILURE)
+    })
+  })
 })
