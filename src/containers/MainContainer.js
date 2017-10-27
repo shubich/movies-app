@@ -1,34 +1,23 @@
 import { connect } from 'react-redux';
-import { Main } from '../components/Main';
-import getFilmDetails from '../actions/getFilmDetails';
+import Main from '../components/Main';
 import { sortFilms } from '../utils';
 
-const mapStateToProps = (state, ownProps) => {
-    if (state.search.searchType === 'title') {
-        return {
-            ...state.search,
-            ...state.films,
-            results: sortFilms(state.films.results, state.search.sortType)
-        };
-    } else if (state.search.searchType === 'person') {
-        return {
-            ...state.search,
-            ...state.people
-        };
-    }
-}
-
-const mapDispatchToProps = (dispatch) => {
+const mapStateToProps = (state) => {
+  if (state.search.searchType === 'title') {
     return {
-        onItemClick: (id) => {
-            //window.scrollTo(0, 0);
-        }
+      ...state.search,
+      ...state.films,
+      results: sortFilms(state.films.results, state.search.sortType),
     };
-}
+  } else if (state.search.searchType === 'person') {
+    return {
+      ...state.search,
+      ...state.people,
+    };
+  }
+  return {};
+};
 
-const MainContainer = connect(
-    mapStateToProps,
-    mapDispatchToProps
-) (Main);
+const MainContainer = connect(mapStateToProps)(Main);
 
 export default MainContainer;
