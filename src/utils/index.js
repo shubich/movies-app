@@ -53,13 +53,10 @@ export const handlePersonDetails = (details) => {
   handledDetails.popularity = (details.popularity)
     ? Math.round(details.popularity)
     : '';
-  return details;
+  return handledDetails;
 };
 
-export const encodeQueryData = (data) => {
-  const query = [];
-  for (const item in data) {
-    query.push(`${encodeURIComponent(item)}=${encodeURIComponent(data[item])}`);
-  }
-  return query.join('&');
-};
+export const jsonToQueryString = json => `?${
+  Object.keys(json).map(key => `${encodeURIComponent(key)}=${
+    encodeURIComponent(json[key])}`).join('&')}`;
+
