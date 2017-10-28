@@ -1,25 +1,23 @@
 import {
-    SET_SEARCH_TYPE,
-    SET_SORT_TYPE
+  SET_SEARCH_TYPE,
+  SET_SORT_TYPE,
 } from '../constants/Search';
 
-import { sortFilms } from '../utils';
-
 const initialState = {
-    searchType: 'title',
-    sortType: ''
-}
+  searchType: 'title',
+  sortType: '',
+};
 
 const search = (state = initialState, action) => {
-    switch(action.type) {
-        case SET_SEARCH_TYPE:
-            return { ...state, searchType: action.filter };
-        case SET_SORT_TYPE:
-            return { ...state, sortType: action.filter };
+  switch (action.type) {
+    case SET_SEARCH_TYPE:
+      return { ...state, searchType: action.filter };
+    case SET_SORT_TYPE:
+      return { ...state, sortType: action.filter };
 
-        default:
-            return state;
-    }
-}
+    default:
+      return state;
+  }
+};
 
 export default search;

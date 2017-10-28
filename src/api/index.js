@@ -5,57 +5,57 @@ const host = 'https://api.themoviedb.org/';
 export const imagePrefix = 'https://image.tmdb.org/t/p/w640';
 
 const paths = {
-    search: '3/search/movie',
-    movie: '3/movie/',
-    people: '3/search/person',
-    person: '3/person/',
-    discover: '3/discover/movie'
+  search: '3/search/movie',
+  movie: '3/movie/',
+  people: '3/search/person',
+  person: '3/person/',
+  discover: '3/discover/movie',
 };
 
 const queries = {
-    films: {
-        api_key: key,
-        language: 'en-US',
-        include_adult: 'false',
-        page: '1'
-    },
-    default: {
-        api_key: key        
-    }
-}
+  films: {
+    api_key: key,
+    language: 'en-US',
+    include_adult: 'false',
+    page: '1',
+  },
+  default: {
+    api_key: key,
+  },
+};
 
 export const requests = {
-    films: (query) => {
-        const queryString = encodeQueryData({...queries.films, query});
-        let url = `${host}${paths.search}?${queryString}`;
-        return fetch(url);
-    },
-    details: (id) => {
-        const queryString = encodeQueryData({...queries.default});
-        const url = `${host}${paths.movie}${id}?${queryString}`;    
-        return fetch(url);
-    },
-    similar: (id) => {
-        const queryString = encodeQueryData({...queries.default});
-        const url = `${host}${paths.movie}${id}/similar?${queryString}`;
-        return fetch(url);   
-    },
-    people: (query) => {
-        const queryString = encodeQueryData({...queries.default, query});
-        const url = `${host}${paths.people}?${queryString}`;
-        return fetch(url);   
-    },
-    person: (id) => {
-        const queryString = encodeQueryData({...queries.default});
-        const url = `${host}${paths.person}${id}?${queryString}`;    
-        return fetch(url);
-    },
-    filmsWithCast: (with_cast) => {
-        const queryString = encodeQueryData({...queries.default, with_cast});
-        const url = `${host}${paths.discover}?${queryString}`;    
-        return fetch(url);
-    }
-}
+  films: (query) => {
+    const queryString = encodeQueryData({ ...queries.films, query });
+    const url = `${host}${paths.search}?${queryString}`;
+    return fetch(url);
+  },
+  details: (id) => {
+    const queryString = encodeQueryData({ ...queries.default });
+    const url = `${host}${paths.movie}${id}?${queryString}`;
+    return fetch(url);
+  },
+  similar: (id) => {
+    const queryString = encodeQueryData({ ...queries.default });
+    const url = `${host}${paths.movie}${id}/similar?${queryString}`;
+    return fetch(url);
+  },
+  people: (query) => {
+    const queryString = encodeQueryData({ ...queries.default, query });
+    const url = `${host}${paths.people}?${queryString}`;
+    return fetch(url);
+  },
+  person: (id) => {
+    const queryString = encodeQueryData({ ...queries.default });
+    const url = `${host}${paths.person}${id}?${queryString}`;
+    return fetch(url);
+  },
+  filmsWithCast: (withCast) => {
+    const queryString = encodeQueryData({ ...queries.default, withCast });
+    const url = `${host}${paths.discover}?${queryString}`;
+    return fetch(url);
+  },
+};
 
 // https://www.npmjs.com/package/eslint-config-airbnb !!!
 

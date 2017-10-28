@@ -1,10 +1,16 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-export const Header = (props) => (
-    <header id='header'>
-        <div className='container'>
-            {props.children}
-        </div>
-    </header>
+const Header = props => (
+  <header id="header">
+    <div className="container">
+      {props.children}
+    </div>
+  </header>
 );
+
+Header.propTypes = {
+  children: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
+
+export default Header;

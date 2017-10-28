@@ -8,16 +8,16 @@ import filmDetails from '../reducers/filmDetails';
 import personDetails from '../reducers/personDetails';
 
 const moviesApp = combineReducers({
-    search,
-    films,
-    people,
-    filmDetails,
-    personDetails
+  search,
+  films,
+  people,
+  filmDetails,
+  personDetails,
 });
 
 const store = createStore(
-    moviesApp,
-    applyMiddleware(thunk, logger)
+  moviesApp,
+  applyMiddleware(thunk, logger),
 );
 
 export default store;
