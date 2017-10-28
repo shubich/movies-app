@@ -21,39 +21,38 @@ export const sortFilms = (films, field) => {
 };
 
 export const handleFilmDetails = (details) => {
-  details.vote_average = (details.vote_average < 10)
+  const handledDetails = { ...details };
+  handledDetails.vote_average = (details.vote_average < 10)
     ? details.vote_average.toFixed(1)
     : '';
 
-  details.genres = details.genres && details.genres
+  handledDetails.genres = details.genres && details.genres
     .map(genre => genre.name).join(', ');
 
-  details.release_date = (details.release_date)
+  handledDetails.release_date = (details.release_date)
     ? details.release_date.split('-')[0]
     : '';
 
-  details.runtime = (details.runtime)
+  handledDetails.runtime = (details.runtime)
     ? `${details.runtime} min`
     : '';
-
-  return details;
+  return handledDetails;
 };
 
 export const handlePersonDetails = (details) => {
-  details.birthday = (details.birthday)
+  const handledDetails = { ...details };
+  handledDetails.birthday = (details.birthday)
     ? `Born: ${handleDate(details.birthday)}`
     : '';
-  details.deathday = details.deathday
+  handledDetails.deathday = details.deathday
     ? `Died: ${handleDate(details.deathday)}`
     : '';
-  details.place_of_birth = (details.place_of_birth)
+  handledDetails.place_of_birth = (details.place_of_birth)
     ? ` in ${details.place_of_birth}`
     : '';
-  details.popularity = (details.popularity)
+  handledDetails.popularity = (details.popularity)
     ? Math.round(details.popularity)
     : '';
-
-
   return details;
 };
 

@@ -1,12 +1,10 @@
 import React from 'react';
-import { Footer } from '../Footer';
 import { shallow } from 'enzyme';
+import { Footer } from '../Footer';
 
 describe('Footer', () => {
-    it('renders correctly', () => {
-        const wrapper = shallow(
-            <Footer />
-        );
-        expect(wrapper).toMatchSnapshot();
-    });
-})
+  it('renders correctly', () => {
+    const wrapper = shallow(<Footer />);
+    expect(wrapper).toMatchSnapshot();
+  });
+});

@@ -17,7 +17,7 @@ const personDetails = (state = initialState, action) => {
     case GET_PERSON_DETAILS_REQUEST:
       return { details: {}, fetching: true, error: '' };
     case GET_PERSON_DETAILS_SUCCESS:
-      return { details: handlePersonDetails({ ...action.details }), fetching: false, error: '' };
+      return { details: handlePersonDetails(action.details), fetching: false, error: '' };
     case GET_PERSON_DETAILS_FAILURE:
       return { details: {}, fetching: false, error: action.error };
     default:
