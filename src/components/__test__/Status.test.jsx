@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Status } from '../Status';
+import Status from '../Status';
 
 let props;
 

@@ -29,7 +29,6 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <Link
-          onClick={[Function]}
           replace={false}
           to="/film/1"
         >
@@ -42,7 +41,6 @@ ShallowWrapper {
         >
           <Link
             className="title"
-            onClick={[Function]}
             replace={false}
             to="/film/1"
           >
@@ -70,7 +68,6 @@ ShallowWrapper {
           "children": <Poster
             path="/img1234_0987"
           />,
-          "onClick": [Function],
           "replace": false,
           "to": "/film/1",
         },
@@ -96,7 +93,6 @@ ShallowWrapper {
           "children": Array [
             <Link
               className="title"
-              onClick={[Function]}
               replace={false}
               to="/film/1"
             >
@@ -119,7 +115,6 @@ ShallowWrapper {
             "props": Object {
               "children": "Pulp Fiction",
               "className": "title",
-              "onClick": [Function],
               "replace": false,
               "to": "/film/1",
             },
@@ -164,7 +159,6 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <Link
-            onClick={[Function]}
             replace={false}
             to="/film/1"
           >
@@ -177,7 +171,6 @@ ShallowWrapper {
           >
             <Link
               className="title"
-              onClick={[Function]}
               replace={false}
               to="/film/1"
             >
@@ -205,7 +198,6 @@ ShallowWrapper {
             "children": <Poster
               path="/img1234_0987"
             />,
-            "onClick": [Function],
             "replace": false,
             "to": "/film/1",
           },
@@ -231,7 +223,6 @@ ShallowWrapper {
             "children": Array [
               <Link
                 className="title"
-                onClick={[Function]}
                 replace={false}
                 to="/film/1"
               >
@@ -254,7 +245,6 @@ ShallowWrapper {
               "props": Object {
                 "children": "Pulp Fiction",
                 "className": "title",
-                "onClick": [Function],
                 "replace": false,
                 "to": "/film/1",
               },
@@ -329,12 +319,11 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <Link
-          onClick={[Function]}
           replace={false}
           to="/film/2"
         >
           <Poster
-            path={undefined}
+            path=""
           />
         </Link>,
         <div
@@ -342,7 +331,6 @@ ShallowWrapper {
         >
           <Link
             className="title"
-            onClick={[Function]}
             replace={false}
             to="/film/2"
           >
@@ -363,9 +351,8 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "children": <Poster
-            path={undefined}
+            path=""
           />,
-          "onClick": [Function],
           "replace": false,
           "to": "/film/2",
         },
@@ -375,7 +362,7 @@ ShallowWrapper {
           "key": null,
           "nodeType": "function",
           "props": Object {
-            "path": undefined,
+            "path": "",
           },
           "ref": null,
           "rendered": null,
@@ -391,7 +378,6 @@ ShallowWrapper {
           "children": Array [
             <Link
               className="title"
-              onClick={[Function]}
               replace={false}
               to="/film/2"
             >
@@ -410,7 +396,6 @@ ShallowWrapper {
             "props": Object {
               "children": "Taxi",
               "className": "title",
-              "onClick": [Function],
               "replace": false,
               "to": "/film/2",
             },
@@ -444,12 +429,11 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <Link
-            onClick={[Function]}
             replace={false}
             to="/film/2"
           >
             <Poster
-              path={undefined}
+              path=""
             />
           </Link>,
           <div
@@ -457,7 +441,6 @@ ShallowWrapper {
           >
             <Link
               className="title"
-              onClick={[Function]}
               replace={false}
               to="/film/2"
             >
@@ -478,9 +461,8 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "children": <Poster
-              path={undefined}
+              path=""
             />,
-            "onClick": [Function],
             "replace": false,
             "to": "/film/2",
           },
@@ -490,7 +472,7 @@ ShallowWrapper {
             "key": null,
             "nodeType": "function",
             "props": Object {
-              "path": undefined,
+              "path": "",
             },
             "ref": null,
             "rendered": null,
@@ -506,7 +488,6 @@ ShallowWrapper {
             "children": Array [
               <Link
                 className="title"
-                onClick={[Function]}
                 replace={false}
                 to="/film/2"
               >
@@ -525,7 +506,6 @@ ShallowWrapper {
               "props": Object {
                 "children": "Taxi",
                 "className": "title",
-                "onClick": [Function],
                 "replace": false,
                 "to": "/film/2",
               },

@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Film } from '../Film';
+import Film from '../Film';
 
 let fullProps;
 let partialProps;

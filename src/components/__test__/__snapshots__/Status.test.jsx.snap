@@ -221,17 +221,28 @@ ShallowWrapper {
           >
             Sort by
           </span>
-          <a
+          <label
             className="link link-default"
-            onClick={[Function]}
           >
+            <input
+              checked={false}
+              onChange={[Function]}
+              type="radio"
+              value="date"
+            />
             release date
-          </a>
-          <span
+          </label>
+          <label
             className="link link-primary"
           >
+            <input
+              checked={true}
+              onChange={[Function]}
+              type="radio"
+              value="rating"
+            />
             rating
-          </span>
+          </label>
         </div>
       </div>,
       "id": "status",
@@ -259,17 +270,28 @@ ShallowWrapper {
             >
               Sort by
             </span>
-            <a
+            <label
               className="link link-default"
-              onClick={[Function]}
             >
+              <input
+                checked={false}
+                onChange={[Function]}
+                type="radio"
+                value="date"
+              />
               release date
-            </a>
-            <span
+            </label>
+            <label
               className="link link-primary"
             >
+              <input
+                checked={true}
+                onChange={[Function]}
+                type="radio"
+                value="rating"
+              />
               rating
-            </span>
+            </label>
           </div>,
         ],
         "className": "container",
@@ -309,17 +331,28 @@ ShallowWrapper {
               >
                 Sort by
               </span>,
-              <a
+              <label
                 className="link link-default"
-                onClick={[Function]}
               >
+                <input
+                  checked={false}
+                  onChange={[Function]}
+                  type="radio"
+                  value="date"
+                />
                 release date
-              </a>,
-              <span
+              </label>,
+              <label
                 className="link link-primary"
               >
+                <input
+                  checked={true}
+                  onChange={[Function]}
+                  type="radio"
+                  value="rating"
+                />
                 rating
-              </span>,
+              </label>,
             ],
             "className": "sort",
           },
@@ -342,25 +375,72 @@ ShallowWrapper {
               "key": null,
               "nodeType": "host",
               "props": Object {
-                "children": "release date",
+                "children": Array [
+                  <input
+                    checked={false}
+                    onChange={[Function]}
+                    type="radio"
+                    value="date"
+                  />,
+                  "release date",
+                ],
                 "className": "link link-default",
-                "onClick": [Function],
               },
               "ref": null,
-              "rendered": "release date",
-              "type": "a",
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": null,
+                  "nodeType": "host",
+                  "props": Object {
+                    "checked": false,
+                    "onChange": [Function],
+                    "type": "radio",
+                    "value": "date",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "input",
+                },
+                "release date",
+              ],
+              "type": "label",
             },
             Object {
               "instance": null,
               "key": null,
               "nodeType": "host",
               "props": Object {
-                "children": "rating",
+                "children": Array [
+                  <input
+                    checked={true}
+                    onChange={[Function]}
+                    type="radio"
+                    value="rating"
+                  />,
+                  "rating",
+                ],
                 "className": "link link-primary",
               },
               "ref": null,
-              "rendered": "rating",
-              "type": "span",
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": null,
+                  "nodeType": "host",
+                  "props": Object {
+                    "checked": true,
+                    "onChange": [Function],
+                    "type": "radio",
+                    "value": "rating",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "input",
+                },
+                "rating",
+              ],
+              "type": "label",
             },
           ],
           "type": "div",
@@ -395,17 +475,28 @@ ShallowWrapper {
             >
               Sort by
             </span>
-            <a
+            <label
               className="link link-default"
-              onClick={[Function]}
             >
+              <input
+                checked={false}
+                onChange={[Function]}
+                type="radio"
+                value="date"
+              />
               release date
-            </a>
-            <span
+            </label>
+            <label
               className="link link-primary"
             >
+              <input
+                checked={true}
+                onChange={[Function]}
+                type="radio"
+                value="rating"
+              />
               rating
-            </span>
+            </label>
           </div>
         </div>,
         "id": "status",
@@ -433,17 +524,28 @@ ShallowWrapper {
               >
                 Sort by
               </span>
-              <a
+              <label
                 className="link link-default"
-                onClick={[Function]}
               >
+                <input
+                  checked={false}
+                  onChange={[Function]}
+                  type="radio"
+                  value="date"
+                />
                 release date
-              </a>
-              <span
+              </label>
+              <label
                 className="link link-primary"
               >
+                <input
+                  checked={true}
+                  onChange={[Function]}
+                  type="radio"
+                  value="rating"
+                />
                 rating
-              </span>
+              </label>
             </div>,
           ],
           "className": "container",
@@ -483,17 +585,28 @@ ShallowWrapper {
                 >
                   Sort by
                 </span>,
-                <a
+                <label
                   className="link link-default"
-                  onClick={[Function]}
                 >
+                  <input
+                    checked={false}
+                    onChange={[Function]}
+                    type="radio"
+                    value="date"
+                  />
                   release date
-                </a>,
-                <span
+                </label>,
+                <label
                   className="link link-primary"
                 >
+                  <input
+                    checked={true}
+                    onChange={[Function]}
+                    type="radio"
+                    value="rating"
+                  />
                   rating
-                </span>,
+                </label>,
               ],
               "className": "sort",
             },
@@ -516,25 +629,72 @@ ShallowWrapper {
                 "key": null,
                 "nodeType": "host",
                 "props": Object {
-                  "children": "release date",
+                  "children": Array [
+                    <input
+                      checked={false}
+                      onChange={[Function]}
+                      type="radio"
+                      value="date"
+                    />,
+                    "release date",
+                  ],
                   "className": "link link-default",
-                  "onClick": [Function],
                 },
                 "ref": null,
-                "rendered": "release date",
-                "type": "a",
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": null,
+                    "nodeType": "host",
+                    "props": Object {
+                      "checked": false,
+                      "onChange": [Function],
+                      "type": "radio",
+                      "value": "date",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "input",
+                  },
+                  "release date",
+                ],
+                "type": "label",
               },
               Object {
                 "instance": null,
                 "key": null,
                 "nodeType": "host",
                 "props": Object {
-                  "children": "rating",
+                  "children": Array [
+                    <input
+                      checked={true}
+                      onChange={[Function]}
+                      type="radio"
+                      value="rating"
+                    />,
+                    "rating",
+                  ],
                   "className": "link link-primary",
                 },
                 "ref": null,
-                "rendered": "rating",
-                "type": "span",
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": null,
+                    "nodeType": "host",
+                    "props": Object {
+                      "checked": true,
+                      "onChange": [Function],
+                      "type": "radio",
+                      "value": "rating",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "input",
+                  },
+                  "rating",
+                ],
+                "type": "label",
               },
             ],
             "type": "div",
@@ -603,18 +763,28 @@ ShallowWrapper {
           >
             Sort by
           </span>
-          <a
+          <label
             className="link link-default"
-            onClick={[Function]}
           >
+            <input
+              checked={false}
+              onChange={[Function]}
+              type="radio"
+              value="date"
+            />
             release date
-          </a>
-          <a
+          </label>
+          <label
             className="link link-default"
-            onClick={[Function]}
           >
+            <input
+              checked={false}
+              onChange={[Function]}
+              type="radio"
+              value="rating"
+            />
             rating
-          </a>
+          </label>
         </div>
       </div>,
       "id": "status",
@@ -642,18 +812,28 @@ ShallowWrapper {
             >
               Sort by
             </span>
-            <a
+            <label
               className="link link-default"
-              onClick={[Function]}
             >
+              <input
+                checked={false}
+                onChange={[Function]}
+                type="radio"
+                value="date"
+              />
               release date
-            </a>
-            <a
+            </label>
+            <label
               className="link link-default"
-              onClick={[Function]}
             >
+              <input
+                checked={false}
+                onChange={[Function]}
+                type="radio"
+                value="rating"
+              />
               rating
-            </a>
+            </label>
           </div>,
         ],
         "className": "container",
@@ -693,18 +873,28 @@ ShallowWrapper {
               >
                 Sort by
               </span>,
-              <a
+              <label
                 className="link link-default"
-                onClick={[Function]}
               >
+                <input
+                  checked={false}
+                  onChange={[Function]}
+                  type="radio"
+                  value="date"
+                />
                 release date
-              </a>,
-              <a
+              </label>,
+              <label
                 className="link link-default"
-                onClick={[Function]}
               >
+                <input
+                  checked={false}
+                  onChange={[Function]}
+                  type="radio"
+                  value="rating"
+                />
                 rating
-              </a>,
+              </label>,
             ],
             "className": "sort",
           },
@@ -727,26 +917,72 @@ ShallowWrapper {
               "key": null,
               "nodeType": "host",
               "props": Object {
-                "children": "release date",
+                "children": Array [
+                  <input
+                    checked={false}
+                    onChange={[Function]}
+                    type="radio"
+                    value="date"
+                  />,
+                  "release date",
+                ],
                 "className": "link link-default",
-                "onClick": [Function],
               },
               "ref": null,
-              "rendered": "release date",
-              "type": "a",
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": null,
+                  "nodeType": "host",
+                  "props": Object {
+                    "checked": false,
+                    "onChange": [Function],
+                    "type": "radio",
+                    "value": "date",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "input",
+                },
+                "release date",
+              ],
+              "type": "label",
             },
             Object {
               "instance": null,
               "key": null,
               "nodeType": "host",
               "props": Object {
-                "children": "rating",
+                "children": Array [
+                  <input
+                    checked={false}
+                    onChange={[Function]}
+                    type="radio"
+                    value="rating"
+                  />,
+                  "rating",
+                ],
                 "className": "link link-default",
-                "onClick": [Function],
               },
               "ref": null,
-              "rendered": "rating",
-              "type": "a",
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": null,
+                  "nodeType": "host",
+                  "props": Object {
+                    "checked": false,
+                    "onChange": [Function],
+                    "type": "radio",
+                    "value": "rating",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "input",
+                },
+                "rating",
+              ],
+              "type": "label",
             },
           ],
           "type": "div",
@@ -781,18 +1017,28 @@ ShallowWrapper {
             >
               Sort by
             </span>
-            <a
+            <label
               className="link link-default"
-              onClick={[Function]}
             >
+              <input
+                checked={false}
+                onChange={[Function]}
+                type="radio"
+                value="date"
+              />
               release date
-            </a>
-            <a
+            </label>
+            <label
               className="link link-default"
-              onClick={[Function]}
             >
+              <input
+                checked={false}
+                onChange={[Function]}
+                type="radio"
+                value="rating"
+              />
               rating
-            </a>
+            </label>
           </div>
         </div>,
         "id": "status",
@@ -820,18 +1066,28 @@ ShallowWrapper {
               >
                 Sort by
               </span>
-              <a
+              <label
                 className="link link-default"
-                onClick={[Function]}
               >
+                <input
+                  checked={false}
+                  onChange={[Function]}
+                  type="radio"
+                  value="date"
+                />
                 release date
-              </a>
-              <a
+              </label>
+              <label
                 className="link link-default"
-                onClick={[Function]}
               >
+                <input
+                  checked={false}
+                  onChange={[Function]}
+                  type="radio"
+                  value="rating"
+                />
                 rating
-              </a>
+              </label>
             </div>,
           ],
           "className": "container",
@@ -871,18 +1127,28 @@ ShallowWrapper {
                 >
                   Sort by
                 </span>,
-                <a
+                <label
                   className="link link-default"
-                  onClick={[Function]}
                 >
+                  <input
+                    checked={false}
+                    onChange={[Function]}
+                    type="radio"
+                    value="date"
+                  />
                   release date
-                </a>,
-                <a
+                </label>,
+                <label
                   className="link link-default"
-                  onClick={[Function]}
                 >
+                  <input
+                    checked={false}
+                    onChange={[Function]}
+                    type="radio"
+                    value="rating"
+                  />
                   rating
-                </a>,
+                </label>,
               ],
               "className": "sort",
             },
@@ -905,26 +1171,72 @@ ShallowWrapper {
                 "key": null,
                 "nodeType": "host",
                 "props": Object {
-                  "children": "release date",
+                  "children": Array [
+                    <input
+                      checked={false}
+                      onChange={[Function]}
+                      type="radio"
+                      value="date"
+                    />,
+                    "release date",
+                  ],
                   "className": "link link-default",
-                  "onClick": [Function],
                 },
                 "ref": null,
-                "rendered": "release date",
-                "type": "a",
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": null,
+                    "nodeType": "host",
+                    "props": Object {
+                      "checked": false,
+                      "onChange": [Function],
+                      "type": "radio",
+                      "value": "date",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "input",
+                  },
+                  "release date",
+                ],
+                "type": "label",
               },
               Object {
                 "instance": null,
                 "key": null,
                 "nodeType": "host",
                 "props": Object {
-                  "children": "rating",
+                  "children": Array [
+                    <input
+                      checked={false}
+                      onChange={[Function]}
+                      type="radio"
+                      value="rating"
+                    />,
+                    "rating",
+                  ],
                   "className": "link link-default",
-                  "onClick": [Function],
                 },
                 "ref": null,
-                "rendered": "rating",
-                "type": "a",
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": null,
+                    "nodeType": "host",
+                    "props": Object {
+                      "checked": false,
+                      "onChange": [Function],
+                      "type": "radio",
+                      "value": "rating",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "input",
+                  },
+                  "rating",
+                ],
+                "type": "label",
               },
             ],
             "type": "div",
@@ -994,17 +1306,28 @@ ShallowWrapper {
           >
             Sort by
           </span>
-          <span
+          <label
             className="link link-primary"
           >
+            <input
+              checked={true}
+              onChange={[Function]}
+              type="radio"
+              value="date"
+            />
             release date
-          </span>
-          <a
+          </label>
+          <label
             className="link link-default"
-            onClick={[Function]}
           >
+            <input
+              checked={false}
+              onChange={[Function]}
+              type="radio"
+              value="rating"
+            />
             rating
-          </a>
+          </label>
         </div>
       </div>,
       "id": "status",
@@ -1032,17 +1355,28 @@ ShallowWrapper {
             >
               Sort by
             </span>
-            <span
+            <label
               className="link link-primary"
             >
+              <input
+                checked={true}
+                onChange={[Function]}
+                type="radio"
+                value="date"
+              />
               release date
-            </span>
-            <a
+            </label>
+            <label
               className="link link-default"
-              onClick={[Function]}
             >
+              <input
+                checked={false}
+                onChange={[Function]}
+                type="radio"
+                value="rating"
+              />
               rating
-            </a>
+            </label>
           </div>,
         ],
         "className": "container",
@@ -1082,17 +1416,28 @@ ShallowWrapper {
               >
                 Sort by
               </span>,
-              <span
+              <label
                 className="link link-primary"
               >
+                <input
+                  checked={true}
+                  onChange={[Function]}
+                  type="radio"
+                  value="date"
+                />
                 release date
-              </span>,
-              <a
+              </label>,
+              <label
                 className="link link-default"
-                onClick={[Function]}
               >
+                <input
+                  checked={false}
+                  onChange={[Function]}
+                  type="radio"
+                  value="rating"
+                />
                 rating
-              </a>,
+              </label>,
             ],
             "className": "sort",
           },
@@ -1115,25 +1460,72 @@ ShallowWrapper {
               "key": null,
               "nodeType": "host",
               "props": Object {
-                "children": "release date",
+                "children": Array [
+                  <input
+                    checked={true}
+                    onChange={[Function]}
+                    type="radio"
+                    value="date"
+                  />,
+                  "release date",
+                ],
                 "className": "link link-primary",
               },
               "ref": null,
-              "rendered": "release date",
-              "type": "span",
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": null,
+                  "nodeType": "host",
+                  "props": Object {
+                    "checked": true,
+                    "onChange": [Function],
+                    "type": "radio",
+                    "value": "date",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "input",
+                },
+                "release date",
+              ],
+              "type": "label",
             },
             Object {
               "instance": null,
               "key": null,
               "nodeType": "host",
               "props": Object {
-                "children": "rating",
+                "children": Array [
+                  <input
+                    checked={false}
+                    onChange={[Function]}
+                    type="radio"
+                    value="rating"
+                  />,
+                  "rating",
+                ],
                 "className": "link link-default",
-                "onClick": [Function],
               },
               "ref": null,
-              "rendered": "rating",
-              "type": "a",
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": null,
+                  "nodeType": "host",
+                  "props": Object {
+                    "checked": false,
+                    "onChange": [Function],
+                    "type": "radio",
+                    "value": "rating",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "input",
+                },
+                "rating",
+              ],
+              "type": "label",
             },
           ],
           "type": "div",
@@ -1168,17 +1560,28 @@ ShallowWrapper {
             >
               Sort by
             </span>
-            <span
+            <label
               className="link link-primary"
             >
+              <input
+                checked={true}
+                onChange={[Function]}
+                type="radio"
+                value="date"
+              />
               release date
-            </span>
-            <a
+            </label>
+            <label
               className="link link-default"
-              onClick={[Function]}
             >
+              <input
+                checked={false}
+                onChange={[Function]}
+                type="radio"
+                value="rating"
+              />
               rating
-            </a>
+            </label>
           </div>
         </div>,
         "id": "status",
@@ -1206,17 +1609,28 @@ ShallowWrapper {
               >
                 Sort by
               </span>
-              <span
+              <label
                 className="link link-primary"
               >
+                <input
+                  checked={true}
+                  onChange={[Function]}
+                  type="radio"
+                  value="date"
+                />
                 release date
-              </span>
-              <a
+              </label>
+              <label
                 className="link link-default"
-                onClick={[Function]}
               >
+                <input
+                  checked={false}
+                  onChange={[Function]}
+                  type="radio"
+                  value="rating"
+                />
                 rating
-              </a>
+              </label>
             </div>,
           ],
           "className": "container",
@@ -1256,17 +1670,28 @@ ShallowWrapper {
                 >
                   Sort by
                 </span>,
-                <span
+                <label
                   className="link link-primary"
                 >
+                  <input
+                    checked={true}
+                    onChange={[Function]}
+                    type="radio"
+                    value="date"
+                  />
                   release date
-                </span>,
-                <a
+                </label>,
+                <label
                   className="link link-default"
-                  onClick={[Function]}
                 >
+                  <input
+                    checked={false}
+                    onChange={[Function]}
+                    type="radio"
+                    value="rating"
+                  />
                   rating
-                </a>,
+                </label>,
               ],
               "className": "sort",
             },
@@ -1289,25 +1714,72 @@ ShallowWrapper {
                 "key": null,
                 "nodeType": "host",
                 "props": Object {
-                  "children": "release date",
+                  "children": Array [
+                    <input
+                      checked={true}
+                      onChange={[Function]}
+                      type="radio"
+                      value="date"
+                    />,
+                    "release date",
+                  ],
                   "className": "link link-primary",
                 },
                 "ref": null,
-                "rendered": "release date",
-                "type": "span",
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": null,
+                    "nodeType": "host",
+                    "props": Object {
+                      "checked": true,
+                      "onChange": [Function],
+                      "type": "radio",
+                      "value": "date",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "input",
+                  },
+                  "release date",
+                ],
+                "type": "label",
               },
               Object {
                 "instance": null,
                 "key": null,
                 "nodeType": "host",
                 "props": Object {
-                  "children": "rating",
+                  "children": Array [
+                    <input
+                      checked={false}
+                      onChange={[Function]}
+                      type="radio"
+                      value="rating"
+                    />,
+                    "rating",
+                  ],
                   "className": "link link-default",
-                  "onClick": [Function],
                 },
                 "ref": null,
-                "rendered": "rating",
-                "type": "a",
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": null,
+                    "nodeType": "host",
+                    "props": Object {
+                      "checked": false,
+                      "onChange": [Function],
+                      "type": "radio",
+                      "value": "rating",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "input",
+                  },
+                  "rating",
+                ],
+                "type": "label",
               },
             ],
             "type": "div",

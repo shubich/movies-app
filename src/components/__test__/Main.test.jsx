@@ -1,6 +1,6 @@
 import React from 'react';
-import { Main } from '../Main';
 import { shallow } from 'enzyme';
+import Main from '../Main';
 
 let props;
 

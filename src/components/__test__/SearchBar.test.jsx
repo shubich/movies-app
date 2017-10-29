@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import { SearchBar } from '../SearchBar';
+import SearchBar from '../SearchBar';
 
 let props;
 
