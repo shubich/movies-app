@@ -7,10 +7,7 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <FilmDetails
     details={
       Object {
-        "genres": Array [
-          "Thriller",
-          "Crime",
-        ],
+        "genres": "Thriller, Crime",
         "overview": "Lorem ipsum dolor sit amet.",
         "poster_path": "/img1234_0987",
         "release_date": "1999",
@@ -19,6 +16,7 @@ ShallowWrapper {
         "vote_average": "8.3",
       }
     }
+    fetching={false}
     getFilmDetails={[Function]}
     getSimilarFilms={[Function]}
     match={
@@ -65,8 +63,7 @@ ShallowWrapper {
           <p
             className="genre text-basic"
           >
-            Thriller
-            Crime
+            Thriller, Crime
           </p>
           <p
             className="numbers"
@@ -118,8 +115,7 @@ ShallowWrapper {
             <p
               className="genre text-basic"
             >
-              Thriller
-              Crime
+              Thriller, Crime
             </p>
             <p
               className="numbers"
@@ -178,8 +174,7 @@ ShallowWrapper {
               <p
                 className="genre text-basic"
               >
-                Thriller
-                Crime
+                Thriller, Crime
               </p>,
               <p
                 className="numbers"
@@ -257,17 +252,11 @@ ShallowWrapper {
               "key": null,
               "nodeType": "host",
               "props": Object {
-                "children": Array [
-                  "Thriller",
-                  "Crime",
-                ],
+                "children": "Thriller, Crime",
                 "className": "genre text-basic",
               },
               "ref": null,
-              "rendered": Array [
-                "Thriller",
-                "Crime",
-              ],
+              "rendered": "Thriller, Crime",
               "type": "p",
             },
             Object {
@@ -368,8 +357,7 @@ ShallowWrapper {
             <p
               className="genre text-basic"
             >
-              Thriller
-              Crime
+              Thriller, Crime
             </p>
             <p
               className="numbers"
@@ -421,8 +409,7 @@ ShallowWrapper {
               <p
                 className="genre text-basic"
               >
-                Thriller
-                Crime
+                Thriller, Crime
               </p>
               <p
                 className="numbers"
@@ -481,8 +468,7 @@ ShallowWrapper {
                 <p
                   className="genre text-basic"
                 >
-                  Thriller
-                  Crime
+                  Thriller, Crime
                 </p>,
                 <p
                   className="numbers"
@@ -560,17 +546,11 @@ ShallowWrapper {
                 "key": null,
                 "nodeType": "host",
                 "props": Object {
-                  "children": Array [
-                    "Thriller",
-                    "Crime",
-                  ],
+                  "children": "Thriller, Crime",
                   "className": "genre text-basic",
                 },
                 "ref": null,
-                "rendered": Array [
-                  "Thriller",
-                  "Crime",
-                ],
+                "rendered": "Thriller, Crime",
                 "type": "p",
               },
               Object {
@@ -659,10 +639,7 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <FilmDetails
     details={
       Object {
-        "genres": Array [
-          "Thriller",
-          "Crime",
-        ],
+        "genres": "Thriller, Crime",
         "overview": "Lorem ipsum dolor sit amet.",
         "poster_path": "/img1234_0987",
         "release_date": "1999",
@@ -774,10 +751,7 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <FilmDetails
     details={
       Object {
-        "genres": Array [
-          "Thriller",
-          "Crime",
-        ],
+        "genres": "Thriller, Crime",
         "overview": "Lorem ipsum dolor sit amet.",
         "poster_path": "/img1234_0987",
         "release_date": "1999",
@@ -786,6 +760,7 @@ ShallowWrapper {
         "vote_average": "8.3",
       }
     }
+    fetching={false}
     getFilmDetails={[Function]}
     getSimilarFilms={[Function]}
     match={
@@ -832,8 +807,7 @@ ShallowWrapper {
           <p
             className="genre text-basic"
           >
-            Thriller
-            Crime
+            Thriller, Crime
           </p>
           <p
             className="numbers"
@@ -885,8 +859,7 @@ ShallowWrapper {
             <p
               className="genre text-basic"
             >
-              Thriller
-              Crime
+              Thriller, Crime
             </p>
             <p
               className="numbers"
@@ -945,8 +918,7 @@ ShallowWrapper {
               <p
                 className="genre text-basic"
               >
-                Thriller
-                Crime
+                Thriller, Crime
               </p>,
               <p
                 className="numbers"
@@ -1024,17 +996,11 @@ ShallowWrapper {
               "key": null,
               "nodeType": "host",
               "props": Object {
-                "children": Array [
-                  "Thriller",
-                  "Crime",
-                ],
+                "children": "Thriller, Crime",
                 "className": "genre text-basic",
               },
               "ref": null,
-              "rendered": Array [
-                "Thriller",
-                "Crime",
-              ],
+              "rendered": "Thriller, Crime",
               "type": "p",
             },
             Object {
@@ -1135,8 +1101,7 @@ ShallowWrapper {
             <p
               className="genre text-basic"
             >
-              Thriller
-              Crime
+              Thriller, Crime
             </p>
             <p
               className="numbers"
@@ -1188,8 +1153,7 @@ ShallowWrapper {
               <p
                 className="genre text-basic"
               >
-                Thriller
-                Crime
+                Thriller, Crime
               </p>
               <p
                 className="numbers"
@@ -1248,8 +1212,7 @@ ShallowWrapper {
                 <p
                   className="genre text-basic"
                 >
-                  Thriller
-                  Crime
+                  Thriller, Crime
                 </p>,
                 <p
                   className="numbers"
@@ -1327,17 +1290,11 @@ ShallowWrapper {
                 "key": null,
                 "nodeType": "host",
                 "props": Object {
-                  "children": Array [
-                    "Thriller",
-                    "Crime",
-                  ],
+                  "children": "Thriller, Crime",
                   "className": "genre text-basic",
                 },
                 "ref": null,
-                "rendered": Array [
-                  "Thriller",
-                  "Crime",
-                ],
+                "rendered": "Thriller, Crime",
                 "type": "p",
               },
               Object {
@@ -1424,7 +1381,8 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <FilmDetails
-    details={Array []}
+    details={Object {}}
+    fetching={false}
     getFilmDetails={[Function]}
     getSimilarFilms={[Function]}
     match={

@@ -11,14 +11,12 @@ ShallowWrapper {
         "birthday": "8.3",
         "deathday": "154",
         "name": "Pulp Fiction",
-        "place_of_birth": Array [
-          "Thriller",
-          "Crime",
-        ],
-        "popularity": "1999",
+        "place_of_birth": "Philadelphia, Pennsylvania, USA",
+        "popularity": 11,
         "profile_path": "/img1234_0987",
       }
     }
+    fetching={false}
     getFilmsWithCast={[Function]}
     getPersonDetails={[Function]}
     setSearchType={[Function]}
@@ -53,13 +51,13 @@ ShallowWrapper {
             <span
               className="rating"
             >
-              1999
+              11
             </span>
           </h2>
           <p
             className="numbers"
           >
-            8.3Thriller,Crime
+            8.3Philadelphia, Pennsylvania, USA
           </p>
           <p
             className="numbers"
@@ -96,13 +94,13 @@ ShallowWrapper {
               <span
                 className="rating"
               >
-                1999
+                11
               </span>
             </h2>
             <p
               className="numbers"
             >
-              8.3Thriller,Crime
+              8.3Philadelphia, Pennsylvania, USA
             </p>
             <p
               className="numbers"
@@ -146,13 +144,13 @@ ShallowWrapper {
                 <span
                   className="rating"
                 >
-                  1999
+                  11
                 </span>
               </h2>,
               <p
                 className="numbers"
               >
-                8.3Thriller,Crime
+                8.3Philadelphia, Pennsylvania, USA
               </p>,
               <p
                 className="numbers"
@@ -183,7 +181,7 @@ ShallowWrapper {
                   <span
                     className="rating"
                   >
-                    1999
+                    11
                   </span>,
                 ],
               },
@@ -206,11 +204,11 @@ ShallowWrapper {
                   "key": null,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "1999",
+                    "children": 11,
                     "className": "rating",
                   },
                   "ref": null,
-                  "rendered": "1999",
+                  "rendered": 11,
                   "type": "span",
                 },
               ],
@@ -221,11 +219,11 @@ ShallowWrapper {
               "key": null,
               "nodeType": "host",
               "props": Object {
-                "children": "8.3Thriller,Crime",
+                "children": "8.3Philadelphia, Pennsylvania, USA",
                 "className": "numbers",
               },
               "ref": null,
-              "rendered": "8.3Thriller,Crime",
+              "rendered": "8.3Philadelphia, Pennsylvania, USA",
               "type": "p",
             },
             Object {
@@ -284,13 +282,13 @@ ShallowWrapper {
               <span
                 className="rating"
               >
-                1999
+                11
               </span>
             </h2>
             <p
               className="numbers"
             >
-              8.3Thriller,Crime
+              8.3Philadelphia, Pennsylvania, USA
             </p>
             <p
               className="numbers"
@@ -327,13 +325,13 @@ ShallowWrapper {
                 <span
                   className="rating"
                 >
-                  1999
+                  11
                 </span>
               </h2>
               <p
                 className="numbers"
               >
-                8.3Thriller,Crime
+                8.3Philadelphia, Pennsylvania, USA
               </p>
               <p
                 className="numbers"
@@ -377,13 +375,13 @@ ShallowWrapper {
                   <span
                     className="rating"
                   >
-                    1999
+                    11
                   </span>
                 </h2>,
                 <p
                   className="numbers"
                 >
-                  8.3Thriller,Crime
+                  8.3Philadelphia, Pennsylvania, USA
                 </p>,
                 <p
                   className="numbers"
@@ -414,7 +412,7 @@ ShallowWrapper {
                     <span
                       className="rating"
                     >
-                      1999
+                      11
                     </span>,
                   ],
                 },
@@ -437,11 +435,11 @@ ShallowWrapper {
                     "key": null,
                     "nodeType": "host",
                     "props": Object {
-                      "children": "1999",
+                      "children": 11,
                       "className": "rating",
                     },
                     "ref": null,
-                    "rendered": "1999",
+                    "rendered": 11,
                     "type": "span",
                   },
                 ],
@@ -452,11 +450,11 @@ ShallowWrapper {
                 "key": null,
                 "nodeType": "host",
                 "props": Object {
-                  "children": "8.3Thriller,Crime",
+                  "children": "8.3Philadelphia, Pennsylvania, USA",
                   "className": "numbers",
                 },
                 "ref": null,
-                "rendered": "8.3Thriller,Crime",
+                "rendered": "8.3Philadelphia, Pennsylvania, USA",
                 "type": "p",
               },
               Object {
@@ -513,11 +511,8 @@ ShallowWrapper {
         "birthday": "8.3",
         "deathday": "154",
         "name": "Pulp Fiction",
-        "place_of_birth": Array [
-          "Thriller",
-          "Crime",
-        ],
-        "popularity": "1999",
+        "place_of_birth": "Philadelphia, Pennsylvania, USA",
+        "popularity": 11,
         "profile_path": "/img1234_0987",
       }
     }
@@ -616,7 +611,8 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <PersonDetails
-    details={Array []}
+    details={Object {}}
+    fetching={false}
     getFilmsWithCast={[Function]}
     getPersonDetails={[Function]}
     setSearchType={[Function]}

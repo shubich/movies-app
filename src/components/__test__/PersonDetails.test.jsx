@@ -10,15 +10,16 @@ describe('PersonDetails', () => {
       details: {
         name: 'Pulp Fiction',
         profile_path: '/img1234_0987',
-        popularity: '1999',
+        popularity: 11,
         birthday: '8.3',
-        place_of_birth: ['Thriller', 'Crime'],
+        place_of_birth: 'Philadelphia, Pennsylvania, USA',
         deathday: '154',
         biography: 'Lorem ipsum dolor sit amet.',
       },
       getPersonDetails: jest.fn(),
       getFilmsWithCast: jest.fn(),
       setSearchType: jest.fn(),
+      fetching: false,
     };
   });
 
@@ -33,7 +34,7 @@ describe('PersonDetails', () => {
   });
 
   it('renders correctly without details', () => {
-    const wrapper = shallow(<PersonDetails {...props} details={[]} />);
+    const wrapper = shallow(<PersonDetails {...props} details={{}} />);
     expect(wrapper).toMatchSnapshot();
   });
 });

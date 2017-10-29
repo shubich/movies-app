@@ -13,8 +13,9 @@ describe('Status', () => {
           id: '680',
         },
       },
-      count: '20',
+      count: 20,
       searchType: 'title',
+      sortType: '',
       handleSort: jest.fn(),
     };
   });
@@ -39,22 +40,22 @@ describe('Status', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('renders correctly without props', () => {
-    const wrapper = shallow(<Status />);
+  it('renders correctly with empty results', () => {
+    const wrapper = shallow(<Status {...props} count={0} />);
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should call handleSort with "date"', () => {
     const wrapper = shallow(<Status {...props} sortType="rating" />);
-    wrapper.find('a').simulate('click');
+    wrapper.find('[value="date"]').simulate('change');
 
-    expect(props.handleSort).toBeCalledWith('date');
+    expect(props.handleSort).toBeCalled();
   });
 
   it('should call handleSort with "rating"', () => {
     const wrapper = shallow(<Status {...props} sortType="date" />);
-    wrapper.find('a').simulate('click');
+    wrapper.find('[value="rating"]').simulate('change');
 
-    expect(props.handleSort).toBeCalledWith('rating');
+    expect(props.handleSort).toBeCalled();
   });
 });

@@ -40,6 +40,11 @@ describe('Main', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('renders correctly with another searchType', () => {
+    const wrapper = shallow(<Main {...props} searchType="person" />);
+    expect(wrapper).toMatchSnapshot();
+  });
+
   it('renders correctly without searchType', () => {
     const wrapper = shallow(<Main {...props} searchType="" />);
     expect(wrapper).toMatchSnapshot();

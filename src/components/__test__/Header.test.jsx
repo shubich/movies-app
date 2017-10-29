@@ -7,7 +7,9 @@ let props;
 describe('Header', () => {
   beforeEach(() => {
     props = {
-      children: 'test',
+      children: [
+        <div key={1}>test</div>,
+      ],
     };
   });
 

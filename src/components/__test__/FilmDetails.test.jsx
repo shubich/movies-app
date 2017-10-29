@@ -12,7 +12,7 @@ describe('FilmDetails', () => {
         poster_path: '/img1234_0987',
         release_date: '1999',
         vote_average: '8.3',
-        genres: ['Thriller', 'Crime'],
+        genres: 'Thriller, Crime',
         runtime: '154',
         overview: 'Lorem ipsum dolor sit amet.',
       },
@@ -23,6 +23,7 @@ describe('FilmDetails', () => {
       },
       getFilmDetails: jest.fn(),
       getSimilarFilms: jest.fn(),
+      fetching: false,
     };
   });
 
@@ -43,7 +44,7 @@ describe('FilmDetails', () => {
   });
 
   it('renders correctly without details', () => {
-    const wrapper = shallow(<FilmDetails {...props} details={[]} />);
+    const wrapper = shallow(<FilmDetails {...props} details={{}} />);
     expect(wrapper).toMatchSnapshot();
   });
 });

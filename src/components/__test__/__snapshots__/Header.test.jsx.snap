@@ -5,7 +5,9 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Header>
-    test
+    <div>
+      test
+    </div>
   </Header>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -22,7 +24,9 @@ ShallowWrapper {
       "children": <div
         className="container"
       >
-        test
+        <div>
+          test
+        </div>
       </div>,
       "id": "header",
     },
@@ -32,11 +36,27 @@ ShallowWrapper {
       "key": null,
       "nodeType": "host",
       "props": Object {
-        "children": "test",
+        "children": Array [
+          <div>
+            test
+          </div>,
+        ],
         "className": "container",
       },
       "ref": null,
-      "rendered": "test",
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "1",
+          "nodeType": "host",
+          "props": Object {
+            "children": "test",
+          },
+          "ref": null,
+          "rendered": "test",
+          "type": "div",
+        },
+      ],
       "type": "div",
     },
     "type": "header",
@@ -50,7 +70,9 @@ ShallowWrapper {
         "children": <div
           className="container"
         >
-          test
+          <div>
+            test
+          </div>
         </div>,
         "id": "header",
       },
@@ -60,11 +82,27 @@ ShallowWrapper {
         "key": null,
         "nodeType": "host",
         "props": Object {
-          "children": "test",
+          "children": Array [
+            <div>
+              test
+            </div>,
+          ],
           "className": "container",
         },
         "ref": null,
-        "rendered": "test",
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": "1",
+            "nodeType": "host",
+            "props": Object {
+              "children": "test",
+            },
+            "ref": null,
+            "rendered": "test",
+            "type": "div",
+          },
+        ],
         "type": "div",
       },
       "type": "header",

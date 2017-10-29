@@ -12,6 +12,7 @@ ShallowWrapper {
         "push": [Function],
       }
     }
+    searchQuery=""
     searchType="title"
     setSearchType={[Function]}
   />,
@@ -38,7 +39,7 @@ ShallowWrapper {
         >
           <input
             autoComplete="off"
-            defaultValue={undefined}
+            defaultValue=""
             name="searchLine"
             placeholder="Pulp Fiction"
             type="text"
@@ -96,7 +97,7 @@ ShallowWrapper {
           >
             <input
               autoComplete="off"
-              defaultValue={undefined}
+              defaultValue=""
               name="searchLine"
               placeholder="Pulp Fiction"
               type="text"
@@ -161,7 +162,7 @@ ShallowWrapper {
             "children": Array [
               <input
                 autoComplete="off"
-                defaultValue={undefined}
+                defaultValue=""
                 name="searchLine"
                 placeholder="Pulp Fiction"
                 type="text"
@@ -212,7 +213,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "autoComplete": "off",
-                "defaultValue": undefined,
+                "defaultValue": "",
                 "name": "searchLine",
                 "placeholder": "Pulp Fiction",
                 "type": "text",
@@ -381,7 +382,7 @@ ShallowWrapper {
           >
             <input
               autoComplete="off"
-              defaultValue={undefined}
+              defaultValue=""
               name="searchLine"
               placeholder="Pulp Fiction"
               type="text"
@@ -439,7 +440,7 @@ ShallowWrapper {
             >
               <input
                 autoComplete="off"
-                defaultValue={undefined}
+                defaultValue=""
                 name="searchLine"
                 placeholder="Pulp Fiction"
                 type="text"
@@ -504,7 +505,7 @@ ShallowWrapper {
               "children": Array [
                 <input
                   autoComplete="off"
-                  defaultValue={undefined}
+                  defaultValue=""
                   name="searchLine"
                   placeholder="Pulp Fiction"
                   type="text"
@@ -555,7 +556,7 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "autoComplete": "off",
-                  "defaultValue": undefined,
+                  "defaultValue": "",
                   "name": "searchLine",
                   "placeholder": "Pulp Fiction",
                   "type": "text",

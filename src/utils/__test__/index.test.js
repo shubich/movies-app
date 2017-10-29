@@ -1,6 +1,6 @@
 import * as utils from '../index';
 
-describe('films reducer', () => {
+describe('utils', () => {
   const films = [
     {
       title: 'Pulp Fiction',
@@ -80,11 +80,11 @@ describe('films reducer', () => {
   });
 
   it('should return queryString', () => {
-    expect(utils.encodeQueryData({
+    expect(utils.jsonToQueryString({
       language: 'en-US',
       include_adult: 'false',
       page: '1',
-    })).toEqual('language=en-US&include_adult=false&page=1');
+    })).toEqual('?language=en-US&include_adult=false&page=1');
   });
 
   it('should handleFilmDetails with empty details ', () => {

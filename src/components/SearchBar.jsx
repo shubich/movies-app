@@ -92,7 +92,7 @@ export default class SearchBar extends React.Component {
 }
 
 SearchBar.propTypes = {
-  searchQuery: PropTypes.string.isRequired,
+  searchQuery: PropTypes.string,
   getFilms: PropTypes.func.isRequired,
   getPeople: PropTypes.func.isRequired,
   setSearchType: PropTypes.func.isRequired,
@@ -101,3 +101,8 @@ SearchBar.propTypes = {
     push: PropTypes.func,
   }).isRequired,
 };
+
+SearchBar.defaultProps = {
+  searchQuery: '',
+};
+

@@ -5,7 +5,7 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Status
-    count="20"
+    count={20}
     handleSort={[Function]}
     match={
       Object {
@@ -16,6 +16,7 @@ ShallowWrapper {
       }
     }
     searchType="person"
+    sortType=""
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -70,7 +71,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              "20",
+              20,
               " ",
               "people",
               " found",
@@ -79,7 +80,7 @@ ShallowWrapper {
           },
           "ref": null,
           "rendered": Array [
-            "20",
+            20,
             " ",
             "people",
             " found",
@@ -139,7 +140,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": Array [
-                "20",
+                20,
                 " ",
                 "people",
                 " found",
@@ -148,7 +149,7 @@ ShallowWrapper {
             },
             "ref": null,
             "rendered": Array [
-              "20",
+              20,
               " ",
               "people",
               " found",
@@ -177,7 +178,7 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Status
-    count="20"
+    count={20}
     handleSort={[Function]}
     match={
       Object {
@@ -304,7 +305,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              "20",
+              20,
               " ",
               "movies",
               " found",
@@ -313,7 +314,7 @@ ShallowWrapper {
           },
           "ref": null,
           "rendered": Array [
-            "20",
+            20,
             " ",
             "movies",
             " found",
@@ -558,7 +559,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": Array [
-                "20",
+                20,
                 " ",
                 "movies",
                 " found",
@@ -567,7 +568,7 @@ ShallowWrapper {
             },
             "ref": null,
             "rendered": Array [
-              "20",
+              20,
               " ",
               "movies",
               " found",
@@ -715,12 +716,12 @@ ShallowWrapper {
 }
 `;
 
-exports[`Status renders correctly with props 1`] = `
+exports[`Status renders correctly with empty results 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Status
-    count="20"
+    count={0}
     handleSort={[Function]}
     match={
       Object {
@@ -731,6 +732,68 @@ ShallowWrapper {
       }
     }
     searchType="title"
+    sortType=""
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": null,
+    "nodeType": "host",
+    "props": Object {
+      "children": null,
+      "id": "status",
+    },
+    "ref": null,
+    "rendered": null,
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": null,
+      "nodeType": "host",
+      "props": Object {
+        "children": null,
+        "id": "status",
+      },
+      "ref": null,
+      "rendered": null,
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`Status renders correctly with props 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Status
+    count={20}
+    handleSort={[Function]}
+    match={
+      Object {
+        "params": Object {
+          "id": "680",
+        },
+        "url": "/film/680",
+      }
+    }
+    searchType="title"
+    sortType=""
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -846,7 +909,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              "20",
+              20,
               " ",
               "movies",
               " found",
@@ -855,7 +918,7 @@ ShallowWrapper {
           },
           "ref": null,
           "rendered": Array [
-            "20",
+            20,
             " ",
             "movies",
             " found",
@@ -1100,7 +1163,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": Array [
-                "20",
+                20,
                 " ",
                 "movies",
                 " found",
@@ -1109,7 +1172,7 @@ ShallowWrapper {
             },
             "ref": null,
             "rendered": Array [
-              "20",
+              20,
               " ",
               "movies",
               " found",
@@ -1262,7 +1325,7 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Status
-    count="20"
+    count={20}
     handleSort={[Function]}
     match={
       Object {
@@ -1389,7 +1452,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              "20",
+              20,
               " ",
               "movies",
               " found",
@@ -1398,7 +1461,7 @@ ShallowWrapper {
           },
           "ref": null,
           "rendered": Array [
-            "20",
+            20,
             " ",
             "movies",
             " found",
@@ -1643,7 +1706,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": Array [
-                "20",
+                20,
                 " ",
                 "movies",
                 " found",
@@ -1652,7 +1715,7 @@ ShallowWrapper {
             },
             "ref": null,
             "rendered": Array [
-              "20",
+              20,
               " ",
               "movies",
               " found",
@@ -1787,54 +1850,6 @@ ShallowWrapper {
         ],
         "type": "div",
       },
-      "type": "div",
-    },
-  ],
-  Symbol(enzyme.__options__): Object {
-    "adapter": ReactSixteenAdapter {
-      "options": Object {
-        "enableComponentDidUpdateOnSetState": true,
-      },
-    },
-  },
-}
-`;
-
-exports[`Status renders correctly without props 1`] = `
-ShallowWrapper {
-  "length": 1,
-  Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Status />,
-  Symbol(enzyme.__renderer__): Object {
-    "batchedUpdates": [Function],
-    "getNode": [Function],
-    "render": [Function],
-    "simulateEvent": [Function],
-    "unmount": [Function],
-  },
-  Symbol(enzyme.__node__): Object {
-    "instance": null,
-    "key": null,
-    "nodeType": "host",
-    "props": Object {
-      "children": null,
-      "id": "status",
-    },
-    "ref": null,
-    "rendered": null,
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": null,
-      "nodeType": "host",
-      "props": Object {
-        "children": null,
-        "id": "status",
-      },
-      "ref": null,
-      "rendered": null,
       "type": "div",
     },
   ],

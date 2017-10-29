@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-const Nav = ({ search = true }) => (
+const Nav = ({ search }) => (
   <div id="nav">
     <h1 className="sitename">netflixroulette</h1>
     {
@@ -16,7 +16,11 @@ const Nav = ({ search = true }) => (
 );
 
 Nav.propTypes = {
-  search: PropTypes.bool.isRequired,
+  search: PropTypes.bool,
+};
+
+Nav.defaultProps = {
+  search: true,
 };
 
 export default Nav;
