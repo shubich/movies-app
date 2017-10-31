@@ -38,6 +38,12 @@ describe('FilmDetails', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('renders correctly with same props', () => {
+    const wrapper = shallow(<FilmDetails {...props} />);
+    wrapper.setProps({ ...props });
+    expect(wrapper).toMatchSnapshot();
+  });
+
   it('renders correctly with fetching', () => {
     const wrapper = shallow(<FilmDetails {...props} fetching />);
     expect(wrapper).toMatchSnapshot();

@@ -29,7 +29,7 @@ export default class SearchBar extends React.Component {
   }
 
   setRef = (node) => {
-    if (node) this[node.name] = node;
+    this.searchLine = node;
   }
 
   handleSubmit = (e) => {
