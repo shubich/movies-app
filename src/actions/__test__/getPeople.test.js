@@ -24,8 +24,8 @@ describe('async actions', () => {
   it('works with promises [SUCCESS]', () => {
     const query = 'test';
     const dispatch = jest.fn();
-    const requestPeople = getPeople(query)(dispatch);
-    return requestPeople.then(() => {
+    const request = getPeople(query)(dispatch);
+    return request.then(() => {
       expect(dispatch.mock.calls[0][0]).toEqual(expectedActions.request(query));
       expect(dispatch.mock.calls[1][0]).toEqual(expectedActions.success(query));
     });
@@ -33,8 +33,8 @@ describe('async actions', () => {
 
   it('works with promises [FAILURE]', () => {
     const dispatch = jest.fn();
-    const requestPeople = getPeople()(dispatch);
-    return requestPeople.then(() => {
+    const request = getPeople()(dispatch);
+    return request.then(() => {
       expect(dispatch.mock.calls[0][0]).toEqual(expectedActions.request());
       expect(dispatch.mock.calls[1][0]).toEqual(expectedActions.failure());
     });

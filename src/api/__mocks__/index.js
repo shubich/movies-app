@@ -1,3 +1,5 @@
+export const imagePrefix = 'https://image.tmdb.org/t/p/w640';
+
 export const requests = {
   people: query => (
     new Promise((resolve, reject) => {
@@ -17,6 +19,13 @@ export const requests = {
       ));
     })
   ),
+  filmsWithCast: id => (
+    new Promise((resolve, reject) => {
+      process.nextTick(() => (
+        id
+          ? resolve({ json: () => ({ results: [{ title: 'test' }] }) })
+          : reject(new Error(`id: ${id}`))
+      ));
+    })
+  ),
 };
-
-export const a = 1;
