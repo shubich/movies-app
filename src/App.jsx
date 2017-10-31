@@ -11,7 +11,7 @@ import NotFound from './components/NotFound';
 import Footer from './components/Footer';
 import './styles/index.less';
 
-const Film = () => (
+const FilmRoute = () => (
   <div>
     <Header>
       <Nav search />
@@ -23,7 +23,7 @@ const Film = () => (
   </div>
 );
 
-const Person = () => (
+const PersonRoute = () => (
   <div>
     <Header>
       <Nav search />
@@ -35,7 +35,7 @@ const Person = () => (
   </div>
 );
 
-const Search = () => (
+const SearchRoute = () => (
   <div>
     <Header>
       <Nav search={false} />
@@ -54,13 +54,13 @@ const App = () => (
   <Router>
     <Switch>
       <Route path="/film/:id">
-        <Film />
+        <FilmRoute />
       </Route>
       <Route path="/person/:id">
-        <Person />
+        <PersonRoute />
       </Route>
       <Route path="*">
-        <Search />
+        <SearchRoute />
       </Route>
     </Switch>
   </Router>

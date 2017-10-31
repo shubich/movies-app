@@ -6,7 +6,7 @@
     "scripts": {
         "start": "babel-node server/app.js",
         "test": "jest --coverage",
-        "lint": "eslint ./src/* --ext .js --ext .jsx"
+        "lint": "eslint ./src --ext .js --ext .jsx"
     },
     "jest": {
         "setupFiles": [
