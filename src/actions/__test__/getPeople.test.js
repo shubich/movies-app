@@ -16,7 +16,7 @@ const expectedActions = {
   }),
   failure: query => ({
     type: types.GET_PEOPLE_FAILURE,
-    error: new Error(`query is ${query}`),
+    error: new Error(`query: ${query}`),
   }),
 };
 
@@ -25,7 +25,7 @@ describe('async actions', () => {
     const query = 'test';
     const dispatch = jest.fn();
     const requestPeople = getPeople(query)(dispatch);
-    requestPeople.then(() => {
+    return requestPeople.then(() => {
       expect(dispatch.mock.calls[0][0]).toEqual(expectedActions.request(query));
       expect(dispatch.mock.calls[1][0]).toEqual(expectedActions.success(query));
     });
@@ -34,7 +34,7 @@ describe('async actions', () => {
   it('works with promises [FAILURE]', () => {
     const dispatch = jest.fn();
     const requestPeople = getPeople()(dispatch);
-    requestPeople.then(() => {
+    return requestPeople.then(() => {
       expect(dispatch.mock.calls[0][0]).toEqual(expectedActions.request());
       expect(dispatch.mock.calls[1][0]).toEqual(expectedActions.failure());
     });

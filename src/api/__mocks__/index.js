@@ -4,16 +4,16 @@ export const requests = {
       process.nextTick(() => (
         query
           ? resolve({ json: () => ({ results: [{ name: query }] }) })
-          : reject(new Error(`query is ${query}`))
+          : reject(new Error(`query: ${query}`))
       ));
     })
   ),
-  films: query => (
+  details: id => (
     new Promise((resolve, reject) => {
       process.nextTick(() => (
-        query
-          ? resolve({ json: () => ({ results: [{ title: query }] }) })
-          : reject(new Error(`query is ${query}`))
+        id
+          ? resolve({ json: () => ({ title: 'test' }) })
+          : reject(new Error(`id: ${id}`))
       ));
     })
   ),

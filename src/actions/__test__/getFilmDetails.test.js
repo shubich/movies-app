@@ -1,41 +1,42 @@
-import configureMockStore from 'redux-mock-store';
-import thunk from 'redux-thunk';
-import fetchMock from 'fetch-mock';
 import getFilmDetails from '../getFilmDetails';
 import * as types from '../../constants/Film';
 
-const middlewares = [thunk];
-const mockStore = configureMockStore(middlewares);
+jest.mock('../../api');
+
+const expectedActions = {
+  request: id => ({
+    type: types.GET_FILM_DETAILS_REQUEST,
+    id,
+  }),
+  success: () => ({
+    type: types.GET_FILM_DETAILS_SUCCESS,
+    details: {
+      title: 'test',
+    },
+  }),
+  failure: id => ({
+    type: types.GET_FILM_DETAILS_FAILURE,
+    error: new Error(`id: ${id}`),
+  }),
+};
 
 describe('async actions', () => {
-  afterEach(() => {
-    fetchMock.reset();
-    fetchMock.restore();
-  });
-
-  it('creates GET_FILM_DETAILS_SUCCESS when fetching film has been done', () => {
-    // Mock the fetch() global to always return the same value for GET requests to all URLs.
-    fetchMock.get('*', { title: 'wanted' });
-
-    const expectedActions = [
-      { type: types.GET_FILM_DETAILS_REQUEST, id: 1 },
-      { type: types.GET_FILM_DETAILS_SUCCESS, details: { title: 'wanted' } },
-    ];
-    const store = mockStore({ filmDetails: [] });
-
-    store.dispatch(getFilmDetails(1)).then(() => {
-      // return of async actions
-      expect(store.getActions()).toEqual(expectedActions);
+  it('works with promises [SUCCESS]', () => {
+    const id = 1;
+    const dispatch = jest.fn();
+    const requestPeople = getFilmDetails(id)(dispatch);
+    return requestPeople.then(() => {
+      expect(dispatch.mock.calls[0][0]).toEqual(expectedActions.request(id));
+      expect(dispatch.mock.calls[1][0]).toEqual(expectedActions.success(id));
     });
   });
 
-  it('creates GET_FILM_DETAILS_FAILURE when fetching film has been done', () => {
-    fetchMock.get('*', 500);
-
-    const store = mockStore({ filmDetails: [] });
-
-    store.dispatch(getFilmDetails(1)).then(() => {
-      expect(store.getActions()[1].type).toEqual(types.GET_FILM_DETAILS_FAILURE);
+  it('works with promises [FAILURE]', () => {
+    const dispatch = jest.fn();
+    const requestPeople = getFilmDetails()(dispatch);
+    return requestPeople.then(() => {
+      expect(dispatch.mock.calls[0][0]).toEqual(expectedActions.request());
+      expect(dispatch.mock.calls[1][0]).toEqual(expectedActions.failure());
     });
   });
 });
