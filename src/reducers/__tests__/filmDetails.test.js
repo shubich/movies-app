@@ -1,5 +1,7 @@
 import filmDetails from '../filmDetails';
 
+jest.mock('../../utils');
+
 let props;
 
 describe('filmDetails reducer', () => {
@@ -32,24 +34,10 @@ describe('filmDetails reducer', () => {
       undefined,
       {
         type: 'GET_FILM_DETAILS_SUCCESS',
-        details: {
-          genres: [
-            { id: 28, name: 'Action' },
-            { id: 35, name: 'Comedy' },
-          ],
-          release_date: '1998-04-04',
-          runtime: '86',
-          vote_average: 6.5,
-        },
+        details: {},
       },
     )).toEqual({
       ...props,
-      details: {
-        genres: 'Action, Comedy',
-        release_date: '1998',
-        runtime: '86 min',
-        vote_average: '6.5',
-      },
     });
   });
 

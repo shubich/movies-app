@@ -1,5 +1,7 @@
 import personDetails from '../personDetails';
 
+jest.mock('../../utils');
+
 let props;
 
 describe('personDetails reducer', () => {
@@ -32,21 +34,11 @@ describe('personDetails reducer', () => {
       undefined,
       {
         type: 'GET_PERSON_DETAILS_SUCCESS',
-        details: {
-          birthday: '1962-06-21',
-          deathday: '1990-08-15',
-          place_of_birth: 'Moscow, Russia',
-          popularity: 5,
-        },
+        details: {},
       },
     )).toEqual({
       ...props,
-      details: {
-        birthday: 'Born: Jun 21, 1962',
-        deathday: 'Died: Aug 15, 1990',
-        place_of_birth: ' in Moscow, Russia',
-        popularity: 5,
-      },
+      details: {},
     });
   });
 

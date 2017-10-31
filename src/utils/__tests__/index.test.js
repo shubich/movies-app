@@ -113,7 +113,7 @@ describe('utils', () => {
   it('should handlePersonDetails normal', () => {
     expect(utils.handlePersonDetails({
       birthday: '1895-10-03',
-      deathday: '1925-12-29',
+      deathday: '1925-12-28',
       place_of_birth: 'Russia',
       popularity: 9.9,
     })).toEqual({

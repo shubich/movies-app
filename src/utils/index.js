@@ -1,9 +1,12 @@
 const handleDate = (str) => {
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
   const [year, month, day] = str.split('-');
-  const date = new Date(year, month - 1, day, 1);
-  const options = { year: 'numeric', month: 'short', day: 'numeric' };
 
-  return date.toLocaleString('en-US', options);
+  return `${months[month - 1]} ${Number(day)}, ${year}`;
+  // const date = new Date(year, month - 1, day, 1);
+  // const options = { year: 'numeric', month: 'short', day: 'numeric' };
+
+  // return date.toLocaleString('en-US', options);
 };
 
 export const sortFilms = (films, field) => {
