@@ -23,8 +23,8 @@ export const sortFilms = (films, field) => {
 export const handleFilmDetails = (details) => {
   const handledDetails = { ...details };
   handledDetails.vote_average = (details.vote_average < 10)
-    ? details.vote_average.toFixed(1)
-    : '';
+    ? Number(details.vote_average.toFixed(1))
+    : details.vote_average || '';
 
   handledDetails.genres = details.genres && details.genres
     .map(genre => genre.name).join(', ');
