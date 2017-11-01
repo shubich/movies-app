@@ -50,8 +50,8 @@ export const requests = {
     const url = `${host}${paths.person}${id}${queryString}`;
     return fetch(url);
   },
-  filmsWithCast: (withCast) => {
-    const queryString = jsonToQueryString({ ...queries.default, withCast });
+  filmsWithCast: (id) => {
+    const queryString = jsonToQueryString({ ...queries.default, with_cast: id });
     const url = `${host}${paths.discover}${queryString}`;
     return fetch(url);
   },

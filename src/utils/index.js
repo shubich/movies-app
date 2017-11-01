@@ -27,7 +27,7 @@ export const handleFilmDetails = (details) => {
   const handledDetails = { ...details };
   handledDetails.vote_average = (details.vote_average < 10)
     ? Number(details.vote_average.toFixed(1))
-    : details.vote_average || '';
+    : details.vote_average || 0;
 
   handledDetails.genres = details.genres && details.genres
     .map(genre => genre.name).join(', ');

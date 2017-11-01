@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Header from './components/Header';
 import Nav from './components/Nav';
 import SearchBarContainer from './containers/SearchBarContainer';
@@ -51,19 +51,17 @@ const SearchRoute = () => (
 );
 
 const App = () => (
-  <Router>
-    <Switch>
-      <Route path="/film/:id">
-        <FilmRoute />
-      </Route>
-      <Route path="/person/:id">
-        <PersonRoute />
-      </Route>
-      <Route path="*">
-        <SearchRoute />
-      </Route>
-    </Switch>
-  </Router>
+  <Switch>
+    <Route path="/film/:id">
+      <FilmRoute />
+    </Route>
+    <Route path="/person/:id">
+      <PersonRoute />
+    </Route>
+    <Route path="*">
+      <SearchRoute />
+    </Route>
+  </Switch>
 );
 
 export default App;
