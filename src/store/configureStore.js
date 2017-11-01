@@ -1,5 +1,5 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
-import logger from 'redux-logger';
+// import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 import search from '../reducers/search';
 import films from '../reducers/films';
@@ -15,9 +15,16 @@ const moviesApp = combineReducers({
   personDetails,
 });
 
-const store = createStore(
-  moviesApp,
-  applyMiddleware(thunk, logger),
-);
+export default (initialState) => {
+  // const rootReducer = combineReducers(moviesApp);
+  const store = createStore(moviesApp, initialState, applyMiddleware(thunk));
 
-export default store;
+  return store;
+};
+
+// const store = createStore(
+//   moviesApp,
+//   applyMiddleware(thunk, logger),
+// );
+
+// export default store;

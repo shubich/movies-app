@@ -3,8 +3,13 @@ import { AppContainer } from 'react-hot-loader';
 import { BrowserRouter as Router } from 'react-router-dom';
 import ReactDom from 'react-dom';
 import { Provider } from 'react-redux';
-import store from './store/configureStore';
+import configureStore from './store/configureStore';
 import App from './App';
+
+// Grab the state from a global variable injected into the server-generated HTML
+const store = configureStore(window.PRELOADED_STATE);
+// Allow the passed state to be garbage-collected
+delete window.PRELOADED_STATE;
 
 const render = () => {
   ReactDom.hydrate(
