@@ -106,7 +106,7 @@ describe('utils', () => {
       genres: undefined,
       release_date: '',
       runtime: '',
-      vote_average: '',
+      vote_average: 0,
     });
   });
 

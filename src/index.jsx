@@ -7,7 +7,7 @@ import store from './store/configureStore';
 import App from './App';
 
 const render = () => {
-  ReactDom.render(
+  ReactDom.hydrate(
     <AppContainer>
       <Provider store={store}>
         <Router>

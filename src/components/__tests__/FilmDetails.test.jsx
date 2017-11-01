@@ -11,7 +11,7 @@ describe('FilmDetails', () => {
         title: 'Pulp Fiction',
         poster_path: '/img1234_0987',
         release_date: '1999',
-        vote_average: '8.3',
+        vote_average: 8.3,
         genres: 'Thriller, Crime',
         runtime: '154',
         overview: 'Lorem ipsum dolor sit amet.',
