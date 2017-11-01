@@ -3,6 +3,7 @@ import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
+import rootSaga from '../src/rootSaga';
 import configureStore from '../src/store/configureStore';
 import App from '../src/App';
 
@@ -32,7 +33,9 @@ function renderFullPage(html, preloadedState) {
 
 function handleRender(req, res) {
   const store = configureStore();
+  
   const context = {};
+
   const app = (
     <Provider store={store}>
       <StaticRouter location={req.url} context={context} >
@@ -41,17 +44,25 @@ function handleRender(req, res) {
     </Provider>
   );
 
-  const html = renderToString(app);
-  
-  if (context.url) {
-    // Somewhere a `<Redirect>` was rendered
-    return res.redirect(context.url);
-  }
+  store.runSaga(rootSaga).done.then(() => {
+    const html = renderToString(app);
 
-  // Grab the initial state from our Redux store
-  const preloadedState = store.getState();
+    if (context.url) {
+      // Somewhere a `<Redirect>` was rendered
+      return res.redirect(context.url);
+    }
 
-  return res.send(renderFullPage(html, preloadedState));
+    // Grab the initial state from our Redux store
+    const preloadedState = store.getState();
+
+    return res.send(renderFullPage(html, preloadedState));
+  });
+
+  // Do first render, starts initial actions.
+  renderToString(app);
+
+  // When the first render is finished, send the END action to redux-saga.
+  store.close();
 }
 
 export default handleRender;

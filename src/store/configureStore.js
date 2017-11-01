@@ -1,11 +1,15 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 // import logger from 'redux-logger';
-import thunk from 'redux-thunk';
+import createSagaMiddleware, { END } from 'redux-saga';
+// import thunk from 'redux-thunk';
 import search from '../reducers/search';
 import films from '../reducers/films';
 import people from '../reducers/people';
 import filmDetails from '../reducers/filmDetails';
 import personDetails from '../reducers/personDetails';
+import rootSaga from '../rootSaga';
+
+const sagaMiddleware = createSagaMiddleware();
 
 const moviesApp = combineReducers({
   search,
@@ -17,7 +21,11 @@ const moviesApp = combineReducers({
 
 export default (initialState) => {
   // const rootReducer = combineReducers(moviesApp);
-  const store = createStore(moviesApp, initialState, applyMiddleware(thunk));
+  const store = createStore(moviesApp, initialState, applyMiddleware(sagaMiddleware));
+
+  store.runSaga = sagaMiddleware.run;
+  store.close = () => store.dispatch(END);
+  sagaMiddleware.run(rootSaga);
 
   return store;
 };

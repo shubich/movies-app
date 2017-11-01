@@ -1,3 +1,4 @@
+import { call, all } from 'redux-saga/effects';
 import { jsonToQueryString } from '../utils';
 
 const key = '595f6d4c932627df7eb7d5c2f27a7e40';
@@ -25,37 +26,51 @@ const queries = {
 };
 
 export const requests = {
-  films: (query) => {
+  films: function* films(query) {
     const queryString = jsonToQueryString({ ...queries.films, query });
     const url = `${host}${paths.search}${queryString}`;
-    return fetch(url);
+    return yield call(() => fetch(url));
+    // return fetch(url);
   },
-  details: (id) => {
+  details: function* details(id) {
     const queryString = jsonToQueryString({ ...queries.default });
     const url = `${host}${paths.movie}${id}${queryString}`;
-    return fetch(url);
+    // return fetch(url);
+    return yield call(() => fetch(url));
   },
-  similar: (id) => {
+  similar: function* similar(id) {
     const queryString = jsonToQueryString({ ...queries.default });
     const url = `${host}${paths.movie}${id}/similar${queryString}`;
-    return fetch(url);
+    // return fetch(url);
+    return yield call(() => fetch(url));
   },
-  people: (query) => {
+  people: function* people(query) {
     const queryString = jsonToQueryString({ ...queries.default, query });
     const url = `${host}${paths.people}${queryString}`;
-    return fetch(url);
+    return yield call(() => fetch(url));
   },
-  person: (id) => {
+  person: function* person(id) {
     const queryString = jsonToQueryString({ ...queries.default });
     const url = `${host}${paths.person}${id}${queryString}`;
-    return fetch(url);
+    return yield call(() => fetch(url));
   },
-  filmsWithCast: (id) => {
+  filmsWithCast: function* filmsWithCast(id) {
     const queryString = jsonToQueryString({ ...queries.default, with_cast: id });
     const url = `${host}${paths.discover}${queryString}`;
-    return fetch(url);
+    return yield call(() => fetch(url));
   },
 };
+
+export function* saga() {
+  yield all([
+    requests.films(),
+    requests.details(),
+    requests.similar(),
+    requests.people(),
+    requests.person(),
+    requests.filmsWithCast(),
+  ]);
+}
 
 // https://www.npmjs.com/package/eslint-config-airbnb !!!
 
