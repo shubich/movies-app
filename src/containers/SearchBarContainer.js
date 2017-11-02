@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import SearchBar from '../components/SearchBar';
-import getFilms from '../actions/getFilms';
-import getPeople from '../actions/getPeople';
+import { getFilmsAsync } from '../actions/getFilms';
+import { getPeopleAsync } from '../actions/getPeople';
 import setSearchType from '../actions/setSearchType';
 
 const mapStateToProps = (state, ownProps) => {
@@ -14,10 +14,10 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => ({
   getFilms: (val) => {
-    dispatch(getFilms(val));
+    dispatch(getFilmsAsync(val));
   },
   getPeople: (val) => {
-    dispatch(getPeople(val));
+    dispatch(getPeopleAsync(val));
   },
   setSearchType: (val) => {
     dispatch(setSearchType(val));

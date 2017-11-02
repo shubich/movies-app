@@ -1,34 +1,37 @@
-import {
-  GET_PEOPLE_REQUEST,
-  GET_PEOPLE_SUCCESS,
-  GET_PEOPLE_FAILURE,
-} from '../constants/People';
-
+import { put, takeEvery, call } from 'redux-saga/effects';
+import * as types from '../constants/People';
 import * as Api from '../api';
 
+export const getPeopleAsync = query => ({
+  type: types.GET_PEOPLE_ASYNC,
+  query,
+});
+
 const getPeopleRequest = query => ({
-  type: GET_PEOPLE_REQUEST,
+  type: types.GET_PEOPLE_REQUEST,
   query,
 });
 
 const getPeopleSuccess = results => ({
-  type: GET_PEOPLE_SUCCESS,
+  type: types.GET_PEOPLE_SUCCESS,
   results,
 });
 
 const getPeopleFailure = error => ({
-  type: GET_PEOPLE_FAILURE,
+  type: types.GET_PEOPLE_FAILURE,
   error,
 });
 
-const getPeople = query => (
-  (dispatch) => {
-    dispatch(getPeopleRequest(query));
-    return Api.requests.people(query)
-      .then(res => res.json())
-      .then(json => dispatch(getPeopleSuccess(json.results)))
-      .catch(err => dispatch(getPeopleFailure(err)));
+function* getPeople(action) {
+  yield put(getPeopleRequest());
+  try {
+    const json = yield call(Api.requests.people, action.query);
+    yield put(getPeopleSuccess(json.results));
+  } catch (e) {
+    yield put(getPeopleFailure(e.message));
   }
-);
+}
 
-export default getPeople;
+export default function* watchPeopleAsync() {
+  yield takeEvery(types.GET_PEOPLE_ASYNC, getPeople);
+}
