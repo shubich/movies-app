@@ -5,6 +5,7 @@ import ReactDom from 'react-dom';
 import { Provider } from 'react-redux';
 import configureStore from './store/configureStore';
 import App from './App';
+import './styles/index.less';
 
 // Grab the state from a global variable injected into the server-generated HTML
 const store = configureStore(window.PRELOADED_STATE);

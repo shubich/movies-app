@@ -10,7 +10,6 @@ import StatusContainer from './containers/StatusContainer';
 import MainContainer from './containers/MainContainer';
 import NotFound from './components/NotFound';
 import Footer from './components/Footer';
-// import './styles/index.less';
 
 const FilmRoute = () => (
   <div>
