@@ -1,34 +1,37 @@
-import {
-  GET_FILM_DETAILS_REQUEST,
-  GET_FILM_DETAILS_SUCCESS,
-  GET_FILM_DETAILS_FAILURE,
-} from '../constants/Film';
-
+import { put, takeEvery, call } from 'redux-saga/effects';
+import * as types from '../constants/Film';
 import * as Api from '../api';
 
+export const getFilmDetailsAsync = id => ({
+  type: types.GET_FILM_DETAILS_ASYNC,
+  id,
+});
+
 const getFilmDetailsRequest = id => ({
-  type: GET_FILM_DETAILS_REQUEST,
+  type: types.GET_FILM_DETAILS_REQUEST,
   id,
 });
 
 const getFilmDetailsSuccess = details => ({
-  type: GET_FILM_DETAILS_SUCCESS,
+  type: types.GET_FILM_DETAILS_SUCCESS,
   details,
 });
 
 const getFilmDetailsFailure = error => ({
-  type: GET_FILM_DETAILS_FAILURE,
+  type: types.GET_FILM_DETAILS_FAILURE,
   error,
 });
 
-const getFilmDetails = id => (
-  (dispatch) => {
-    dispatch(getFilmDetailsRequest(id));
-    return Api.requests.details(id)
-      .then(res => res.json())
-      .then(json => dispatch(getFilmDetailsSuccess(json)))
-      .catch(err => dispatch(getFilmDetailsFailure(err)));
+function* getFilmDetails(action) {
+  yield put(getFilmDetailsRequest());
+  try {
+    const details = yield call(Api.requests.details, action.id);
+    yield put(getFilmDetailsSuccess(details));
+  } catch (e) {
+    yield put(getFilmDetailsFailure(e.message));
   }
-);
+}
 
-export default getFilmDetails;
+export default function* watchFilmDetailsAsync() {
+  yield takeEvery(types.GET_FILM_DETAILS_ASYNC, getFilmDetails);
+}

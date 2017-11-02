@@ -1,34 +1,37 @@
-import {
-  GET_SIMILAR_FILMS_REQUEST,
-  GET_SIMILAR_FILMS_SUCCESS,
-  GET_SIMILAR_FILMS_FAILURE,
-} from '../constants/Films';
-
+import { put, takeEvery, call } from 'redux-saga/effects';
+import * as types from '../constants/Films';
 import * as Api from '../api';
 
+export const getSimilarFilmsAsync = id => ({
+  type: types.GET_SIMILAR_FILMS_ASYNC,
+  id,
+});
+
 const getSimilarFilmsRequest = id => ({
-  type: GET_SIMILAR_FILMS_REQUEST,
+  type: types.GET_SIMILAR_FILMS_REQUEST,
   id,
 });
 
 const getSimilarFilmsSuccess = results => ({
-  type: GET_SIMILAR_FILMS_SUCCESS,
+  type: types.GET_SIMILAR_FILMS_SUCCESS,
   results,
 });
 
 const getSimilarFilmsFailure = error => ({
-  type: GET_SIMILAR_FILMS_FAILURE,
+  type: types.GET_SIMILAR_FILMS_FAILURE,
   error,
 });
 
-const getSimilarFilms = id => (
-  (dispatch) => {
-    dispatch(getSimilarFilmsRequest(id));
-    return Api.requests.similar(id)
-      .then(res => res.json())
-      .then(json => dispatch(getSimilarFilmsSuccess(json.results)))
-      .catch(err => dispatch(getSimilarFilmsFailure(err)));
+function* getSimilarFilms(action) {
+  yield put(getSimilarFilmsRequest());
+  try {
+    const json = yield call(Api.requests.similar, action.id);
+    yield put(getSimilarFilmsSuccess(json.results));
+  } catch (e) {
+    yield put(getSimilarFilmsFailure(e.message));
   }
-);
+}
 
-export default getSimilarFilms;
+export default function* watchSimilarFilmsAsync() {
+  yield takeEvery(types.GET_SIMILAR_FILMS_ASYNC, getSimilarFilms);
+}

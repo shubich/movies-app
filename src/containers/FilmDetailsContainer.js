@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import FilmDetails from '../components/FilmDetails';
-import getFilmDetails from '../actions/getFilmDetails';
-import getSimilarFilms from '../actions/getSimilarFilms';
+import { getFilmDetailsAsync } from '../actions/getFilmDetails';
+import { getSimilarFilmsAsync } from '../actions/getSimilarFilms';
 
 const mapStateToProps = state => ({
   ...state.filmDetails,
@@ -12,10 +12,10 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 
   return {
     getFilmDetails: (id = filmId) => {
-      dispatch(getFilmDetails(id));
+      dispatch(getFilmDetailsAsync(id));
     },
     getSimilarFilms: (id = filmId) => {
-      dispatch(getSimilarFilms(id));
+      dispatch(getSimilarFilmsAsync(id));
     },
   };
 };
