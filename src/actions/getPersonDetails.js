@@ -1,34 +1,37 @@
-import {
-  GET_PERSON_DETAILS_REQUEST,
-  GET_PERSON_DETAILS_SUCCESS,
-  GET_PERSON_DETAILS_FAILURE,
-} from '../constants/Person';
-
+import { put, takeEvery, call } from 'redux-saga/effects';
+import * as types from '../constants/Person';
 import * as Api from '../api';
 
+export const getPersonDetailsAsync = id => ({
+  type: types.GET_PERSON_DETAILS_ASYNC,
+  id,
+});
+
 const getPersonDetailsRequest = id => ({
-  type: GET_PERSON_DETAILS_REQUEST,
+  type: types.GET_PERSON_DETAILS_REQUEST,
   id,
 });
 
 const getPersonDetailsSuccess = details => ({
-  type: GET_PERSON_DETAILS_SUCCESS,
+  type: types.GET_PERSON_DETAILS_SUCCESS,
   details,
 });
 
 const getPersonDetailsFailure = error => ({
-  type: GET_PERSON_DETAILS_FAILURE,
+  type: types.GET_PERSON_DETAILS_FAILURE,
   error,
 });
 
-const getPersonDetails = id => (
-  (dispatch) => {
-    dispatch(getPersonDetailsRequest(id));
-    return Api.requests.person(id)
-      .then(res => res.json())
-      .then(json => dispatch(getPersonDetailsSuccess(json)))
-      .catch(err => dispatch(getPersonDetailsFailure(err)));
+function* getPersonDetails(action) {
+  yield put(getPersonDetailsRequest());
+  try {
+    const details = yield call(Api.requests.person, action.id);
+    yield put(getPersonDetailsSuccess(details));
+  } catch (e) {
+    yield put(getPersonDetailsFailure(e.message));
   }
-);
+}
 
-export default getPersonDetails;
+export default function* watchPersonDetailsAsync() {
+  yield takeEvery(types.GET_PERSON_DETAILS_ASYNC, getPersonDetails);
+}

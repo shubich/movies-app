@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import PersonDetails from '../components/PersonDetails';
-import getPersonDetails from '../actions/getPersonDetails';
-import getFilmsWithCast from '../actions/getFilmsWithCast';
+import { getPersonDetailsAsync } from '../actions/getPersonDetails';
+import { getFilmsWithCastAsync } from '../actions/getFilmsWithCast';
 import setSearchType from '../actions/setSearchType';
 
 const mapStateToProps = state => ({
@@ -13,10 +13,10 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 
   return {
     getPersonDetails: (id = personId) => {
-      dispatch(getPersonDetails(id));
+      dispatch(getPersonDetailsAsync(id));
     },
     getFilmsWithCast: (id = personId) => {
-      dispatch(getFilmsWithCast(id));
+      dispatch(getFilmsWithCastAsync(id));
     },
     setSearchType: () => {
       dispatch(setSearchType('title'));

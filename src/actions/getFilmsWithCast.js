@@ -1,34 +1,37 @@
-import {
-  GET_FILMS_REQUEST,
-  GET_FILMS_SUCCESS,
-  GET_FILMS_FAILURE,
-} from '../constants/Films';
-
+import { put, takeEvery, call } from 'redux-saga/effects';
+import * as types from '../constants/Films';
 import * as Api from '../api';
 
+export const getFilmsWithCastAsync = id => ({
+  type: types.GET_FILMS_WITH_CAST_ASYNC,
+  id,
+});
+
 const getFilmsWithCastRequest = id => ({
-  type: GET_FILMS_REQUEST,
+  type: types.GET_FILMS_WITH_CAST_REQUEST,
   id,
 });
 
 const getFilmsWithCastSuccess = results => ({
-  type: GET_FILMS_SUCCESS,
+  type: types.GET_FILMS_WITH_CAST_SUCCESS,
   results,
 });
 
 const getFilmsWithCastFailure = error => ({
-  type: GET_FILMS_FAILURE,
+  type: types.GET_FILMS_WITH_CAST_FAILURE,
   error,
 });
 
-const getFilmsWithCast = id => (
-  (dispatch) => {
-    dispatch(getFilmsWithCastRequest(id));
-    return Api.requests.filmsWithCast(id)
-      .then(res => res.json())
-      .then(json => dispatch(getFilmsWithCastSuccess(json.results)))
-      .catch(err => dispatch(getFilmsWithCastFailure(err)));
+function* getFilmsWithCast(action) {
+  yield put(getFilmsWithCastRequest());
+  try {
+    const json = yield call(Api.requests.filmsWithCast, action.id);
+    yield put(getFilmsWithCastSuccess(json.results));
+  } catch (e) {
+    yield put(getFilmsWithCastFailure(e.message));
   }
-);
+}
 
-export default getFilmsWithCast;
+export default function* watchFilmsWithCastAsync() {
+  yield takeEvery(types.GET_FILMS_WITH_CAST_ASYNC, getFilmsWithCast);
+}
