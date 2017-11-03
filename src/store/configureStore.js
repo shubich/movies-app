@@ -7,7 +7,7 @@ import films from '../reducers/films';
 import people from '../reducers/people';
 import filmDetails from '../reducers/filmDetails';
 import personDetails from '../reducers/personDetails';
-import rootSaga from '../rootSaga';
+import rootSaga from '../sagas/rootSaga';
 
 const sagaMiddleware = createSagaMiddleware();
 

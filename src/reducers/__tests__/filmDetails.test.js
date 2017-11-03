@@ -1,6 +1,6 @@
 import filmDetails from '../filmDetails';
 
-jest.mock('../../utils');
+jest.mock('../../lib/utils');
 
 let props;
 

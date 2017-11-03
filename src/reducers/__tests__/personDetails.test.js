@@ -1,6 +1,6 @@
 import personDetails from '../personDetails';
 
-jest.mock('../../utils');
+jest.mock('../../lib/utils');
 
 let props;
 

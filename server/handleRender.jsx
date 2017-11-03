@@ -3,7 +3,7 @@ import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
-import rootSaga from '../src/rootSaga';
+import rootSaga from '../src/sagas/rootSaga';
 import configureStore from '../src/store/configureStore';
 import App from '../src/App';
 
