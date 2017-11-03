@@ -1,7 +1,7 @@
 import getPeople from '../getPeople';
 import * as types from '../../constants/People';
 
-jest.mock('../../api');
+jest.mock('../../lib/api');
 
 const expectedActions = {
   request: query => ({

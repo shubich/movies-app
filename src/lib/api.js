@@ -1,4 +1,4 @@
-import { jsonToQueryString } from '../utils';
+import { jsonToQueryString } from './utils';
 
 const key = '595f6d4c932627df7eb7d5c2f27a7e40';
 const host = 'https://api.themoviedb.org/';

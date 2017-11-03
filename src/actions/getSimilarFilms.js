@@ -1,6 +1,6 @@
 import { put, takeEvery, call } from 'redux-saga/effects';
 import * as types from '../constants/Films';
-import * as Api from '../api';
+import * as Api from '../lib/api';
 
 export const getSimilarFilmsAsync = id => ({
   type: types.GET_SIMILAR_FILMS_ASYNC,

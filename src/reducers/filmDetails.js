@@ -4,7 +4,7 @@ import {
   GET_FILM_DETAILS_FAILURE,
 } from '../constants/Film';
 
-import { handleFilmDetails } from '../utils';
+import { handleFilmDetails } from '../lib/utils';
 
 const initialState = {
   details: {},

@@ -4,7 +4,7 @@ import {
   GET_PERSON_DETAILS_FAILURE,
 } from '../constants/Person';
 
-import { handlePersonDetails } from '../utils';
+import { handlePersonDetails } from '../lib/utils';
 
 const initialState = {
   details: {},

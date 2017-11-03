@@ -1,6 +1,6 @@
 import { put, takeEvery, call } from 'redux-saga/effects';
 import * as types from '../constants/Films';
-import * as Api from '../api';
+import * as Api from '../lib/api';
 
 export const getFilmsWithCastAsync = id => ({
   type: types.GET_FILMS_WITH_CAST_ASYNC,

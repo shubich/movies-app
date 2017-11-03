@@ -1,7 +1,7 @@
 import getFilmWithCast from '../getFilmsWithCast';
 import * as types from '../../constants/Films';
 
-jest.mock('../../api');
+jest.mock('../../lib/api');
 
 const expectedActions = {
   request: id => ({

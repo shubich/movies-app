@@ -16,7 +16,7 @@ function renderFullPage(html, preloadedState) {
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
             <title>Movies-app</title>
-            <link rel="shortcut icon" href="/favicon.png">
+            <link rel="shortcut icon" href="/img/favicon.png">
         </head>
         <body>
             <div id="app">${html}</div>
@@ -33,7 +33,6 @@ function renderFullPage(html, preloadedState) {
 
 function handleRender(req, res) {
   const store = configureStore();
-  
   const context = {};
 
   const app = (

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { imagePrefix } from '../api/';
+import { imagePrefix } from '../lib/api';
 
 const Poster = ({
   path,

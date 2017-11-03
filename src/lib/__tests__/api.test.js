@@ -1,5 +1,5 @@
 import fetchMock from 'fetch-mock';
-import * as Api from '../';
+import * as Api from '../api';
 
 describe('Api requests', () => {
   it('fetching data', () => {

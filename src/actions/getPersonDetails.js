@@ -1,6 +1,6 @@
 import { put, takeEvery, call } from 'redux-saga/effects';
 import * as types from '../constants/Person';
-import * as Api from '../api';
+import * as Api from '../lib/api';
 
 export const getPersonDetailsAsync = id => ({
   type: types.GET_PERSON_DETAILS_ASYNC,

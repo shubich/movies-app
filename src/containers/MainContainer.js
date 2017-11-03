@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Main from '../components/Main';
-import { sortFilms } from '../utils';
+import { sortFilms } from '../lib/utils';
 
 const mapStateToProps = (state) => {
   if (state.search.searchType === 'title') {
