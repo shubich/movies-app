@@ -1,41 +1,33 @@
-import configureMockStore from 'redux-mock-store';
-import thunk from 'redux-thunk';
-import fetchMock from 'fetch-mock';
-import getSimilarFilms from '../getSimilarFilms';
+import * as actions from '../getSimilarFilms';
 import * as types from '../../constants/Films';
 
-const middlewares = [thunk];
-const mockStore = configureMockStore(middlewares);
+const id = 101;
+const results = [{ title: 'Titanic' }];
+const error = 'something went wrong';
 
-describe('async actions', () => {
-  afterEach(() => {
-    fetchMock.reset();
-    fetchMock.restore();
-  });
-
-  it('creates GET_SIMILAR_FILMS_SUCCESS when fetching similar films has been done', () => {
-    // Mock the fetch() global to always return the same value for GET requests to all URLs.
-    fetchMock.get('*', { results: ['taxi', 'wanted'] });
-
-    const expectedActions = [
-      { type: types.GET_SIMILAR_FILMS_REQUEST, id: 1 },
-      { type: types.GET_SIMILAR_FILMS_SUCCESS, results: ['taxi', 'wanted'] },
-    ];
-    const store = mockStore({ films: [] });
-
-    store.dispatch(getSimilarFilms(1)).then(() => {
-      // return of async actions
-      expect(store.getActions()).toEqual(expectedActions);
+describe('getSimilarFilms actions', () => {
+  it('should create GET_SIMILAR_FILMS_ASYNC action', () => {
+    expect(actions.getSimilarFilmsAsync(id)).toEqual({
+      type: types.GET_SIMILAR_FILMS_ASYNC,
+      id,
     });
   });
-
-  it('creates GET_SIMILAR_FILMS_FAILURE when fetching similar films has been done', () => {
-    fetchMock.get('*', 500);
-
-    const store = mockStore({ films: [] });
-
-    store.dispatch(getSimilarFilms(1)).then(() => {
-      expect(store.getActions()[1].type).toEqual(types.GET_SIMILAR_FILMS_FAILURE);
+  it('should create GET_SIMILAR_FILMS_REQUEST action', () => {
+    expect(actions.getSimilarFilmsRequest(id)).toEqual({
+      type: types.GET_SIMILAR_FILMS_REQUEST,
+      id,
+    });
+  });
+  it('should create GET_SIMILAR_FILMS_SUCCESS action', () => {
+    expect(actions.getSimilarFilmsSuccess(results)).toEqual({
+      type: types.GET_SIMILAR_FILMS_SUCCESS,
+      results,
+    });
+  });
+  it('should create GET_SIMILAR_FILMS_FAILURE action', () => {
+    expect(actions.getSimilarFilmsFailure(error)).toEqual({
+      type: types.GET_SIMILAR_FILMS_FAILURE,
+      error,
     });
   });
 });

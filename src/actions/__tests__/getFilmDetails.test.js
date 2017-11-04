@@ -1,42 +1,33 @@
-import getFilmDetails from '../getFilmDetails';
+import * as actions from '../getFilmDetails';
 import * as types from '../../constants/Film';
 
-jest.mock('../../lib/api');
+const id = 1;
+const details = { title: 'Wanted' };
+const error = 'something went wrong';
 
-const expectedActions = {
-  request: id => ({
-    type: types.GET_FILM_DETAILS_REQUEST,
-    id,
-  }),
-  success: () => ({
-    type: types.GET_FILM_DETAILS_SUCCESS,
-    details: {
-      title: 'test',
-    },
-  }),
-  failure: id => ({
-    type: types.GET_FILM_DETAILS_FAILURE,
-    error: new Error(`id: ${id}`),
-  }),
-};
-
-describe('async actions', () => {
-  it('works with promises [SUCCESS]', () => {
-    const id = 1;
-    const dispatch = jest.fn();
-    const request = getFilmDetails(id)(dispatch);
-    return request.then(() => {
-      expect(dispatch.mock.calls[0][0]).toEqual(expectedActions.request(id));
-      expect(dispatch.mock.calls[1][0]).toEqual(expectedActions.success(id));
+describe('getFilmDetails actions', () => {
+  it('should create GET_FILM_DETAILS_ASYNC action', () => {
+    expect(actions.getFilmDetailsAsync(id)).toEqual({
+      type: types.GET_FILM_DETAILS_ASYNC,
+      id,
     });
   });
-
-  it('works with promises [FAILURE]', () => {
-    const dispatch = jest.fn();
-    const request = getFilmDetails()(dispatch);
-    return request.then(() => {
-      expect(dispatch.mock.calls[0][0]).toEqual(expectedActions.request());
-      expect(dispatch.mock.calls[1][0]).toEqual(expectedActions.failure());
+  it('should create GET_FILM_DETAILS_REQUEST action', () => {
+    expect(actions.getFilmDetailsRequest(id)).toEqual({
+      type: types.GET_FILM_DETAILS_REQUEST,
+      id,
+    });
+  });
+  it('should create GET_FILM_DETAILS_SUCCESS action', () => {
+    expect(actions.getFilmDetailsSuccess(details)).toEqual({
+      type: types.GET_FILM_DETAILS_SUCCESS,
+      details,
+    });
+  });
+  it('should create GET_FILM_DETAILS_FAILURE action', () => {
+    expect(actions.getFilmDetailsFailure(error)).toEqual({
+      type: types.GET_FILM_DETAILS_FAILURE,
+      error,
     });
   });
 });

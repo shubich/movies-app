@@ -1,41 +1,33 @@
-import configureMockStore from 'redux-mock-store';
-import thunk from 'redux-thunk';
-import fetchMock from 'fetch-mock';
-import getPersonDetails from '../getPersonDetails';
+import * as actions from '../getPersonDetails';
 import * as types from '../../constants/Person';
 
-const middlewares = [thunk];
-const mockStore = configureMockStore(middlewares);
+const id = 1;
+const details = { name: 'Jack' };
+const error = 'something went wrong';
 
-describe('async actions', () => {
-  afterEach(() => {
-    fetchMock.reset();
-    fetchMock.restore();
-  });
-
-  it('creates GET_PERSON_DETAILS_SUCCESS when fetching person has been done', () => {
-    // Mock the fetch() global to always return the same value for GET requests to all URLs.
-    fetchMock.get('*', { name: 'Ivan' });
-
-    const expectedActions = [
-      { type: types.GET_PERSON_DETAILS_REQUEST, id: 1 },
-      { type: types.GET_PERSON_DETAILS_SUCCESS, details: { name: 'Ivan' } },
-    ];
-    const store = mockStore({ personDetails: [] });
-
-    store.dispatch(getPersonDetails(1)).then(() => {
-      // return of async actions
-      expect(store.getActions()).toEqual(expectedActions);
+describe('getPersonDetails actions', () => {
+  it('should create GET_PERSON_DETAILS_ASYNC action', () => {
+    expect(actions.getPersonDetailsAsync(id)).toEqual({
+      type: types.GET_PERSON_DETAILS_ASYNC,
+      id,
     });
   });
-
-  it('creates GET_PERSON_DETAILS_FAILURE when fetching person has been done', () => {
-    fetchMock.get('*', 500);
-
-    const store = mockStore({ personDetails: [] });
-
-    store.dispatch(getPersonDetails(1)).then(() => {
-      expect(store.getActions()[1].type).toEqual(types.GET_PERSON_DETAILS_FAILURE);
+  it('should create GET_PERSON_DETAILS_REQUEST action', () => {
+    expect(actions.getPersonDetailsRequest(id)).toEqual({
+      type: types.GET_PERSON_DETAILS_REQUEST,
+      id,
+    });
+  });
+  it('should create GET_PERSON_DETAILS_SUCCESS action', () => {
+    expect(actions.getPersonDetailsSuccess(details)).toEqual({
+      type: types.GET_PERSON_DETAILS_SUCCESS,
+      details,
+    });
+  });
+  it('should create GET_PERSON_DETAILS_FAILURE action', () => {
+    expect(actions.getPersonDetailsFailure(error)).toEqual({
+      type: types.GET_PERSON_DETAILS_FAILURE,
+      error,
     });
   });
 });

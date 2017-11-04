@@ -1,42 +1,33 @@
-import getFilmWithCast from '../getFilmsWithCast';
+import * as actions from '../getFilmsWithCast';
 import * as types from '../../constants/Films';
 
-jest.mock('../../lib/api');
+const id = 101;
+const results = [{ title: 'Matrix' }];
+const error = 'something went wrong';
 
-const expectedActions = {
-  request: id => ({
-    type: types.GET_FILMS_REQUEST,
-    id,
-  }),
-  success: () => ({
-    type: types.GET_FILMS_SUCCESS,
-    results: [
-      { title: 'test' },
-    ],
-  }),
-  failure: id => ({
-    type: types.GET_FILMS_FAILURE,
-    error: new Error(`id: ${id}`),
-  }),
-};
-
-describe('async actions', () => {
-  it('works with promises [SUCCESS]', () => {
-    const id = 'test';
-    const dispatch = jest.fn();
-    const request = getFilmWithCast(id)(dispatch);
-    return request.then(() => {
-      expect(dispatch.mock.calls[0][0]).toEqual(expectedActions.request(id));
-      expect(dispatch.mock.calls[1][0]).toEqual(expectedActions.success(id));
+describe('getFilmsWithCast actions', () => {
+  it('should create GET_FILMS_WITH_CAST_ASYNC action', () => {
+    expect(actions.getFilmsWithCastAsync(id)).toEqual({
+      type: types.GET_FILMS_WITH_CAST_ASYNC,
+      id,
     });
   });
-
-  it('works with promises [FAILURE]', () => {
-    const dispatch = jest.fn();
-    const request = getFilmWithCast()(dispatch);
-    return request.then(() => {
-      expect(dispatch.mock.calls[0][0]).toEqual(expectedActions.request());
-      expect(dispatch.mock.calls[1][0]).toEqual(expectedActions.failure());
+  it('should create GET_FILMS_WITH_CAST_REQUEST action', () => {
+    expect(actions.getFilmsWithCastRequest(id)).toEqual({
+      type: types.GET_FILMS_WITH_CAST_REQUEST,
+      id,
+    });
+  });
+  it('should create GET_FILMS_WITH_CAST_SUCCESS action', () => {
+    expect(actions.getFilmsWithCastSuccess(results)).toEqual({
+      type: types.GET_FILMS_WITH_CAST_SUCCESS,
+      results,
+    });
+  });
+  it('should create GET_FILMS_WITH_CAST_FAILURE action', () => {
+    expect(actions.getFilmsWithCastFailure(error)).toEqual({
+      type: types.GET_FILMS_WITH_CAST_FAILURE,
+      error,
     });
   });
 });

@@ -1,11 +1,11 @@
 import { all } from 'redux-saga/effects';
 
-import watchFilmsAsync from '../actions/getFilms';
+import watchFilmsAsync from './films';
 import watchPeopleAsync from './people';
-import watchFilmDetailsAsync from '../actions/getFilmDetails';
-import watchPersonDetailsAsync from '../actions/getPersonDetails';
-import watchSimilarFilmsAsync from '../actions/getSimilarFilms';
-import watchFilmsWithCastAsync from '../actions/getFilmsWithCast';
+import watchFilmDetailsAsync from './filmDetails';
+import watchPersonDetailsAsync from './personDetails';
+import watchSimilarFilmsAsync from './similarFilms';
+import watchFilmsWithCastAsync from './filmsWithCast';
 
 
 export default function* rootSaga() {
@@ -18,7 +18,3 @@ export default function* rootSaga() {
     watchFilmsWithCastAsync(),
   ]);
 }
-
-// 1. create async action
-// 2. import saga to rootSaga
-// 3. dispatch(async) somewhere
