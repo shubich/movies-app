@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export default class SearchBar extends React.Component {
-  constructor(props) {
-    super(props);
+  componentDidMount() {
     if (this.props.searchQuery) {
       this.props.getFilms(this.props.searchQuery);
     }

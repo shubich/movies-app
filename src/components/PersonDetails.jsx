@@ -4,8 +4,7 @@ import ReactLoading from 'react-loading';
 import Poster from './Poster';
 
 export default class PersonDetails extends React.Component {
-  constructor(props) {
-    super(props);
+  componentDidMount() {
     if (!this.props.fetching) {
       this.props.getPersonDetails();
       this.props.getFilmsWithCast();
