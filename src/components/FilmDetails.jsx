@@ -5,9 +5,11 @@ import Poster from './Poster';
 
 export default class FilmDetails extends React.Component {
   componentDidMount() {
+    const filmId = this.props.match.params.id;
+
     if (!this.props.fetching) {
-      this.props.getFilmDetails();
-      this.props.getSimilarFilms();
+      this.props.getFilmDetailsAsync(filmId);
+      this.props.getSimilarFilmsAsync(filmId);
     }
   }
 
@@ -16,8 +18,8 @@ export default class FilmDetails extends React.Component {
     const nextId = nextProps.match.params.id;
 
     if (currentId !== nextId) {
-      this.props.getFilmDetails(nextId);
-      this.props.getSimilarFilms(nextId);
+      this.props.getFilmDetailsAsync(nextId);
+      this.props.getSimilarFilmsAsync(nextId);
     }
   }
 
@@ -55,8 +57,8 @@ export default class FilmDetails extends React.Component {
 
 FilmDetails.propTypes = {
   fetching: PropTypes.bool.isRequired,
-  getFilmDetails: PropTypes.func.isRequired,
-  getSimilarFilms: PropTypes.func.isRequired,
+  getFilmDetailsAsync: PropTypes.func.isRequired,
+  getSimilarFilmsAsync: PropTypes.func.isRequired,
   match: PropTypes.shape({
     params: PropTypes.shape({
       id: PropTypes.string,

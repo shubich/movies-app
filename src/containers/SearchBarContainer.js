@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import SearchBar from '../components/SearchBar';
 import { getFilmsAsync } from '../actions/getFilms';
 import { getPeopleAsync } from '../actions/getPeople';
@@ -12,17 +13,11 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
-const mapDispatchToProps = dispatch => ({
-  getFilms: (val) => {
-    dispatch(getFilmsAsync(val));
-  },
-  getPeople: (val) => {
-    dispatch(getPeopleAsync(val));
-  },
-  setSearchType: (val) => {
-    dispatch(setSearchType(val));
-  },
-});
+const mapDispatchToProps = dispatch => bindActionCreators({
+  getFilmsAsync,
+  getPeopleAsync,
+  setSearchType,
+}, dispatch);
 
 const SearchBarContainer = connect(
   mapStateToProps,

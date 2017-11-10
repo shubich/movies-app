@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import PersonDetails from '../components/PersonDetails';
 import { getPersonDetailsAsync } from '../actions/getPersonDetails';
 import { getFilmsWithCastAsync } from '../actions/getFilmsWithCast';
@@ -8,21 +9,11 @@ const mapStateToProps = state => ({
   ...state.personDetails,
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => {
-  const personId = ownProps.match.params.id;
-
-  return {
-    getPersonDetails: (id = personId) => {
-      dispatch(getPersonDetailsAsync(id));
-    },
-    getFilmsWithCast: (id = personId) => {
-      dispatch(getFilmsWithCastAsync(id));
-    },
-    setSearchType: () => {
-      dispatch(setSearchType('title'));
-    },
-  };
-};
+const mapDispatchToProps = dispatch => bindActionCreators({
+  getPersonDetailsAsync,
+  getFilmsWithCastAsync,
+  setSearchType,
+}, dispatch);
 
 const PersonDetailsContainer = connect(
   mapStateToProps,

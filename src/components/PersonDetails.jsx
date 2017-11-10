@@ -5,10 +5,12 @@ import Poster from './Poster';
 
 export default class PersonDetails extends React.Component {
   componentDidMount() {
+    const personId = this.props.match.params.id;
+
     if (!this.props.fetching) {
-      this.props.getPersonDetails();
-      this.props.getFilmsWithCast();
-      this.props.setSearchType();
+      this.props.getPersonDetailsAsync(personId);
+      this.props.getFilmsWithCastAsync(personId);
+      this.props.setSearchType('title');
     }
   }
 
@@ -47,9 +49,14 @@ export default class PersonDetails extends React.Component {
 
 PersonDetails.propTypes = {
   fetching: PropTypes.bool.isRequired,
-  getPersonDetails: PropTypes.func.isRequired,
-  getFilmsWithCast: PropTypes.func.isRequired,
+  getPersonDetailsAsync: PropTypes.func.isRequired,
+  getFilmsWithCastAsync: PropTypes.func.isRequired,
   setSearchType: PropTypes.func.isRequired,
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.string,
+    }),
+  }).isRequired,
   details: PropTypes.shape({
     profile_path: PropTypes.string,
     name: PropTypes.string,
