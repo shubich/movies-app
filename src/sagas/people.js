@@ -14,5 +14,6 @@ export function* getPeople(action) {
 }
 
 export default function* watchPeopleAsync() {
-  yield takeEvery(types.GET_PEOPLE_ASYNC, getPeople);
+  // yield takeEvery(types.GET_PEOPLE_ASYNC, getPeople);
+  yield call(takeEvery, types.GET_PEOPLE_ASYNC, getPeople);
 }

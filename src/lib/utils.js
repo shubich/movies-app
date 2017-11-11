@@ -54,7 +54,7 @@ export const handlePersonDetails = (details) => {
     ? ` in ${details.place_of_birth}`
     : '';
   handledDetails.popularity = Math.round(details.popularity);
-  
+
   return handledDetails;
 };
 
