@@ -1,4 +1,4 @@
-import { put, takeEvery, call } from 'redux-saga/effects';
+import { call, put, takeEvery } from 'redux-saga/effects';
 import { cloneableGenerator } from 'redux-saga/utils';
 import watchPeopleAsync, { getPeople } from '../people';
 import * as actions from '../../actions/getPeople';
@@ -29,7 +29,7 @@ describe('people saga', () => {
   it('should trigger on GET_PEOPLE_ASYNC', () => {
     // arrange
     const iterator = watchPeopleAsync();
-    const expectedYield = call(takeEvery, types.GET_PEOPLE_ASYNC, getPeople);
+    const expectedYield = takeEvery(types.GET_PEOPLE_ASYNC, getPeople);
 
     // act
     const actualYield = iterator.next().value;

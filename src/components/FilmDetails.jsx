@@ -4,7 +4,7 @@ import ReactLoading from 'react-loading';
 import Poster from './Poster';
 
 export default class FilmDetails extends React.Component {
-  componentDidMount() {
+  componentWillMount() {
     const filmId = this.props.match.params.id;
 
     if (!this.props.fetching) {
