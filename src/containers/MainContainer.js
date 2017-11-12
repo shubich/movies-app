@@ -1,23 +1,28 @@
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import Main from '../components/Main';
-import { sortFilms } from '../lib/utils';
+import { getFilmsAsync } from '../actions/getFilms';
+import { getPeopleAsync } from '../actions/getPeople';
+import { getSimilarFilmsAsync } from '../actions/getSimilarFilms';
+import { getFilmsWithCastAsync } from '../actions/getFilmsWithCast';
 
-const mapStateToProps = (state) => {
-  if (state.search.searchType === 'title') {
-    return {
-      ...state.search,
-      ...state.films,
-      results: sortFilms(state.films.results, state.search.sortType),
-    };
-  } else if (state.search.searchType === 'person') {
-    return {
-      ...state.search,
-      ...state.people,
-    };
-  }
-  return {};
-};
+const mapStateToProps = state => ({
+  ...state.search,
+  data: (state.search.searchType === 'title')
+    ? { ...state.films }
+    : { ...state.people },
+});
 
-const MainContainer = connect(mapStateToProps)(Main);
+const mapDispatchToProps = dispatch => bindActionCreators({
+  getFilmsAsync,
+  getPeopleAsync,
+  getSimilarFilmsAsync,
+  getFilmsWithCastAsync,
+}, dispatch);
+
+const MainContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Main);
 
 export default MainContainer;

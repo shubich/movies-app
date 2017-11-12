@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PersonDetails from '../components/PersonDetails';
 import { getPersonDetailsAsync } from '../actions/getPersonDetails';
-import { getFilmsWithCastAsync } from '../actions/getFilmsWithCast';
 import setSearchType from '../actions/setSearchType';
 
 const mapStateToProps = state => ({
@@ -11,7 +10,6 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   getPersonDetailsAsync,
-  getFilmsWithCastAsync,
   setSearchType,
 }, dispatch);
 

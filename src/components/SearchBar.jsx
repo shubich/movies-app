@@ -2,29 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export default class SearchBar extends React.Component {
-  componentDidMount() {
-    if (this.props.searchQuery) {
-      this.props.getFilmsAsync(this.props.searchQuery);
-    }
-  }
-
   componentWillReceiveProps(nextProps) {
     this.searchLine.value = nextProps.searchQuery || '';
-    if (
-      (this.props.searchQuery !== nextProps.searchQuery
-            || this.props.searchType !== nextProps.searchType)
-            && nextProps.searchQuery
-    ) {
-      switch (nextProps.searchType) {
-        case 'person':
-          this.props.getPeopleAsync(nextProps.searchQuery);
-          break;
-        case 'title':
-        default:
-          this.props.getFilmsAsync(nextProps.searchQuery);
-          break;
-      }
-    }
   }
 
   setRef = (node) => {
@@ -92,8 +71,6 @@ export default class SearchBar extends React.Component {
 
 SearchBar.propTypes = {
   searchQuery: PropTypes.string,
-  getFilmsAsync: PropTypes.func.isRequired,
-  getPeopleAsync: PropTypes.func.isRequired,
   setSearchType: PropTypes.func.isRequired,
   searchType: PropTypes.string.isRequired,
   history: PropTypes.shape({
