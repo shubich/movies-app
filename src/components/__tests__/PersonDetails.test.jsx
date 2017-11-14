@@ -16,8 +16,12 @@ describe('PersonDetails', () => {
         deathday: '154',
         biography: 'Lorem ipsum dolor sit amet.',
       },
-      getPersonDetails: jest.fn(),
-      getFilmsWithCast: jest.fn(),
+      match: {
+        params: {
+          id: '1',
+        },
+      },
+      getPersonDetailsAsync: jest.fn(),
       setSearchType: jest.fn(),
       fetching: false,
     };

@@ -17,8 +17,14 @@ ShallowWrapper {
       }
     }
     fetching={false}
-    getFilmsWithCast={[Function]}
-    getPersonDetails={[Function]}
+    getPersonDetailsAsync={[Function]}
+    match={
+      Object {
+        "params": Object {
+          "id": "1",
+        },
+      }
+    }
     setSearchType={[Function]}
   />,
   Symbol(enzyme.__renderer__): Object {
@@ -517,8 +523,14 @@ ShallowWrapper {
       }
     }
     fetching={true}
-    getFilmsWithCast={[Function]}
-    getPersonDetails={[Function]}
+    getPersonDetailsAsync={[Function]}
+    match={
+      Object {
+        "params": Object {
+          "id": "1",
+        },
+      }
+    }
     setSearchType={[Function]}
   />,
   Symbol(enzyme.__renderer__): Object {
@@ -613,8 +625,14 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <PersonDetails
     details={Object {}}
     fetching={false}
-    getFilmsWithCast={[Function]}
-    getPersonDetails={[Function]}
+    getPersonDetailsAsync={[Function]}
+    match={
+      Object {
+        "params": Object {
+          "id": "1",
+        },
+      }
+    }
     setSearchType={[Function]}
   />,
   Symbol(enzyme.__renderer__): Object {

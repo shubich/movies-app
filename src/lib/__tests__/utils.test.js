@@ -129,7 +129,7 @@ describe('utils', () => {
       birthday: '',
       deathday: '',
       place_of_birth: '',
-      popularity: '',
+      popularity: 0,
     });
   });
 });

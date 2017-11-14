@@ -21,8 +21,7 @@ describe('FilmDetails', () => {
           id: '680',
         },
       },
-      getFilmDetails: jest.fn(),
-      getSimilarFilms: jest.fn(),
+      getFilmDetailsAsync: jest.fn(),
       fetching: false,
     };
   });

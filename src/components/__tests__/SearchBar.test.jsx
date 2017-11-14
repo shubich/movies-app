@@ -7,8 +7,6 @@ let props;
 describe('SearchBar', () => {
   beforeEach(() => {
     props = {
-      getFilms: jest.fn(),
-      getPeople: jest.fn(),
       setSearchType: jest.fn(),
       history: { push: jest.fn() },
       searchType: 'title',
@@ -25,23 +23,11 @@ describe('SearchBar', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should call getFilms', () => {
-    const wrapper = mount(<SearchBar {...props} />);
-    wrapper.setProps({ ...props, searchQuery: 'test' });
-    expect(props.getFilms).toBeCalledWith('test');
-  });
-
-  it('should call getPeople', () => {
-    const wrapper = mount(<SearchBar {...props} />);
-    wrapper.setProps({ ...props, searchType: 'person', searchQuery: 'test' });
-    expect(props.getPeople).toBeCalledWith('test');
-  });
-
-  it('shouldn\'t get anything with same props', () => {
-    const wrapper = mount(<SearchBar {...props} />);
-    wrapper.setProps({ ...props });
-    expect(props.getFilms).not.toBeCalled();
-  });
+  // it('shouldn\'t get anything with same props', () => {
+  //   const wrapper = mount(<SearchBar {...props} />);
+  //   wrapper.setProps({ ...props });
+  //   expect(props.getFilms).not.toBeCalled();
+  // });
 
   it('should call input.focus() when search line is empty', () => {
     const focus = jest.fn();

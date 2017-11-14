@@ -7,20 +7,29 @@ let props;
 describe('Main', () => {
   beforeEach(() => {
     props = {
-      results: [
-        {
-          id: 1,
-          title: 'A',
+      data: {
+        results: [
+          {
+            id: 1,
+            title: 'A',
+          },
+        ],
+        fetching: false,
+        error: '',
+      },
+      match: {
+        params: {
+          id: '1',
+          query: 'test',
         },
-        {
-          id: 2,
-          title: 'B',
-        },
-      ],
-      fetching: false,
-      error: '',
+        url: '/film/2330',
+      },
       onFilmClick: jest.fn,
       searchType: 'title',
+      getFilmsAsync: jest.fn,
+      getPeopleAsync: jest.fn,
+      getSimilarFilmsAsync: jest.fn,
+      getFilmsWithCastAsync: jest.fn,
     };
   });
 

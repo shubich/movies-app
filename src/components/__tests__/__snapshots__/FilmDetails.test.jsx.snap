@@ -17,8 +17,7 @@ ShallowWrapper {
       }
     }
     fetching={false}
-    getFilmDetails={[Function]}
-    getSimilarFilms={[Function]}
+    getFilmDetailsAsync={[Function]}
     match={
       Object {
         "params": Object {
@@ -649,8 +648,7 @@ ShallowWrapper {
       }
     }
     fetching={true}
-    getFilmDetails={[Function]}
-    getSimilarFilms={[Function]}
+    getFilmDetailsAsync={[Function]}
     match={
       Object {
         "params": Object {
@@ -761,8 +759,7 @@ ShallowWrapper {
       }
     }
     fetching={false}
-    getFilmDetails={[Function]}
-    getSimilarFilms={[Function]}
+    getFilmDetailsAsync={[Function]}
     match={
       Object {
         "params": Object {
@@ -1393,8 +1390,7 @@ ShallowWrapper {
       }
     }
     fetching={false}
-    getFilmDetails={[Function]}
-    getSimilarFilms={[Function]}
+    getFilmDetailsAsync={[Function]}
     match={
       Object {
         "params": Object {
@@ -2015,8 +2011,7 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <FilmDetails
     details={Object {}}
     fetching={false}
-    getFilmDetails={[Function]}
-    getSimilarFilms={[Function]}
+    getFilmDetailsAsync={[Function]}
     match={
       Object {
         "params": Object {

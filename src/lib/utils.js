@@ -53,7 +53,7 @@ export const handlePersonDetails = (details) => {
   handledDetails.place_of_birth = (details.place_of_birth)
     ? ` in ${details.place_of_birth}`
     : '';
-  handledDetails.popularity = Math.round(details.popularity);
+  handledDetails.popularity = Math.round(details.popularity) || 0;
 
   return handledDetails;
 };

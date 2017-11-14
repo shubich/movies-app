@@ -5,8 +5,6 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <SearchBar
-    getFilms={[Function]}
-    getPeople={[Function]}
     history={
       Object {
         "push": [Function],
@@ -724,8 +722,6 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <SearchBar
-    getFilms={[Function]}
-    getPeople={[Function]}
     history={
       Object {
         "push": [Function],
