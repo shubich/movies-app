@@ -6,6 +6,7 @@ import watchFilmDetailsAsync from './filmDetails';
 import watchPersonDetailsAsync from './personDetails';
 import watchSimilarFilmsAsync from './similarFilms';
 import watchFilmsWithCastAsync from './filmsWithCast';
+import watchMovieCreditsAsync from './movieCredits';
 
 
 export default function* rootSaga() {
@@ -16,5 +17,6 @@ export default function* rootSaga() {
     watchPersonDetailsAsync(),
     watchSimilarFilmsAsync(),
     watchFilmsWithCastAsync(),
+    watchMovieCreditsAsync(),
   ]);
 }

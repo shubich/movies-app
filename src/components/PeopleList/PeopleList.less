@@ -1,0 +1,28 @@
+@import "../../styles/palette";
+
+.PeopleList {
+    padding: 25px;
+
+}
+
+.PeopleList-Grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+    grid-auto-rows: 100%;
+    grid-gap: 50px;
+}
+
+.PeopleList-Header {
+    // cursor: pointer;
+    cursor: default;
+    &::before {
+        display: inline-block;
+        width: 2rem;
+        // content: "▶";
+        content: "▼";
+        color: rgb(68, 114, 185);
+    }
+    &:hover {
+        color: #03a9f4;
+    }
+}

@@ -1,0 +1,43 @@
+.Person-Info {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: baseline;
+}
+
+.Person-Title {
+    flex: 1;
+    font-size: 1.3em;
+}
+
+.Person-Popularity {
+    background: red;
+    color: white;
+    width: 1.4em;
+    height: 1.4em;
+    position: relative;
+    text-align: center;
+    line-height: 1.4em;
+    z-index: 1;
+    &:after, &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1.4em;
+        height: 1.4em;
+        background: red;
+        z-index: -1;
+    }
+    &:after {
+        -webkit-transform: rotate(60deg);
+        -moz-transform: rotate(60deg);
+         -ms-transform: rotate(60deg);
+          -o-transform: rotate(60deg);
+    }
+    &:before {
+        -webkit-transform: rotate(30deg);
+        -moz-transform: rotate(30deg);
+         -ms-transform: rotate(30deg);
+          -o-transform: rotate(30deg);
+    }
+}

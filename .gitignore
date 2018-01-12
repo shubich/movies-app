@@ -1,3 +1,5 @@
 /node_modules
-/built
+/public
+/server/build
 /coverage
+package-lock.json

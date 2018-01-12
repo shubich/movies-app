@@ -1,31 +1,20 @@
 import { connect } from 'react-redux';
 import Status from '../components/Status';
-import setSortType from '../actions/setSortType';
 
-const mapStateToProps = (state) => {
-  if (state.search.searchType === 'title') {
+const mapStateToProps = (state, ownProps) => {
+  if (ownProps.match.url.toLowerCase().indexOf('people') !== -1) {
     return {
-      ...state.search,
-      count: state.films.results.length,
-    };
-  } else if (state.search.searchType === 'person') {
-    return {
-      ...state.search,
-      count: state.people.results.length,
+      searchType: 'people',
+      count: state.people.total_results,
     };
   }
-  return {};
+
+  return {
+    searchType: 'movies',
+    count: state.films.total_results,
+  };
 };
 
-const mapDispatchToProps = dispatch => ({
-  handleSort: (e) => {
-    dispatch(setSortType(e.target.value));
-  },
-});
-
-const StatusContainer = connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(Status);
+const StatusContainer = connect(mapStateToProps)(Status);
 
 export default StatusContainer;

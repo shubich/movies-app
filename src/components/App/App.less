@@ -1,0 +1,40 @@
+@import "../../styles/palette";
+
+body {
+    margin: 0;
+    font-family: "Arial";
+    background: @gray;
+}
+
+input:focus,
+button:focus {
+    outline: none;
+}
+
+img {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    &:link {
+        color: black;
+    }
+
+    &:visited {
+        color: black;
+    }
+
+    &:hover {
+        color: @primary-color;
+    }
+
+    &:active {
+        color: red;
+    }
+}
+
+.Container {
+    max-width: 1111px;
+    margin: 0 auto;
+}

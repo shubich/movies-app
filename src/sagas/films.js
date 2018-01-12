@@ -6,10 +6,10 @@ import * as Api from '../lib/api';
 export function* getFilms(action) {
   yield put(actions.getFilmsRequest());
   try {
-    const json = yield call(Api.requests.films, action.query);
-    yield put(actions.getFilmsSuccess(json.results));
+    const json = yield call(Api.requests.films, action.payload);
+    yield put(actions.getFilmsSuccess(json));
   } catch (e) {
-    yield put(actions.etFilmsFailure(e.message));
+    yield put(actions.getFilmsFailure(e.message));
   }
 }
 

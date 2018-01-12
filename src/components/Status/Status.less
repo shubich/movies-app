@@ -1,0 +1,46 @@
+@import "../../styles/palette";
+@import "../../styles/media";
+
+.Status {
+    background: #CDCDCD;
+    padding: 25px 50px;
+    input {
+        display: none;
+    }
+    @media @phone {
+        padding: 25px;
+    }   
+}
+
+.Status-Container {
+    display: flex;
+    flex-flow: row nowrap;
+    @media @phone {
+        flex-flow: column wrap;
+    }
+}
+
+.Status-Count {
+    flex: 1;
+}
+
+.Status-SortBy {
+    font-weight: bold;
+}
+
+.Status-Link {
+    margin-left: 10px;
+    cursor: pointer;
+    
+    text-decoration: none;
+    color: black;
+
+    &:hover {
+        color: @primary-color;
+    }
+}
+
+.Status-Link_primary {
+    color: @primary-color;
+    cursor: default;
+}

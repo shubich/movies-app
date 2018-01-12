@@ -2,20 +2,19 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PersonDetails from '../components/PersonDetails';
 import { getPersonDetailsAsync } from '../actions/getPersonDetails';
-import setSearchType from '../actions/setSearchType';
+import detailsWithCrud from '../hoc/detailsWithCrud';
 
 const mapStateToProps = state => ({
   ...state.personDetails,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  getPersonDetailsAsync,
-  setSearchType,
+  getData: getPersonDetailsAsync,
 }, dispatch);
 
 const PersonDetailsContainer = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(PersonDetails);
+)(detailsWithCrud(PersonDetails));
 
 export default PersonDetailsContainer;

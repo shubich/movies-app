@@ -15,7 +15,7 @@ const initialState = {
 const filmDetails = (state = initialState, action) => {
   switch (action.type) {
     case GET_FILM_DETAILS_REQUEST:
-      return { details: {}, fetching: true, error: '' };
+      return { ...state, fetching: true, error: '' };
     case GET_FILM_DETAILS_SUCCESS:
       return { details: handleFilmDetails(action.details), fetching: false, error: '' };
     case GET_FILM_DETAILS_FAILURE:

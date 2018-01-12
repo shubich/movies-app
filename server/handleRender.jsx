@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 
 import rootSaga from '../src/sagas/rootSaga';
 import configureStore from '../src/store/configureStore';
-import App from '../src/App';
+import App from '../src/components/App';
 
 function renderFullPage(html, preloadedState) {
   return `
@@ -16,7 +16,8 @@ function renderFullPage(html, preloadedState) {
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
             <title>Movies-app</title>
-            <link rel="shortcut icon" href="/img/favicon.png">
+            <link rel="shortcut icon" href="/src/favicon.png">
+            <link rel="stylesheet" href="/styles.css">
         </head>
         <body>
             <div id="app">${html}</div>
@@ -25,7 +26,8 @@ function renderFullPage(html, preloadedState) {
                 // http://redux.js.org/docs/recipes/ServerRendering.html#security-considerations
                 window.PRELOADED_STATE = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
             </script>
-            <script type="text/javascript" src="/shop.js"></script>
+            <script type="text/javascript" src="/common.bundle.js" defer></script>
+            <script type="text/javascript" src="/client.bundle.js" defer></script>
         </body>
     </html>
   `;

@@ -1,21 +1,35 @@
 import * as types from '../constants/Films';
 
-export const getFilmsAsync = query => ({
+export const getFilmsAsync = (query, page) => ({
   type: types.GET_FILMS_ASYNC,
-  query,
+  payload: { query, page },
 });
 
-export const getFilmsRequest = query => ({
+export const getFilmsWithCastAsync = (id, page) => ({
+  type: types.GET_FILMS_WITH_CAST_ASYNC,
+  payload: { id, page },
+});
+
+export const getSimilarFilmsAsync = (id, page) => ({
+  type: types.GET_SIMILAR_FILMS_ASYNC,
+  payload: { id, page },
+});
+
+export const getFilmsRequest = () => ({
   type: types.GET_FILMS_REQUEST,
-  query,
 });
 
-export const getFilmsSuccess = results => ({
+export const getFilmsSuccess = json => ({
   type: types.GET_FILMS_SUCCESS,
-  results,
+  payload: json,
 });
 
 export const getFilmsFailure = error => ({
   type: types.GET_FILMS_FAILURE,
   error,
 });
+
+export const resetFilms = () => ({
+  type: types.RESET_FILMS,
+});
+

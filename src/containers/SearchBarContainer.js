@@ -1,23 +1,15 @@
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import SearchBar from '../components/SearchBar';
-import setSearchType from '../actions/setSearchType';
 
 const mapStateToProps = (state, ownProps) => {
-  const searchQuery = decodeURI(ownProps.match.url.split('/')[2] || '');
+  const uri = decodeURI(ownProps.match.url).split('/');
+
   return {
-    searchQuery,
-    ...state.search,
+    searchType: uri[2] || 'movies',
+    searchQuery: uri[3] || '',
   };
 };
 
-const mapDispatchToProps = dispatch => bindActionCreators({
-  setSearchType,
-}, dispatch);
-
-const SearchBarContainer = connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(SearchBar);
+const SearchBarContainer = connect(mapStateToProps)(SearchBar);
 
 export default SearchBarContainer;

@@ -1,5 +1,5 @@
 # movies-app
-Single page application, which will allow users to search the Netflix Roulette database
+Single page application, which will allow users to search The Movie Database (TMDb)
 
 ## How to run it
     npm install
@@ -13,6 +13,6 @@ Single page application, which will allow users to search the Netflix Roulette d
 ### Person
 ![person](/screenshots/3.person.png)
 
-# Contributors
+## Contributors
 * [Andrey Shubich](https://github.com/shubich)
 

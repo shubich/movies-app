@@ -2,18 +2,19 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import FilmDetails from '../components/FilmDetails';
 import { getFilmDetailsAsync } from '../actions/getFilmDetails';
+import detailsWithCrud from '../hoc/detailsWithCrud';
 
 const mapStateToProps = state => ({
   ...state.filmDetails,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  getFilmDetailsAsync,
+  getData: getFilmDetailsAsync,
 }, dispatch);
 
 const FilmDetailsContainer = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(FilmDetails);
+)(detailsWithCrud(FilmDetails));
 
 export default FilmDetailsContainer;

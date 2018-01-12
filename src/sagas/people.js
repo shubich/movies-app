@@ -4,10 +4,10 @@ import * as types from '../constants/People';
 import * as Api from '../lib/api';
 
 export function* getPeople(action) {
-  yield put(actions.getPeopleRequest(action.query));
+  yield put(actions.getPeopleRequest());
   try {
-    const json = yield call(Api.requests.people, action.query);
-    yield put(actions.getPeopleSuccess(json.results));
+    const json = yield call(Api.requests.people, action.payload);
+    yield put(actions.getPeopleSuccess(json));
   } catch (e) {
     yield put(actions.getPeopleFailure(e.message));
   }

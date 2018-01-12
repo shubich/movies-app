@@ -10,6 +10,7 @@ const paths = {
   people: '3/search/person',
   person: '3/person/',
   discover: '3/discover/movie',
+  movieCredits: personId => `3/person/${personId}/movie_credits`,
 };
 
 const queries = {
@@ -27,8 +28,13 @@ const queries = {
 const fetchJson = url => fetch(url).then(res => res.json());
 
 export const requests = {
-  films: (query) => {
-    const queryString = jsonToQueryString({ ...queries.films, query });
+  movieCredits: (personId) => {
+    const queryString = jsonToQueryString({ ...queries.default });
+    const url = `${host}${paths.movieCredits(personId)}${queryString}`;
+    return fetchJson(url);
+  },
+  films: ({ query, page }) => {
+    const queryString = jsonToQueryString({ ...queries.films, query, page });
     const url = `${host}${paths.search}${queryString}`;
     return fetchJson(url);
   },
@@ -37,13 +43,13 @@ export const requests = {
     const url = `${host}${paths.movie}${id}${queryString}`;
     return fetchJson(url);
   },
-  similar: (id) => {
-    const queryString = jsonToQueryString({ ...queries.default });
+  similar: ({ id, page }) => {
+    const queryString = jsonToQueryString({ ...queries.default, page });
     const url = `${host}${paths.movie}${id}/similar${queryString}`;
     return fetchJson(url);
   },
-  people: (query) => {
-    const queryString = jsonToQueryString({ ...queries.default, query });
+  people: ({ query, page }) => {
+    const queryString = jsonToQueryString({ ...queries.default, query, page });
     const url = `${host}${paths.people}${queryString}`;
     return fetchJson(url);
   },
@@ -52,18 +58,9 @@ export const requests = {
     const url = `${host}${paths.person}${id}${queryString}`;
     return fetchJson(url);
   },
-  filmsWithCast: (id) => {
-    const queryString = jsonToQueryString({ ...queries.default, with_cast: id });
+  filmsWithCast: ({ id, page }) => {
+    const queryString = jsonToQueryString({ ...queries.default, with_cast: id, page });
     const url = `${host}${paths.discover}${queryString}`;
     return fetchJson(url);
   },
 };
-
-// https://www.npmjs.com/package/eslint-config-airbnb !!!
-
-// https://api.themoviedb.org/3/search/movie?api_key=595f6d4c932627df7eb7d5c2f27a7e40&language=en-US&&query=taxi&page=1&include_adult=false
-// https://api.themoviedb.org/3/movie/343611?api_key={api_key}
-// https://api.themoviedb.org/3/movie/2330/similar?api_key=595f6d4c932627df7eb7d5c2f27a7e40
-// https://api.themoviedb.org/3/search/person?api_key=595f6d4c932627df7eb7d5c2f27a7e40&query=will
-// https://api.themoviedb.org/3/person/976?api_key=595f6d4c932627df7eb7d5c2f27a7e40
-// https://api.themoviedb.org/3/discover/movie?api_key=595f6d4c932627df7eb7d5c2f27a7e40&with_cast=976

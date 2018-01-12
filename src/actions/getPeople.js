@@ -1,18 +1,17 @@
 import * as types from '../constants/People';
 
-export const getPeopleAsync = query => ({
+export const getPeopleAsync = (query, page) => ({
   type: types.GET_PEOPLE_ASYNC,
-  query,
+  payload: { query, page },
 });
 
-export const getPeopleRequest = query => ({
+export const getPeopleRequest = () => ({
   type: types.GET_PEOPLE_REQUEST,
-  query,
 });
 
-export const getPeopleSuccess = results => ({
+export const getPeopleSuccess = json => ({
   type: types.GET_PEOPLE_SUCCESS,
-  results,
+  payload: json,
 });
 
 export const getPeopleFailure = error => ({

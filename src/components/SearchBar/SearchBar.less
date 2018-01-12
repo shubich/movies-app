@@ -1,0 +1,50 @@
+@import "../../styles/palette";
+
+.SearchBar {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.SearchBar-Form {
+    display: flex;
+    flex-flow: row wrap;
+    input[type='text'] {
+        flex-basis: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        border: 5px solid #111111;
+        border-bottom-color: @primary-color;
+        box-shadow: 1px 1px 5px #333;
+        margin-bottom: 15px;
+        &:focus {
+            border-color: @primary-color;
+        }
+    }
+}
+
+.SearchBar-Props {
+    flex: 1;
+}
+
+.SearchBar-RadioBtn {
+    margin-left: 10px;
+    cursor: default;
+    font-size: 13.333px;
+    display: inline-block;
+    padding: 3px 9px;
+    border: none;
+    box-shadow: 1px 1px 5px #444;
+    input {
+        display: none;
+    }
+}
+
+.SearchBar-RadioBtn_primary {
+    background: @primary-color;
+    color: @default-color;
+}
+
+.SearchBar-RadioBtn_basic {
+    background: gray;
+    color: @default-color;
+}
