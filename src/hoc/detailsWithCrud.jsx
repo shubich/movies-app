@@ -8,6 +8,10 @@ function detailsWithCrud(Component) {
       this.props.getData(this.id);
     }
 
+    componentDidMount() {
+      window.scrollTo(0, 0);
+    }
+
     componentWillReceiveProps(nextProps) {
       const currentId = this.props.match.params.id;
       const nextId = nextProps.match.params.id;
@@ -15,7 +19,12 @@ function detailsWithCrud(Component) {
       if (currentId !== nextId) {
         this.id = nextId;
         this.props.getData(this.id);
+        window.scrollTo(0, 0);
       }
+    }
+
+    componentWillUnmount() {
+      this.props.resetData();
     }
 
     render() {
@@ -27,6 +36,7 @@ function detailsWithCrud(Component) {
 
   DetailsWithCrud.propTypes = {
     getData: PropTypes.func.isRequired,
+    resetData: PropTypes.func.isRequired,
     match: PropTypes.shape({
       params: PropTypes.shape({
         id: PropTypes.string,

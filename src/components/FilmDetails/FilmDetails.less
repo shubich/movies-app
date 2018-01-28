@@ -1,33 +1,8 @@
-@import "../../styles/palette.less";
-
-.FilmDetails {
-    margin-top: 40px;
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-gap: 15px;
-}
-
-.FilmDetails-Title {
-    color: @primary-color;    
-}
+@import "../../styles/palette";
+@import "../../styles/media";
 
 .FilmDetails-Genres {
     color: @basic-color;
-}
-
-.FilmDetails-Rating {
-    color: @primary-color;
-    margin-left: 25px;
-    font-size: 0.7em;
-    font-weight: 100;
-    border: 1px solid white;
-    background: white;
-    border-radius: 50px;
-    padding: 5px;
-    font-family: initial;
-    display: inline-block;
-    min-width: 20px;
-    text-align: center;
 }
 
 .FilmDetails-Numbers {
@@ -38,11 +13,13 @@
 }
 
 .FilmDetails-Description {
-    margin-top: 25px;
+    margin-top: 1.4em;
     font-size: 1.1em;
     color: @basic-color;
 }
 
-.FilmDetails-Poster {
-    width: 250px;
+@media @phone {
+    .FilmDetails-Description {
+        margin-top: 0.9em;
+    }
 }

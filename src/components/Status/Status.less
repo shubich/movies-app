@@ -1,14 +1,15 @@
 @import "../../styles/palette";
+@import "../../styles/spaces";
 @import "../../styles/media";
 
 .Status {
     background: #CDCDCD;
-    padding: 25px 50px;
+    padding: @desktop-space;
     input {
         display: none;
-    }
+    } 
     @media @phone {
-        padding: 25px;
+        padding: @phone-space;
     }   
 }
 

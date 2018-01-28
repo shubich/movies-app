@@ -1,11 +1,12 @@
 @import "../../styles/palette";
+@import "../../styles/spaces";
 @import "../../styles/media";
 
 .Header {
     background: @gray;
     color: white;
-    padding: 25px 50px;
+    padding: @desktop-space;
     @media @phone {
-        padding: 25px;
+        padding: @phone-space;
     }   
 }

@@ -6,27 +6,27 @@ import Poster from '../Poster';
 import './Person.less';
 
 const Person = ({
-  person,
+  item,
 }) => (
   <div className="Person">
-    <Link to={`/person/${person.id}`}>
-      <Poster path={person.profile_path} />
+    <Link to={`/person/${item.id}`}>
+      <Poster path={item.profile_path} person />
     </Link>
     <div className="Person-Info">
-      <Link className="Person-Title" to={`/person/${person.id}`}>
-        {person.name}
+      <Link className="Person-Title" to={`/person/${item.id}`}>
+        {item.name}
       </Link>
       {
-        person.popularity
-        ? <span className="Person-Popularity">{person.popularity.toFixed(0)}</span>
-        : null
+        item.popularity
+          ? <span className="Person-Popularity">{item.popularity.toFixed(0)}</span>
+          : null
       }
     </div>
   </div>
 );
 
 Person.propTypes = {
-  person: PropTypes.shape({
+  item: PropTypes.shape({
     id: PropTypes.number,
     name: PropTypes.string,
     popularity: PropTypes.number,

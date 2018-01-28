@@ -3,20 +3,29 @@ import PropTypes from 'prop-types';
 
 import './NotFound.less';
 
-const NotFound = ({ data }) => (
+const NotFound = ({ query }) => (
   <div className="NotFound">
     <div className="Container">
-      <h2 className="NotFound-Header">No {data} found</h2>
+      <h2 className="NotFound-Header">
+        No results found
+        {
+          query ? (
+            <span className="NotFound-Query">
+              for <b>&quot;{query}&quot;</b>
+            </span>
+          ) : (null)
+        }
+      </h2>
     </div>
   </div>
 );
 
 NotFound.propTypes = {
-  data: PropTypes.string,
+  query: PropTypes.string,
 };
 
 NotFound.defaultProps = {
-  data: 'films',
+  query: '',
 };
 
 export default NotFound;

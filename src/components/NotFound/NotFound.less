@@ -1,11 +1,17 @@
 @import "../../styles/palette";
+@import "../../styles/spaces";
+@import "../../styles/media";
 
 .NotFound {
-    padding: 25px;
+    padding: @desktop-space;
     background: white;
     min-height: 550px;
     display: flex;
     align-items: center;
+    @media @phone {
+        padding: @phone-space;
+        min-height: 50vh;
+    }  
 }
 
 .NotFound-Header {
@@ -14,4 +20,17 @@
     color: @basic-color;
     font-size: 3em;
     font-weight: unset;    
+    @media @phone {
+        font-size: 2em;
+    }  
+}
+
+.NotFound-Query {
+    b {
+        color: #ccc;
+        font-weight: 100;
+    }
+    &::before {
+        content: ' ';
+    }
 }

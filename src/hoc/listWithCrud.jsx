@@ -1,36 +1,37 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function listWithCrud(Component) {
+function listWithCrud(Component, param) {
   class ListWithCrud extends React.Component {
     componentWillMount() {
-      this.id = this.props.match.params.id;
+      this[param] = this.props.match.params[param];
       this.page = 1;
 
       if (!this.props.fetching) {
-        this.props.getData(this.id, this.page);
+        this.props.getData(this[param], this.page);
       }
     }
 
     componentDidMount() {
       window.addEventListener('scroll', this.handleScroll);
+      window.scrollTo(0, 0);
     }
 
     componentWillReceiveProps(nextProps) {
-      const currentId = this.props.match.params.id;
-      const nextId = nextProps.match.params.id;
+      const currentParam = this.props.match.params[param];
+      const nextParam = nextProps.match.params[param];
 
-      if (currentId !== nextId) {
-        this.id = nextId;
+      if (currentParam !== nextParam) {
+        this[param] = nextParam;
         this.page = 1;
+        this.props.getData(this[param], this.page);
         window.scrollTo(0, 0);
-        this.props.getData(this.id, this.page);
       }
     }
 
     componentWillUnmount() {
       window.removeEventListener('scroll', this.handleScroll);
-      // reset store here?
+      this.props.resetData();
     }
 
     handleScroll = (/* e */) => {
@@ -39,7 +40,7 @@ function listWithCrud(Component) {
 
         if (!this.props.fetching && this.page < this.props.total_pages) {
           this.page += 1;
-          this.props.getData(this.id, this.page);
+          this.props.getData(this[param], this.page);
         }
       }
     }
@@ -55,9 +56,11 @@ function listWithCrud(Component) {
     fetching: PropTypes.bool.isRequired,
     total_pages: PropTypes.number,
     getData: PropTypes.func.isRequired,
+    resetData: PropTypes.func.isRequired,
     match: PropTypes.shape({
       params: PropTypes.shape({
         id: PropTypes.string,
+        query: PropTypes.string,
       }),
     }).isRequired,
   };

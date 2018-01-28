@@ -1,6 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-// const HTMLWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const nodeExternals = require('webpack-node-externals');
 
@@ -41,11 +40,6 @@ const clientConfig = {
     new webpack.optimize.CommonsChunkPlugin({
       name: 'common', // Specify the common bundle's name.
     }),
-    // new HTMLWebpackPlugin({
-    //   template: './src/index.html',
-    //   favicon: './src/favicon.png',
-    //   hash: true,
-    // }),
   ],
 };
 

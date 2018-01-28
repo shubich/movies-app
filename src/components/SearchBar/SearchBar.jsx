@@ -42,7 +42,7 @@ export default class SearchBar extends React.Component {
             ref={this.setRef}
           />
           <div className="SearchBar-Props">
-            <span>SEARCH BY</span>
+            <span className="SearchBar-SearchBy">SEARCH BY</span>
 
             <label className={`SearchBar-RadioBtn SearchBar-RadioBtn_${this.props.searchType === 'movies' ? 'primary' : 'basic'}`}>
               <input

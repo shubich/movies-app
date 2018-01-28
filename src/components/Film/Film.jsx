@@ -6,27 +6,27 @@ import Poster from '../Poster';
 import './Film.less';
 
 const Film = ({
-  film,
+  item,
 }) => (
   <div className="Film">
-    <Link to={`/film/${film.id}`}>
-      <Poster path={film.poster_path} />
+    <Link to={`/film/${item.id}`}>
+      <Poster path={item.poster_path} film />
     </Link>
     <div className="Film-Info">
-      <Link className="Film-Title" to={`/film/${film.id}`}>
-        {film.title}
+      <Link className="Film-Title" to={`/film/${item.id}`}>
+        {item.title}
       </Link>
       {
-        film.release_date
-        ? <span className="Film-Year">{film.release_date.split('-')[0]}</span>
-        : null
+        item.release_date
+          ? <span className="Film-Year">{item.release_date.split('-')[0]}</span>
+          : null
       }
     </div>
   </div>
 );
 
 Film.propTypes = {
-  film: PropTypes.shape({
+  item: PropTypes.shape({
     id: PropTypes.number,
     poster_path: PropTypes.string,
     title: PropTypes.string,

@@ -1,15 +1,16 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PersonDetails from '../components/PersonDetails';
-import { getPersonDetailsAsync } from '../actions/getPersonDetails';
+import { getPersonDetailsAsync, resetDetails } from '../actions/detailsActions';
 import detailsWithCrud from '../hoc/detailsWithCrud';
 
 const mapStateToProps = state => ({
-  ...state.personDetails,
+  ...state.details,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   getData: getPersonDetailsAsync,
+  resetData: resetDetails,
 }, dispatch);
 
 const PersonDetailsContainer = connect(

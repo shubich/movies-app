@@ -2,21 +2,15 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 // import logger from 'redux-logger';
 import createSagaMiddleware, { END } from 'redux-saga';
 
-import films from '../reducers/films';
-import people from '../reducers/people';
-import filmDetails from '../reducers/filmDetails';
-import personDetails from '../reducers/personDetails';
-import movieCredits from '../reducers/movieCredits';
+import list from '../reducers/list';
+import details from '../reducers/details';
 import rootSaga from '../sagas/rootSaga';
 
 const sagaMiddleware = createSagaMiddleware();
 
 const moviesApp = combineReducers({
-  films,
-  people,
-  filmDetails,
-  personDetails,
-  movieCredits,
+  list,
+  details,
 });
 
 export default (initialState) => {
@@ -28,4 +22,3 @@ export default (initialState) => {
 
   return store;
 };
-

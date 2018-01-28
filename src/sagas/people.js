@@ -1,15 +1,15 @@
 import { put, call, takeEvery } from 'redux-saga/effects';
-import * as actions from '../actions/getPeople';
-import * as types from '../constants/People';
-import * as Api from '../lib/api';
+import * as actions from '../actions/listActions';
+import * as types from '../constants/List';
+import * as resources from '../api/resources';
 
 export function* getPeople(action) {
-  yield put(actions.getPeopleRequest());
+  yield put(actions.getListRequest());
   try {
-    const json = yield call(Api.requests.people, action.payload);
-    yield put(actions.getPeopleSuccess(json));
+    const json = yield call(resources.searchPerson, action.payload);
+    yield put(actions.getListSuccess(json));
   } catch (e) {
-    yield put(actions.getPeopleFailure(e.message));
+    yield put(actions.getListFailure(e.message));
   }
 }
 

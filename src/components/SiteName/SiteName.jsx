@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './SiteName.less';
 
 const SiteName = ({ className, ...props }) => (
-  <h3 className={`SiteName ${className}`} {...props}>netflixroulette</h3>
+  <h1 className={`SiteName ${className}`} {...props}>netflixroulette</h1>
 );
 
 SiteName.propTypes = {

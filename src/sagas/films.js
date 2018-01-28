@@ -1,15 +1,15 @@
 import { put, takeEvery, call } from 'redux-saga/effects';
-import * as actions from '../actions/getFilms';
-import * as types from '../constants/Films';
-import * as Api from '../lib/api';
+import * as actions from '../actions/listActions';
+import * as types from '../constants/List';
+import * as resources from '../api/resources';
 
 export function* getFilms(action) {
-  yield put(actions.getFilmsRequest());
+  yield put(actions.getListRequest());
   try {
-    const json = yield call(Api.requests.films, action.payload);
-    yield put(actions.getFilmsSuccess(json));
+    const json = yield call(resources.searchMovie, action.payload);
+    yield put(actions.getListSuccess(json));
   } catch (e) {
-    yield put(actions.getFilmsFailure(e.message));
+    yield put(actions.getListFailure(e.message));
   }
 }
 
