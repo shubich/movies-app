@@ -5,8 +5,10 @@ import './Header.less';
 
 const Header = props => (
   <header className="Header">
-    <div className="Container">
-      {props.children}
+    <div className="Header-MaskLayer">
+      <div className="Container">
+        {props.children}
+      </div>
     </div>
   </header>
 );

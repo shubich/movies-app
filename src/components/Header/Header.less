@@ -3,9 +3,14 @@
 @import "../../styles/media";
 
 .Header {
-    background: @gray;
+    background: url("../../assets/background.jpg");
     color: white;
-    padding: @desktop-space;
+    
+    &-MaskLayer {
+        padding: @desktop-space;
+        background: rgba(0, 0, 0, 0.75);
+    }
+
     @media @phone {
         padding: @phone-space;
     }   
