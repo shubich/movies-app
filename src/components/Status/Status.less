@@ -5,17 +5,25 @@
 .Status {
     background: #CDCDCD;
     padding: @desktop-space;
-    input {
-        display: none;
-    } 
+
     @media @phone {
         padding: @phone-space;
     }   
+    
+    &_padding_horizontal {
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
+
+    input {
+        display: none;
+    }
 }
 
 .Status-Container {
     display: flex;
     flex-flow: row nowrap;
+
     @media @phone {
         flex-flow: column wrap;
     }
@@ -32,7 +40,6 @@
 .Status-Link {
     margin-left: 10px;
     cursor: pointer;
-    
     text-decoration: none;
     color: black;
 
