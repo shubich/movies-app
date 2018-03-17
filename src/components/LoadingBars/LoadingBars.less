@@ -1,6 +1,8 @@
-@import "../../styles/palette";
+@import "../../styles/media";
 
 .LoadingBars {
-    position: absolute;
-    background: @primary-color;
+    @media @phone {
+        height: 43px !important;
+        width: 43px !important;
+    }   
 }

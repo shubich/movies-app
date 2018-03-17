@@ -1,7 +1,7 @@
-import express from 'express';
-import handleRender from './build/server.bundle';
+const express = require('express');
+const handleRender = require('./build/server.bundle').default;
 
-const port = 8000;
+const port = process.env.PORT || 3000
 const server = express();
 
 server.use(express.static('public'));

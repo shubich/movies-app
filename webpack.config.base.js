@@ -9,7 +9,7 @@ const clientConfig = {
     extensions: ['.js', '.jsx'],
   },
   entry: {
-    client: ['babel-polyfill', './src/index'],
+    client: ['@babel/polyfill', './src/index'],
     vendors: './src/vendors',
   },
   output: {
@@ -28,7 +28,7 @@ const clientConfig = {
         use: ['css-loader', 'less-loader'],
       }),
     }, {
-      test: /\.(ttf|eot|svg|woff|png)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+      test: /\.(ttf|eot|svg|woff|jpe?g|png)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
       loader: 'file-loader',
       options: {
         name: '[path][name].[ext]?[hash]',
@@ -47,7 +47,7 @@ const serverConfig = {
   target: 'node',
   externals: [nodeExternals()],
   context: path.join(__dirname),
-  entry: ['./server/handleRender.jsx'],
+  entry: ['@babel/polyfill', './server/handleRender.jsx'],
   resolve: { extensions: ['.js', '.jsx'] },
   output: {
     path: path.join(__dirname, 'server/build'),

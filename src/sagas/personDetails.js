@@ -1,6 +1,6 @@
 import { put, takeEvery, call } from 'redux-saga/effects';
-import * as actions from '../actions/detailsActions';
-import * as types from '../constants/Details';
+import actions from '../store/modules/details/actions';
+import TYPES from '../store/modules/details/action-types';
 import * as resources from '../api/resources';
 
 export function* getPersonDetails(action) {
@@ -14,6 +14,6 @@ export function* getPersonDetails(action) {
 }
 
 export default function* watchPersonDetailsAsync() {
-  yield takeEvery(types.GET_PERSON_DETAILS_ASYNC, getPersonDetails);
+  yield takeEvery(TYPES.GET_PERSON_DETAILS_ASYNC, getPersonDetails);
 }
 

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import List from '../components/List';
-import { getPeopleAsync, resetList } from '../actions/listActions';
+import actions from '../store/modules/list/actions';
 import listWithCrud from '../hoc/listWithCrud';
 
 const mapStateToProps = (state, ownProps) => ({
@@ -13,8 +13,8 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  getData: getPeopleAsync,
-  resetData: resetList,
+  getData: actions.getPeopleAsync,
+  resetData: actions.resetList,
 }, dispatch);
 
 const FoundMoviesContainer = connect(

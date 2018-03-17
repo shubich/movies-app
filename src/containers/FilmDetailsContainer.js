@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import FilmDetails from '../components/FilmDetails';
-import { getFilmDetailsAsync, resetDetails } from '../actions/detailsActions';
+import actions from '../store/modules/details/actions';
 import detailsWithCrud from '../hoc/detailsWithCrud';
 
 const mapStateToProps = state => ({
@@ -9,8 +9,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  getData: getFilmDetailsAsync,
-  resetData: resetDetails,
+  getData: actions.getFilmDetailsAsync,
+  resetData: actions.resetDetails,
 }, dispatch);
 
 const FilmDetailsContainer = connect(

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import List from '../components/List';
-import { getSimilarFilmsAsync, resetList } from '../actions/listActions';
+import actions from '../store/modules/list/actions';
 import listWithCrud from '../hoc/listWithCrud';
 
 
@@ -13,8 +13,8 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  getData: getSimilarFilmsAsync,
-  resetData: resetList,
+  getData: actions.getSimilarFilmsAsync,
+  resetData: actions.resetList,
 }, dispatch);
 
 const FilmListContainer = connect(

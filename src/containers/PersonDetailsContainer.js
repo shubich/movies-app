@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PersonDetails from '../components/PersonDetails';
-import { getPersonDetailsAsync, resetDetails } from '../actions/detailsActions';
+import actions from '../store/modules/details/actions';
 import detailsWithCrud from '../hoc/detailsWithCrud';
 
 const mapStateToProps = state => ({
@@ -9,8 +9,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  getData: getPersonDetailsAsync,
-  resetData: resetDetails,
+  getData: actions.getPersonDetailsAsync,
+  resetData: actions.resetDetails,
 }, dispatch);
 
 const PersonDetailsContainer = connect(

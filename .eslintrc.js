@@ -8,10 +8,11 @@ module.exports = {
         "jest": true,
     },
     "rules": {
-        "linebreak-style": ["error", "windows"],
         "jsx-a11y/anchor-is-valid": [ "error", {}],
         "jsx-a11y/label-has-for": [ 2, {
             "allowChildren": true,
         }],
+        "import/prefer-default-export": 0,
+        "react/no-typos": 0,
     }
 };

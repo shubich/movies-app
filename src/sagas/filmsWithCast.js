@@ -1,6 +1,6 @@
 import { put, takeEvery, call } from 'redux-saga/effects';
-import * as actions from '../actions/listActions';
-import * as types from '../constants/List';
+import actions from '../store/modules/list/actions';
+import TYPES from '../store/modules/list/action-types';
 import * as resources from '../api/resources';
 
 export function* getFilmsWithCast(action) {
@@ -14,5 +14,5 @@ export function* getFilmsWithCast(action) {
 }
 
 export default function* watchFilmsWithCastAsync() {
-  yield takeEvery(types.GET_FILMS_WITH_CAST_ASYNC, getFilmsWithCast);
+  yield takeEvery(TYPES.GET_FILMS_WITH_CAST_ASYNC, getFilmsWithCast);
 }

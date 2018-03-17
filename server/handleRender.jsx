@@ -4,7 +4,7 @@ import { StaticRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import rootSaga from '../src/sagas/rootSaga';
-import configureStore from '../src/store/configureStore';
+import configureStore from '../src/store';
 import App from '../src/components/App';
 
 function renderFullPage(html, preloadedState) {
@@ -33,7 +33,7 @@ function renderFullPage(html, preloadedState) {
   `;
 }
 
-function handleRender(req, res) {
+export default function handleRender(req, res) {
   const store = configureStore();
   const context = {};
 
@@ -65,5 +65,3 @@ function handleRender(req, res) {
   // When the first render is finished, send the END action to redux-saga.
   store.close();
 }
-
-export default handleRender;
